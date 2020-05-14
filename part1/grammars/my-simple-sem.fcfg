@@ -1,0 +1,61 @@
+## Natural Language Toolkit: sem3.fcfg
+##
+## Alternative simple grammar with transitive verbs and 
+## quantifiers for the book. 
+## 
+## Author: Ewan Klein <ewan@inf.ed.ac.uk> 
+## URL: <http://nltk.sourceforge.net>
+## For license information, see LICENSE.TXT
+
+
+% start S
+############################
+# Grammar Rules
+#############################
+
+# S -> NP VP
+# S -> NP VP PP
+# S -> VP NP
+# S -> VP NP PP
+
+S[SEM = <?subj(?vp)>] -> NP[NUM=?n,SEM=?subj] VP[NUM=?n,SEM=?vp]
+S[SEM = <?subj(?vp)>] -> NP[NUM=?n,SEM=?subj] VP[NUM=?n,SEM=?vp] PP[NUM=?n, SEM=?pp]
+S[SEM = <?vp(?np)>] -> VP[NUM=?n,SEM=?vp] NP[NUM=?n,SEM=?np]
+S[SEM = <?vp(?np)>] -> VP[NUM=?n,SEM=?vp] NP[NUM=?n,SEM=?np] PP[NUM=?n, SEM=?pp]
+
+# NP -> NNS
+# NP -> DT NN
+# NP -> PRPS JJ NP
+
+NP[SEM=<\Q.exists x.((?nn)(x) & Q(x))>] -> NN[NUM=?n, SEM=?nn]
+NP[SEM=<\Q.exists x.((?nns)(x) & Q(x))>] -> NNS[NUM=?n, SEM=?nns]
+NP[SEM=<?nn>] -> DT[NUM=?n,SEM=?dt]  NN[NUM=?n,SEM=?nn]
+NP[SEM=<\Q.exists x.((?nn)(x) & Q(x) & (?nn)(x) & (?prps)(x))>] -> PRPS[NUM=?n, SEM=?prps] JJ[NUM=?n, SEM=?jj] NNS[NUM=?n, SEM=?nns]
+
+# VP -> PRP VBP VBG
+# VP -> EX VBZ
+# VP -> EX VBP
+# VP -> VBZ VBG
+
+VP[NUM=?n,SEM=<sogg(?prp) & ?vbp(?vpb) & ?vbg(?vbg)>] -> PRP[NUM=?n,SEM=?prp] VBP[NUM=?n,SEM=?vbp] VBG[NUM=?n,SEM=?vbg]
+VP[SEM=<?ex(?vbz)>] -> EX[SEM=?ex] VBZ[SEM=?vbz]
+VP[SEM=<?ex(?vbp)>] -> EX[SEM=?ex] VBP[SEM=?vbp]
+VP[NUM=?n,SEM=<vbz(?vpz) & vbg(?vbg)>] -> VBP[NUM=?n,SEM=?vbp] VBG[NUM=?n,SEM=?vbg]
+
+# PP -> IN PRPS NN
+# PP -> IN IN PB
+
+PP[+POSS, SEM=<\N.exists x.((?in)(x) & (?prps)(x) & ?nn(x) & N(x))>] -> IN[SEM=?in] PRPS[SEM=?prps] NN[SEM=?nn]
+PP[SEM=<?in1(?in2(?rb))>] -> IN[SEM=?in1] IN[SEM=?in2] RB[SEM=?rb]
+
+#############################
+# Lexical Rules
+#############################
+
+PRP[+PERS, NUM=sg, SEM=<\P.P(you)>] -> 'You'
+PRP[+PERS, NUM=pl, SEM=<\P.P(you)>] -> 'You'
+VBP[NUM=sg, SEM=<\P.P>] -> 'are'
+VBP[NUM=pl, SEM=<\P.P>] -> 'are'
+VBG[NUM=sg,SEM=<\X x.X(\y.image(x,y))>,TNS=ger] -> 'imagining'
+VBG[NUM=pl,SEM=<\X x.X(\y.image(x,y))>,TNS=ger] -> 'imagining'
+NNS[NUM=pl,GEN=f,SEM=<\x.thing(x)>] -> 'things'
