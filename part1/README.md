@@ -14,8 +14,8 @@ Di seguito è presente il dettaglio dei tre passi da svolgere:
 
 ## 1. Parsificare le frasi inglesi 
 Scrivere una grammatica CF G1 (con semantica!) per le frasi in ingresso e usare [NLTK](https://www.nltk.org).
-Suggerimento: ispirarsi alla grammatica “simple-sem.fcfg”, disponibile al seguente [link](https://github.com/nltk/nltk_teach/blob/master/examples/grammars/book_grammars/simple-sem.fcfg)
-e a quest'altro [link](http://www.nltk.org/book/ch10.html), contenente una guida a NLTK.
+Suggerimento: ispirarsi alla grammatica “simple-sem.fcfg”, disponibile al seguente [link](https://github.com/nltk/nltk_teach/blob/master/examples/grammars/book_grammars/simple-sem.fcfg).
+In aggiunta, se si sitiene opportuno fornisco anche quest'altro [link](http://www.nltk.org/book/ch10.html), contenente una guida a NLTK.
 
 ## 2. Dalla Logica al Sentence Plan 
 Per passare dalla logica FOL al Sentence Plan è necessario costruire un sentence planner che per ogni formula logica 
