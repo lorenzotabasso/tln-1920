@@ -20,8 +20,8 @@
 
 S[SEM = <?subj(?vp)>] -> NP[NUM=?n,SEM=?subj] VP[NUM=?n,SEM=?vp]
 S[SEM = <?subj(?vp)>] -> NP[NUM=?n,SEM=?subj] VP[NUM=?n,SEM=?vp] PP[NUM=?n, SEM=?pp]
-S[SEM = <?vp(?np)>] -> VP[NUM=?n,SEM=?vp] NP[NUM=?n,SEM=?np]
-S[SEM = <?vp(?np)>] -> VP[NUM=?n,SEM=?vp] NP[NUM=?n,SEM=?np] PP[NUM=?n, SEM=?pp]
+S[SEM = <?np(?vp)>] -> VP[NUM=?n,SEM=?vp] NP[NUM=?n,SEM=?np]
+S[SEM = <?vp(?np(?pp))>] -> VP[NUM=?n,SEM=?vp] NP[NUM=?n,SEM=?np] PP[NUM=?n, SEM=?pp]
 
 # NP -> NNS
 # NP -> DT NN
@@ -29,7 +29,7 @@ S[SEM = <?vp(?np)>] -> VP[NUM=?n,SEM=?vp] NP[NUM=?n,SEM=?np] PP[NUM=?n, SEM=?pp]
 
 NP[SEM=<\Q.exists x.((?nn)(x) & Q(x))>] -> NN[NUM=?n, SEM=?nn]
 NP[SEM=<\Q.exists x.((?nns)(x) & Q(x))>] -> NNS[NUM=?n, SEM=?nns]
-NP[SEM=<?nn>] -> DT[NUM=?n,SEM=?dt]  NN[NUM=?n,SEM=?nn]
+NP[SEM=<?dt(?nn)>] -> DT[NUM=?n,SEM=?dt]  NN[NUM=?n,SEM=?nn]
 NP[SEM=<\Q.exists x.((?nn)(x) & Q(x) & (?nn)(x) & (?prps)(x))>] -> PRPS[NUM=?n, SEM=?prps] JJ[NUM=?n, SEM=?jj] NNS[NUM=?n, SEM=?nns]
 
 # VP -> PRP VBP VBG
@@ -37,7 +37,7 @@ NP[SEM=<\Q.exists x.((?nn)(x) & Q(x) & (?nn)(x) & (?prps)(x))>] -> PRPS[NUM=?n, 
 # VP -> EX VBP
 # VP -> VBZ VBG
 
-VP[NUM=?n,SEM=<sogg(?prp) & ?vbp(?vpb) & ?vbg(?vbg)>] -> PRP[NUM=?n,SEM=?prp] VBP[NUM=?n,SEM=?vbp] VBG[NUM=?n,SEM=?vbg]
+VP[NUM=?n,SEM=<?vbg(?prp)>] -> PRP[NUM=?n,SEM=?prp] VBP[NUM=?n,SEM=?vbp] VBG[NUM=?n,SEM=?vbg]
 VP[SEM=<?ex(?vbz)>] -> EX[SEM=?ex] VBZ[SEM=?vbz]
 VP[SEM=<?ex(?vbp)>] -> EX[SEM=?ex] VBP[SEM=?vbp]
 VP[NUM=?n,SEM=<vbz(?vpz) & vbg(?vbg)>] -> VBP[NUM=?n,SEM=?vbp] VBG[NUM=?n,SEM=?vbg]
@@ -45,7 +45,7 @@ VP[NUM=?n,SEM=<vbz(?vpz) & vbg(?vbg)>] -> VBP[NUM=?n,SEM=?vbp] VBG[NUM=?n,SEM=?v
 # PP -> IN PRPS NN
 # PP -> IN IN PB
 
-PP[+POSS, SEM=<\N.exists x.((?in)(x) & (?prps)(x) & ?nn(x) & N(x))>] -> IN[SEM=?in] PRPS[SEM=?prps] NN[SEM=?nn]
+PP[+POSS, SEM=<\N.exists x.((?in)(x) & (?prps)(x) & ?nn(x))>] -> IN[SEM=?in] PRPS[SEM=?prps] NN[SEM=?nn]
 PP[SEM=<?in1(?in2(?rb))>] -> IN[SEM=?in1] IN[SEM=?in2] RB[SEM=?rb]
 
 #############################
@@ -59,3 +59,11 @@ VBP[NUM=pl, SEM=<\P.P>] -> 'are'
 VBG[NUM=sg,SEM=<\X x.X(\y.image(x,y))>,TNS=ger] -> 'imagining'
 VBG[NUM=pl,SEM=<\X x.X(\y.image(x,y))>,TNS=ger] -> 'imagining'
 NNS[NUM=pl,GEN=f,SEM=<\x.thing(x)>] -> 'things'
+
+EX[SEM=<\P Q.exists x.(P(x) & Q(x))>] -> 'There'
+VBZ[NUM=sg,SEM=<\x.exists e.(presence(e) & agent(e,x))>] -> 'is'
+DT[NUM=sg,SEM=<\P Q.exists x.(P(x) & Q(x))>] -> 'a'
+NN[NUM=sg,GEN=m,SEM=<\x.price(x)>] -> 'price'
+IN[+LOC, SEM=<\R P x.R(\y.(P(x) & on(x,y)))>] -> 'on'
+PRPS[+POSS, NUM=sg, SEM=<\x.my(x)>] -> 'my'
+NN[NUM=sg,GEN=f,SEM=<\x.head(x)>] -> 'head'
