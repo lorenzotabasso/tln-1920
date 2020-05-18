@@ -21,7 +21,7 @@
 S[SEM = <?subj(?vp)>] -> NP[NUM=?n,SEM=?subj] VP[NUM=?n,SEM=?vp]
 S[SEM = <?subj(?vp)>] -> NP[NUM=?n,SEM=?subj] VP[NUM=?n,SEM=?vp] PP[NUM=?n, SEM=?pp]
 S[SEM = <?np(?vp)>] -> VP[NUM=?n,SEM=?vp] NP[NUM=?n,SEM=?np]
-S[SEM = <?vp(?np(?pp))>] -> VP[NUM=?n,SEM=?vp] NP[NUM=?n,SEM=?np] PP[NUM=?n, SEM=?pp]
+S[SEM = <?vp(?pp(?np))>] -> VP[NUM=?n,SEM=?vp] NP[NUM=?n,SEM=?np] PP[NUM=?n, SEM=?pp]
 
 # NP -> NNS
 # NP -> DT NN
@@ -43,10 +43,13 @@ VP[SEM=<?ex(?vbp)>] -> EX[SEM=?ex] VBP[SEM=?vbp]
 VP[NUM=?n,SEM=<vbz(?vpz) & vbg(?vbg)>] -> VBP[NUM=?n,SEM=?vbp] VBG[NUM=?n,SEM=?vbg]
 
 # PP -> IN PRPS NN
+# PP -> IN PP
+# PP -> PRPS NN
 # PP -> IN IN PB
 
-PP[+POSS, SEM=<\N.exists x.((?in)(x) & (?prps)(x) & ?nn(x))>] -> IN[SEM=?in] PRPS[SEM=?prps] NN[SEM=?nn]
 PP[SEM=<?in1(?in2(?rb))>] -> IN[SEM=?in1] IN[SEM=?in2] RB[SEM=?rb]
+PP[+LOC, SEM=<?in(?poss)>] -> IN[+LOC, SEM=?in] PP[SEM=?poss]
+PP[+POSS, SEM=<\T.exists x.((?prps)(x) & (?nn)(x) & T(x))>] -> PRPS[+POSS, SEM=?prps] NN[SEM=?nn]
 
 #############################
 # Lexical Rules
