@@ -157,5 +157,8 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
+# Excel temp file -------------------------------------------------------------
+~$*.xlsx
+
 # IntelliJ IDEA project files -------------------------------------------------
 .idea
