@@ -55,15 +55,16 @@ PP[SEM=<?in(?rb)>] -> IN[SEM=?in] RB[SEM=?rb]
 # Lexical Rules
 #############################
 
-PRP[+PERS, NUM=sg, SEM=<\P.P(you)>] -> 'You'
-PRP[+PERS, NUM=pl, SEM=<\P.P(you)>] -> 'You'
+PRP[+PERS, NUM=sg, SEM=<\P.P(you)>] -> 'you'
+PRP[+PERS, NUM=pl, SEM=<\P.P(you)>] -> 'you'
 VBP[NUM=sg, SEM=<\P.P>] -> 'are'
 VBP[NUM=pl, SEM=<\P.P>] -> 'are'
 VBG[NUM=sg,SEM=<\X x.X(\y.image(x,y))>,TNS=ger] -> 'imagining'
 VBG[NUM=pl,SEM=<\X x.X(\y.image(x,y))>,TNS=ger] -> 'imagining'
 NNS[NUM=pl,GEN=f,SEM=<\x.thing(x)>] -> 'things'
 
-EX[SEM=<\P Q.exists x.(P(x) & Q(x))>] -> 'There'
+EX[SEM=<\P Q.exists x.(P(x) & Q(x))>] -> 'there'
+
 # FIXME: ambiguità tra "is", ripensare i non terminali
 VBZ[NUM=sg,SEM=<\x.exists e.(presence(e) & agent(e,x))>] -> 'is'
 DT[NUM=sg,SEM=<\P Q.exists x.(P(x) & Q(x))>] -> 'a'
@@ -72,7 +73,7 @@ IN[+LOC, SEM=<\R P x.R(\y.(P(x) & on(x,y)))>] -> 'on'
 PRPS[+POSS, NUM=sg, SEM=<\x.my(x)>] -> 'my'
 NN[NUM=sg,GEN=f,SEM=<\x.head(x)>] -> 'head'
 
-PRPS[+POSS, NUM=sg, SEM=<\x.your(x)>] -> 'Your'
+PRPS[+POSS, NUM=sg, SEM=<\x.your(x)>] -> 'your'
 JJ[SEM=<\x.big(x)>] -> 'big'
 NN[NUM=sg,GEN=f,SEM=<\x.opportunity(x)>] -> 'opportunity'
 VBZ[NUM=sg,SEM=<\P.P>] -> 'is'
