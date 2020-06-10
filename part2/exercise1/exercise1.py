@@ -110,7 +110,7 @@ if __name__ == "__main__":
     parser = OptionParser()
 
     parser.add_option("-b", "--input", help='path to the input file', action="store", type="string", dest="input",
-                      default="/Users/lorenzotabasso/Desktop/University/TLN/Progetto/19-20/tln-1920/part2/exercise1/input/br-a01.xml")
+                      default="/Users/lorenzotabasso/Desktop/University/TLN/Progetto/19-20/tln-1920/part2/exercise1/input/semcor3.0/brown1/tagfiles/br-a01")
 
     parser.add_option("-o", "--output", help='output directory', action="store", type="string", dest="output",
                       default="/Users/lorenzotabasso/Desktop/University/TLN/Progetto/19-20/tln-1920/part2/exercise1/output/")

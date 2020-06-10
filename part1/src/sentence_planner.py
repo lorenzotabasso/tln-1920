@@ -116,8 +116,8 @@ def sentence_2(tree):
     terms = get_semantics(tree)
     var_verb = terms[0]  # presence(e)
     verb = match_pred_pos(tree, var_verb)  # {'pred': 'presence', 'tag': 'VBZ', 'num': 'sg', 'tns': 'pres'}
-    event = str(var_verb.args[0])  # e
-    visited_variables.add(event)
+    var_event = str(var_verb.args[0])  # e
+    visited_variables.add(var_event)
 
     # Finding the subject ------------------------------------------------------
     var_subj = get_intransitive_subject(tree)  # x
@@ -153,7 +153,7 @@ def sentence_2(tree):
             if occurrence in mod_subj:
                 mod_subj.remove(occurrence)
 
-    # # Building Sentence Plan tree --------------------------------------------
+    # Building Sentence Plan tree ----------------------------------------------
     id = 0
     id, root = create_node(id, type="clause", parent=None, proprieties={"tense": verb['tns']})
 
@@ -190,22 +190,79 @@ def sentence_2(tree):
                                     proprieties={"num": x['num'], "gen": x['gen']})
             occurrences_compl.remove(x)
 
-    # TODO da valutare se è meglio
-    # # Object complement with preposition, first search
-    # id, child_np = create_node(id, type="ppcompl", parent=tree_object_complement)
-    # for x in occurrences_compl:
-    #     if x['tag'] == 'NN' and x['pred'] == 'head':
-    #         id, child = create_node(id, type="noum", parent=tree_object_complement,
-    #                                 label=translate_word(x['pred']),
-    #                                 proprieties={"num": x['num'], "gen": x['gen']})
-    #         occurrences_compl.remove(x)
-    #
-    # # Object complement with preposition, second search
-    # for x in occurrences_compl:
-    #     if x['tag'] == 'PRPS':
-    #         id, child = create_node(id, type="modifier", parent=tree_object_complement,
-    #                                 label=translate_word(x['pred']))
-    #         occurrences_compl.remove(x)
+    return root
+
+
+def sentence_3(tree):
+    """
+    Method than handles the third sentence: exists x.(your(x) & big(x) & opportunity(x) & exists e.(fly(e) & agent(e,
+    x) & out(e) & exists y.(from(e,y) & here(y))))
+    """
+
+    visited_variables = set() # used below in order to speedup
+
+    # Finding the verb ---------------------------------------------------------
+    terms = get_semantics(tree)
+    var_verb = terms[1 + (len(terms) - 6)]  # when there are not present modifiers, the list has length 6
+    var_event = str(var_verb.args[0])  # "e"
+    mod_verb = find_occurrences(tree, var_event)  # {from, out, fly (removed below)}
+    visited_variables.add(var_event)  # {"e"}
+    verb = match_pred_pos(tree, var_verb)  # fly(e)
+    mod_verb.remove(verb)  # Removing the verb from the modifiers, because "e" is the verb argument (fly(e))
+
+    # Finding the subject ------------------------------------------------------
+    var_subj = get_intransitive_subject(tree)  # "x"
+    visited_variables.add(var_subj)  # {"e", "x"}
+    mod_subj = find_occurrences(tree, var_subj)  # {opportunity, big, your}
+    subj = list(filter(lambda x: 'NN' == x['tag'], mod_subj))[0]  # opportunity(x)
+    mod_subj.remove(subj)  # Removing the subj from the modifiers, because "x" is the subj argument (opportunity(x))
+
+    # Finding the object, only in the unvisited variables ----------------------
+    var_compl = get_all_variables(tree) - visited_variables  # { "y" }
+    occurrences_compl = []  # complement occurrences { from, here }
+    for variable in var_compl:
+        for occ in find_occurrences(tree, variable):
+            occurrences_compl.append(occ)
+            # the obj will appear in both Verb and Obj (because is a function
+            # of type f(x,y)). So, we need to remove it from Verb
+            if occ in mod_verb:
+                mod_verb.remove(occ)  # we will remove only "from"
+
+    # Building Sentence Plan tree ----------------------------------------------
+    id = 0
+    id, root = create_node(id, type="clause", parent=None, proprieties={"tense": verb['tns']})
+
+    # Subject
+    id, tree_subj = create_node(id, type="subj", parent=root)
+    id, tree_subj_specifier = create_node(id, type="spec", parent=tree_subj, label="la")
+
+    # Adding all subjects modifier
+    for mod in mod_subj:
+        id, tree_subj_modifier = create_node(id, type="modifier", parent=tree_subj, label=translate_word(mod['pred']))
+
+    id, tree_subj_noun = create_node(id, type="noum", parent=tree_subj, label=translate_word(subj['pred']),
+                             proprieties={"gen": subj['gen']})
+
+    # Verb and Adverbs
+    id, tree_verb = create_node(id, type="verb", parent=root)
+    id, tree_main_verb = create_node(id, type="vrb", parent=tree_verb, label=translate_word(verb['pred']))
+    for adv in mod_verb:
+        id, tree_verb_adverb = create_node(id, type="adv", parent=tree_verb, label=translate_word(adv['pred']))
+
+    # Place complement with its Adverbs
+    id, tree_place_compl = create_node(id, type="complement", parent=root)
+
+    for prep in occurrences_compl:
+        if prep['tag'] == 'IN':  # from
+            id, child = create_node(id, type="prep", parent=tree_place_compl, label=translate_word(prep['pred']))
+            occurrences_compl.remove(prep)
+
+    for adv in occurrences_compl:
+        if adv['tag'] == 'RB':  # here
+            if 'loc' in adv.keys():
+                id, ppcompl = create_node(id, type="ppcompl", parent=tree_place_compl,
+                                          label=translate_word(adv['pred']))
+            occurrences_compl.remove(adv)
 
     return root
 
@@ -214,10 +271,9 @@ if __name__ == "__main__":
 
     grammar_path = "../grammars/my-simple-sem.fcfg"
 
-    sentences = ["you are imagining things", "there is a price on my head"]
-    # sentences = ["you are imagining things",
-    #              "there is a price on my head",
-    #              "your big opportunity is flying out of here"]
+    sentences = ["you are imagining things",
+                 "there is a price on my head",
+                 "your big opportunity is flying out of here"]
 
     # Using regex to filter the correct semantic output
     correct_regex = [
@@ -225,8 +281,9 @@ if __name__ == "__main__":
         'exists\\s\w+.\\(exists\\s\\w+.\\(\\w+\\(\\w+\\)\\s&\\s\\w+\\(\\w+,\\w+\\)\\)\\s&\\sexists\\s\\w+.\\(\\w+\\('
         '\\w+\\)\\s&\\s\\w+\\(\\w+\\)\\s&\\sexists\\s\\w+.\\(\\w+\\(\\w+\\)\\s&\\s\\w+\\(\\w+\\)\\)\\s&\\s\\w+\\('
         '\\w+,\\w+\\)\\)\\)',
-        'exists\\s\\w+.\\((\\w+\\(\\w+\\)\\s&\\s)*\\w+\\(\\w+\\)\\s&\\sexists\\s\\w+.\\(\\w+\\(\\w+\\)\\s&\\s\\w+\\('
-        '\\w+,\\w+\\)\\s&\\s\\w+\\(\\w+\\)\\s&\\sexists\\s\\w+.\\(\\w+\\(\\w+,\\w+\\)\\s&\\s\\w+\\(\\w+\\)\\)\\)\\) '
+        'exists\\s\\w+.\\(your\\(\\w+\\)\\s&\\sbig\\(\\w+\\)\\s&\\sopportunity\\(\\w+\\)\\s&\\sexists\\s\\w+.\\('
+        'fly\\(\\w+\\)\\s&\\sagent\\(\\w+,\\w+\\)\\s&\\sout\\(\\w+\\)\\s&\\sexists\\s\\w+.\\(from\\(\\w+,'
+        '\\w+\\)\\s&\\shere\\(\\w+\\)\\)\\)\\)'
     ]
 
     # Overwrite sentences array with a more convenient map
@@ -238,30 +295,24 @@ if __name__ == "__main__":
         all_trees = parser(extracted_sentence, grammar_path)
 
         tree = best_tree(all_trees)
-        semantic = (str(tree.label()['SEM']))
+        semantic = str(tree.label()['SEM'])
 
-        # Just for debug.
         k = 0
         for i in range(len(correct_regex)):
             if re.match(correct_regex[i], semantic):
                 k = i
                 break
 
-        print("Match Found! RegExpr number " + str(k))
-        print(semantic)
+        print("Match Found! RegExpr number {}.\n{}\n".format(str(k+1), semantic))
 
-        out = {}
-        features = {}
-        visited = set()
         root = None
-
         if k == 0:
             root = sentence_1(tree)
-
         elif k == 1:
             root = sentence_2(tree)
+        elif k == 2:
+            root = sentence_3(tree)
 
         exporter = JsonExporter(indent=2, sort_keys=True)
-        with open('../output/' + 'sentence' + str(index) + '.json', 'w') as file:
+        with open('../output/' + 'sentence_plan_' + str(index) + '.json', 'w') as file:
             exporter.write(root, file)
-

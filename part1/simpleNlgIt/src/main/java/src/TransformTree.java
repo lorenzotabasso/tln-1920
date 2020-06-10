@@ -21,31 +21,40 @@ import java.util.HashMap;
 
 public class TransformTree {
 
-    private HashMap<Integer, HashMap<String, String>> treeHash = new HashMap<>();
-    private HashMap<Integer, NPPhraseSpec> hashNP = new HashMap<>();
-    private HashMap<Integer, PPPhraseSpec> hashPP = new HashMap<>();
-    private HashMap<Integer, VPPhraseSpec> hashVP = new HashMap<>();
-    private Lexicon italianLexicon = new ITXMLLexicon();
-    private NLGFactory italianFactory = new NLGFactory(italianLexicon);
+    private final HashMap<Integer, HashMap<String, String>> sentenceTree = new HashMap<>();
 
+    /* We need three different HashMap because each constituent has his own structures and proprieties */
+    private final HashMap<Integer, NPPhraseSpec> NPSubTree = new HashMap<>();
+    private final HashMap<Integer, PPPhraseSpec> PPSubTree = new HashMap<>();
+    private final HashMap<Integer, VPPhraseSpec> VPSubTree = new HashMap<>();
+    private final Lexicon italianLexicon = new ITXMLLexicon();
+    private final NLGFactory italianFactory = new NLGFactory(italianLexicon);
 
     public TransformTree(String sentence) {
         ObjectMapper objectMapper = new ObjectMapper();
         try {
             JsonNode root = objectMapper.readTree(sentence);
-            visit(root, null);
+
+            // the second node is null because we are parsing from the root, which has not any parent
+            parseJSON(root, null);
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    public String getRealisedSentence() {
-        SPhraseSpec clauseIt = italianFactory.createClause();
+    /**
+     * Main method of TransformTree. It builds the sentence using a SimpleNLG-It Realizer.
+     * @return The realized sentence.
+     */
+    public String realizeSentence() {
+        SPhraseSpec clauseIt = italianFactory.createClause(); // creating the main clause for the sentence
 
-        fillTree(clauseIt, 2);
+        /* Filling all the NP, PP and VP SubTrees, starting from the 2nd node of sentenceTree, the one who contains
+        the first item, until the end of the sentence. */
+        fillSubTrees(clauseIt, 2);
 
-        String features = treeHash.get(1).get("features");
-        if (parseFeatures(features).get("tense").equals("ger")) {
+        String features = sentenceTree.get(1).get("features");
+        if (parseFeatures(features).get("tense").equals("ger")) { // 3rd and 1st sentence
             clauseIt.setFeature(Feature.PROGRESSIVE, true);
             clauseIt.setFeature(Feature.PERFECT, false);
         }
@@ -55,152 +64,12 @@ public class TransformTree {
     }
 
     /**
-     * Given a string containing the feature (String associated with the dictionary in part1/dictionary/) parse it and
-     * converts it into an Hashmap.
+     * It parse the JSON Sentence Plan and it puts its contents into the {@code sentenceTree} HashMap.
      *
-     * @param features String associated with the dictionary in part1/dictionary/
-     * @return parsed the given string (from the dictionary) and convert it to an Hashmap
+     * @param jsonNode the node from which start the parsing.
+     * @param jsonNodeParent the parent of the {@code jsonNode} (if exist. Otherwise it can be null).
      */
-    private HashMap<String, String> parseFeatures(String features) {
-        HashMap<String, String> map = new HashMap<>();
-
-        features = features.replace("\"", "");
-        features = features.replace("'", "");
-        features = features.replace("{", "");
-        features = features.replace("}", "");
-        String splits[] = features.split(",");
-        for (String tuple : splits) {
-            String parsed[] = tuple.split(":");
-            map.put(parsed[0], parsed[1].trim());
-        }
-
-        return map;
-    }
-
-    private void fillTree(SPhraseSpec clauseIt, int key) {
-        if (!treeHash.keySet().contains(key)) {
-            return; // end of recursion
-        }
-
-        HashMap<String, String> node = treeHash.get(key);
-
-        if (!node.keySet().contains("label")) {
-            /* se non ha "label" vuol dire che è un nodo -> serve creare un nodo
-             * il tipo del nodo dipende da "type"
-             * memorizziamo il nodo in un HashMap in modo da accedervi facilmente
-             * la scelta del HasMap dipende dal tipo
-             * abbiamo 3 HashMap diversi (NP, VP, PP) perchè i nodi hanno tipi diversi con metodi specifici
-             * non si può sfruttare ereditarietà e polimorfismo
-             */
-
-            // in base al tipo di nodo, creiamo il costituente associato
-            switch (node.get("type")) {
-                case "obj": {
-                    NPPhraseSpec np = italianFactory.createNounPhrase();
-                    hashNP.put(key, np);
-                    clauseIt.setObject(np); // per semplicità assumiamo che si attacchi sempre e solo a clause
-                    /*
-                    //altrimenti bisognerebbe cercarlo...
-                    NPPhraseSpec parent = getNPParent(node);
-                    if(parent != null)
-                    //poi prova con PP
-                    */
-
-                    break;
-                }
-                case "subj": {
-                    NPPhraseSpec np = italianFactory.createNounPhrase();
-                    hashNP.put(key, np);
-                    clauseIt.setSubject(np); // per semplicità si attacca solo a clause
-                    break;
-                }
-                case "complement":
-                    PPPhraseSpec pp = italianFactory.createPrepositionPhrase();
-                    hashPP.put(key, pp);
-                    clauseIt.addComplement(pp); // per semplicità si attacca solo a clause (non abbiamo PP innestati)
-                    break;
-                case "ppcompl": {
-                    NPPhraseSpec np = italianFactory.createNounPhrase();
-                    hashNP.put(key, np);
-                    getPPParent(node).setComplement(np); //il padre sarà per forza un PP
-                    break;
-                }
-                case "verb":
-                    VPPhraseSpec vp = italianFactory.createVerbPhrase();
-                    hashVP.put(key, vp);
-                    clauseIt.setVerb(vp); //il padre sarà per forza una clause
-                    break;
-            }
-        } else {
-            // aggiunge i figli ai nodi (esempio: aggiunge lo spec ad un oggetto)
-            // i primi 3 si attaccano solo a clause (ipotesi semplificativa)
-            switch (node.get("type")) {
-                case "subj":
-                    clauseIt.setSubject(node.get("label"));
-                    break;
-                case "obj":
-                    clauseIt.setObject(node.get("label"));
-                    break;
-                case "verb":
-                    clauseIt.setVerb(node.get("label"));
-                    break;
-                case "spec":
-                    getNPParent(node).setSpecifier(node.get("label")); //spec fa parte di un NP
-                    break;
-                case "noum":
-                    getNPParent(node).setNoun(node.get("label")); //noum fa parte di un NP
-                    String features = node.get("features");
-                    if (features != null) {
-                        String number = parseFeatures(features).get("number");
-                        String genre = parseFeatures(features).get("gen");
-                        if (number != null) {
-                            getNPParent(node).setFeature(Feature.NUMBER, (number.equals("pl")) ? NumberAgreement.PLURAL : NumberAgreement.SINGULAR);
-                        }
-                        if (genre != null) {
-                            getNPParent(node).setFeature(Feature.NUMBER, (genre.equals("pl")) ? NumberAgreement.PLURAL : NumberAgreement.SINGULAR);
-                            getNPParent(node).setFeature(LexicalFeature.GENDER, (genre.equals("f")) ? Gender.FEMININE : Gender.MASCULINE);
-                        }
-                    }
-                    break;
-                case "prep":
-                    getPPParent(node).setPreposition(node.get("label")); //prep fa parte di un PP
-                    break;
-                case "ppcompl":
-                    getPPParent(node).setComplement(node.get("label")); //ppcompl fa parte di un PP
-                    break;
-                case "modifier":
-                    getNPParent(node).addModifier(node.get("label")); //modifier fa parte di un NP
-                    break;
-                case "v":
-                    getVPParent(node).setVerb(node.get("label")); //v fa parte di un VP
-                    break;
-                case "adv":
-                    getVPParent(node).addComplement(node.get("label")); //adv fa parte di un VP
-                    break;
-            }
-        }
-
-        fillTree(clauseIt, ++key);
-    }
-
-    // i prossimi tre metodi si differenziano per tipo di ritorno
-    private NPPhraseSpec getNPParent(HashMap<String, String> node) {
-        int parent = Integer.parseInt(node.get("parent"));
-        return hashNP.get(parent);
-    }
-
-    private PPPhraseSpec getPPParent(HashMap<String, String> node) {
-        int parent = Integer.parseInt(node.get("parent"));
-        return hashPP.get(parent);
-    }
-
-    private VPPhraseSpec getVPParent(HashMap<String, String> node) {
-        int parent = Integer.parseInt(node.get("parent"));
-        return hashVP.get(parent);
-    }
-
-    // metodo ricorsivo per la parsificazione della stringa JSON creata da Python
-    private void visit(JsonNode jsonNode, JsonNode jsonNodeParent) {
+    private void parseJSON(JsonNode jsonNode, JsonNode jsonNodeParent) {
         HashMap<String, String> nodeHash = new HashMap<>();
         nodeHash.put("parent", (jsonNodeParent != null) ? jsonNodeParent.get("a").asText() : "null");
         nodeHash.put("type", jsonNode.get("b").asText());
@@ -212,15 +81,203 @@ public class TransformTree {
             nodeHash.put("features", jsonNode.get("d").toString());
         }
 
-        treeHash.put(jsonNode.get("a").asInt(), nodeHash);
+        sentenceTree.put(jsonNode.get("a").asInt(), nodeHash);
 
         ArrayNode arrayNode = (ArrayNode) jsonNode.get("children");
         if (arrayNode == null) {
             return;
         }
         for (int i = 0; i < arrayNode.size(); i++) {
-            visit(arrayNode.get(i), jsonNode);
+            parseJSON(arrayNode.get(i), jsonNode);
         }
+    }
+
+    /**
+     * Recursive method to fill all the subtrees (NP, PP and VP).
+     * @param startClause the clause of the recursion (normally the root clause).
+     * @param key the staring key of the SentenceTree, from which will start the recursion.
+     */
+    private void fillSubTrees(SPhraseSpec startClause, int key) {
+        if (!sentenceTree.containsKey(key)) {
+            return; // end of recursion, the sentenceTree is totally filled.
+        }
+
+        // the staring node of the recursion.
+        HashMap<String, String> node = sentenceTree.get(key);
+
+        if (!node.containsKey("label")) {
+            /* If the node not contains the "label" field it means it is a wrapper of internals node of my Sentence
+            * Plan. We map the node type to his specific constituent (NPSubTree if it is a NP wrapper,
+            * VPSubTree if it is a VP wrapper and PPSubTree if it is a PP wrapper).
+            *
+            * Simplified assumption: in this if branch, each node will always attach to his startClause by default.
+            *
+            * Three example to clarify the cases:
+            *
+            * 1. 3rd sentence, the node with type "subj" will contain all the subj children, so it is a wrapper.
+            * 2. 2nd sentence, the node with type "ppcompl" will contain some children, so it is a wrapper.
+            * */
+            switch (node.get("type")) {
+                case "obj": {
+                    NPPhraseSpec np = italianFactory.createNounPhrase();
+                    NPSubTree.put(key, np);
+                    startClause.setObject(np); // Simplified assumption: attach to startClause
+                    break;
+                }
+                case "subj": {
+                    NPPhraseSpec np = italianFactory.createNounPhrase();
+                    NPSubTree.put(key, np);
+                    startClause.setSubject(np); // Simplified assumption: attach to startClause
+                    break;
+                }
+                case "complement":
+                    PPPhraseSpec pp = italianFactory.createPrepositionPhrase();
+                    PPSubTree.put(key, pp);
+                    startClause.addComplement(pp); // Simplified assumption: attach to startClause
+                    break;
+                case "ppcompl": {
+                    NPPhraseSpec np = italianFactory.createNounPhrase();
+                    NPSubTree.put(key, np); // "ppcompl" structure is a subtype of NP (for example: "my head")
+                    // Attention: in this particular case, its parent will be a "PP", because "ppcompl" is a nested
+                    // complement inside a "compl"
+                    getPPParent(node).setComplement(np);
+                    break;
+                }
+                case "verb":
+                    VPPhraseSpec vp = italianFactory.createVerbPhrase();
+                    VPSubTree.put(key, vp);
+                    startClause.setVerb(vp); // Simplified assumption: attach to startClause
+                    break;
+            }
+        } else {
+            /* In this case, we have to add the children to the respective parent (for example the "prep" object will
+            * be added to the corresponding PP Parent). Pay attention to the first 2 cases, which will attach directly
+            * to the startClause (simplest hypothesis).
+            *
+            * Example of first two cases:
+            *
+            * 1. 1st sentence, all the nodes with types "subj" and "verb" will contain both fields "type" and "label",
+            * so they will attach directly to the startClause.
+            *
+            * 2. 2nd sentence, the node with type "verb" will contain both fields "type" and "label", so it will attach
+            * directly to the startClause.
+            * */
+            switch (node.get("type")) {
+                case "subj":
+                    startClause.setSubject(node.get("label"));
+                    break;
+                case "verb":
+                    startClause.setVerb(node.get("label"));
+                    break;
+                case "spec":
+                    getNPParent(node).setSpecifier(node.get("label")); // spec is a part of NP
+                    break;
+                case "noum":
+                    getNPParent(node).setNoun(node.get("label")); // noum is a part of NP
+                    String features = node.get("features");
+
+                    if (features != null) {
+                        String number = parseFeatures(features).get("number");
+                        String genre = parseFeatures(features).get("gen");
+                        if (number != null) {
+                            if (number.equals("pl")) {
+                                getNPParent(node).setFeature(Feature.NUMBER, NumberAgreement.PLURAL);
+                            } else {
+                                getNPParent(node).setFeature(Feature.NUMBER, NumberAgreement.SINGULAR);
+                            }
+                        }
+                        if (genre != null) {
+                            // Number
+                            if (genre.equals("pl")) {
+                                getNPParent(node).setFeature(Feature.NUMBER, NumberAgreement.PLURAL);
+                            } else {
+                                getNPParent(node).setFeature(Feature.NUMBER, NumberAgreement.SINGULAR);
+                            }
+
+                            // Gender
+                            if (genre.equals("f")) {
+                                getNPParent(node).setFeature(LexicalFeature.GENDER,  Gender.FEMININE);
+                            } else {
+                                getNPParent(node).setFeature(LexicalFeature.GENDER,  Gender.MASCULINE);
+                            }
+                        }
+                    }
+                    break;
+                case "prep":
+                    getPPParent(node).setPreposition(node.get("label")); // prep is a part of PP
+                    break;
+                case "ppcompl":
+                    getPPParent(node).setComplement(node.get("label")); // ppcompl is a part of PP
+                    break;
+                case "modifier":
+                    getNPParent(node).addModifier(node.get("label")); // modifier is a part of NP
+                    break;
+                case "vrb":
+                    getVPParent(node).setVerb(node.get("label")); // vrb is a part of VP
+                    break;
+                case "adv":
+                    getVPParent(node).addComplement(node.get("label")); // adv is a part of VP
+                    break;
+            }
+        }
+
+        fillSubTrees(startClause, ++key);
+    }
+
+    /**
+     * Auxiliary method of fillSubTrees. Given a node in the main HashMap, it returns his NP parent.
+     *
+     * @param node the node in the main HashMap.
+     * @return the NP parent of the given node.
+     */
+    private NPPhraseSpec getNPParent(HashMap<String, String> node) {
+        int parent = Integer.parseInt(node.get("parent"));
+        return NPSubTree.get(parent);
+    }
+
+    /**
+     * Auxiliary method of fillSubTrees. Given a node in the main HashMap, it returns his VP parent.
+     *
+     * @param node the node in the main HashMap.
+     * @return the VP parent of the given node.
+     */
+    private VPPhraseSpec getVPParent(HashMap<String, String> node) {
+        int parent = Integer.parseInt(node.get("parent"));
+        return VPSubTree.get(parent);
+    }
+
+    /**
+     * Auxiliary method of fillSubTrees. Given a node in the main HashMap, it returns his PP parent.
+     *
+     * @param node the node in the main HashMap.
+     * @return the PP parent of the given node.
+     */
+    private PPPhraseSpec getPPParent(HashMap<String, String> node) {
+        int parent = Integer.parseInt(node.get("parent"));
+        return PPSubTree.get(parent);
+    }
+
+    /**
+     * It parse and then converts into an HashMap a given string containing a feature (a String associated with the
+     * dictionary in part1/dictionary/)
+     *
+     * @param features String associated with the dictionary in part1/dictionary/
+     * @return the HashMap containing the parsed feature
+     */
+    private HashMap<String, String> parseFeatures(String features) {
+        HashMap<String, String> map = new HashMap<>();
+
+        features = features.replace("\"", "");
+        features = features.replace("'", "");
+        features = features.replace("{", "");
+        features = features.replace("}", "");
+        String[] splits = features.split(",");
+        for (String tuple : splits) {
+            String[] parsed = tuple.split(":");
+            map.put(parsed[0], parsed[1].trim());
+        }
+
+        return map;
     }
 }
 

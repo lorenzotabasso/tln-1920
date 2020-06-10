@@ -1,12 +1,8 @@
-## Natural Language Toolkit: sem3.fcfg
+## Inspired from Natural Language Toolkit: sem3.fcfg
 ##
-## Alternative simple grammar with transitive verbs and 
-## quantifiers for the book. 
+## Simple grammar for the exercise 2 of the TLN exam's project (Part 1 - Mazzei).
 ## 
-## Author: Ewan Klein <ewan@inf.ed.ac.uk> 
-## URL: <http://nltk.sourceforge.net>
-## For license information, see LICENSE.TXT
-
+## Author: Lorenzo Tabasso <lorenzo.tabasso@edu.unito.it>
 
 % start S
 ############################
@@ -26,12 +22,14 @@ S[SEM = <?vp(?pp(?np))>] -> VP[NUM=?n,SEM=?vp] NP[NUM=?n,SEM=?np] PP[NUM=?n, SEM
 # NP -> NN
 # NP -> PRP
 # NP -> NNS
+# NP -> PRPS NN
 # NP -> DT NN
 # NP -> PRPS JJ NP
 
 NP[SEM=<?nn>] -> NN[NUM=?n, SEM=?nn]
 NP[SEM=<?prp>] -> PRP[NUM=?n, SEM=?prp]
 NP[SEM=<\Q.exists x.((?nns)(x) & Q(x))>] -> NNS[NUM=?n, SEM=?nns]
+NP[+POSS, SEM=<\T.exists x.((?prps)(x) & (?nn)(x) & T(x))>] -> PRPS[+POSS, SEM=?prps] NN[SEM=?nn]
 NP[SEM=<?dt(?nn)>] -> DT[NUM=?n,SEM=?dt]  NN[NUM=?n,SEM=?nn]
 NP[SEM=<\Q.exists x.((?prps)(x) & (?jj)(x) & (?np)(x) & Q(x))>] -> PRPS[NUM=?n, SEM=?prps] JJ[NUM=?n, SEM=?jj] NP[NUM=?n, SEM=?np]
 
@@ -42,17 +40,15 @@ NP[SEM=<\Q.exists x.((?prps)(x) & (?jj)(x) & (?np)(x) & Q(x))>] -> PRPS[NUM=?n, 
 
 VP[NUM=?n,SEM=<?vbg(?prp)>] -> PRP[NUM=?n,SEM=?prp] VBP[NUM=?n,SEM=?vbp] VBG[NUM=?n,SEM=?vbg]
 VP[SEM=<?ex(?vbz)>] -> EX[SEM=?ex] VBZ[SEM=?vbz]
-#VP[NUM=?n,SEM=<?vbz(?vbg(?pp))>] -> VBZ[NUM=?n,SEM=?vbz] VBG[NUM=?n,SEM=?vbg]
+VP[NUM=?n,SEM=<?vbz(?vbg(?pp))>] -> VBZ[NUM=?n,SEM=?vbz] VBG[NUM=?n,SEM=?vbg]
 VP[NUM=?n,SEM=<?vbg(?obj)>] -> VBP[NUM=?n,SEM=?vbp] VBG[NUM=?n,SEM=?vbg] NP[SEM=?obj]
 
 # PP -> IN PP
-# PP -> PRPS NN
+# PP -> IN NP
 # PP -> IN RB
 
-# FIXME: ambiguità
-PP[+LOC, SEM=<?in(?poss)>] -> IN[+LOC, SEM=?in] PP[SEM=?poss]
+PP[+LOC, SEM=<?in(?poss)>] -> IN[+LOC, SEM=?in] NP[SEM=?poss]
 PP[SEM=<\e.(?in(e) & ?place(e))>] -> IN[SEM=?in] PP[SEM=?place]
-PP[+POSS, SEM=<\T.exists x.((?prps)(x) & (?nn)(x) & T(x))>] -> PRPS[+POSS, SEM=?prps] NN[SEM=?nn]
 PP[SEM=<?in(?rb)>] -> IN[SEM=?in] RB[SEM=?rb]
 
 #############################
@@ -65,8 +61,6 @@ VBG[NUM=sg,SEM=<\X x.X(\y.image(x,y))>,TNS=ger] -> 'imagining'
 NNS[NUM=pl,GEN=f,SEM=<\x.thing(x)>] -> 'things'
 
 EX[SEM=<\P Q.exists x.(P(x) & Q(x))>] -> 'there'
-
-# FIXME: ambiguità tra "is", ripensare i non terminali
 VBZ[NUM=sg,SEM=<\x.exists e.(presence(e) & agent(e,x))>, TNS=pres] -> 'is'
 DT[NUM=sg,SEM=<\P Q.exists x.(P(x) & Q(x))>] -> 'a'
 NN[NUM=sg,GEN=m,SEM=<\x.price(x)>] -> 'price'

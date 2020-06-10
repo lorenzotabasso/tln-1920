@@ -4,11 +4,12 @@ import re
 def best_tree(trees):
     """
     Given a list of trees, it returns the correct tree, the one with no
-    lambda-expression in his root.
+    lambda-expression inside.
 
     :param trees: list of trees
     :return: the correct tree
     """
+
     final_tree = None
     for tree in trees:
         flag = True
@@ -18,17 +19,6 @@ def best_tree(trees):
         for character in string_split:
             if "\\" in character:
                 flag = False
-
-        if not flag:
-            continue
-
-        # variables = get_all_variables(tree)
-        # terms = list(subterms(tree.label()['SEM'].term))
-        # terms = list(map(lambda x: x.pred.variable.name, terms))
-        # for v in variables:
-        #     if terms.__contains__(v):
-        #         print("false2")
-        #         flag = False
 
         if flag:
             final_tree = tree
@@ -84,10 +74,8 @@ def find_occurrences(tree, variable):
     """
     res = []
     terms = aux_find_semantic_occurrences(tree, variable)
-    # print("TERMS {}".format(terms))
     for term in terms:
         node = match_pred_pos(tree, term)
-        # print("NODE {}".format(node))
         if node is not None and not res.__contains__(node):
             res.append(node)
 
@@ -153,7 +141,7 @@ def aux_subterms(superterm, terms):
     if hasattr(superterm, 'second'):
         aux_subterms(superterm.second, terms)
     elif hasattr(superterm, 'pred'):
-        if not terms.__contains__(superterm):  # mantains the sort order
+        if not terms.__contains__(superterm):  # maintains the sort order
             terms.append(superterm)  # leaf
 
 
@@ -175,15 +163,11 @@ def match_pred_pos(tree, term):
     all_subtrees = list(
         filter(lambda x: re.search("\\'(.*)\\'", str(x.label()).split('\n')[0], re.IGNORECASE).group(1) in leaves,
                all_subtrees))
-    # print("filtered subtrees: {}".format(all_subtrees))
 
     # setting all the needed information
     for st in all_subtrees:
-        # print("{}, pred_name: |{}| - getLemma(st): |{}|".format(pred_name == get_lemma(st), pred_name, get_lemma(st)))
-        if pred_name == get_lemma(st):
-            # print("TRUE, pred_name {} - GetLemma: {}".format(pred_name, get_lemma(st)))
+        if pred_name == lemmatization(st):
             tag = re.search("\\'(.*)\\'", str(st.label()).split('\n')[0], re.IGNORECASE).group(1)
-            # print("Test: {}, {}".format(str(pred_name), pred_name))
             node = {'pred': str(pred_name), 'tag': tag}
 
             # setting based on which feature is inside the subtree
@@ -199,7 +183,7 @@ def match_pred_pos(tree, term):
     return None
 
 
-def get_lemma(term):
+def lemmatization(term):
     """
     Given a term that represent a predicate in a tree, it returns the name of
     the predicate (lemma). For example, given "image(x,y)", it returns "image".
@@ -212,24 +196,31 @@ def get_lemma(term):
     if tag == 'VBZ':
         term = term.label()['SEM'].term
         terms = subterms(term)
-        terms = list(map(lambda x: x.pred, terms))  # [<ConstantExpression presence>, <ConstantExpression agent>]
-        return str(terms[0])  # [presence, agent]
+        terms = list(map(lambda x: x.pred.variable.name, terms))  # [<ConstantExpression presence>, <ConstantExpression agent>]
+        if terms:
+            return terms[0]  # presence
+        else:
+            return ""  # Needed because of lambda calculus, it avoids error when evaluating "is" from 2nd sentence
     if tag == 'VBG':
         term = term.label()['SEM'].term
         terms = subterms(term)
-        terms = list(map(lambda x: x.argument.term, terms))
-        return str(terms[0].pred) # image
+        # I need to split the return because of the different Lambda Calculus.
+        if str(terms[0]).__contains__("image"):
+            terms = list(map(lambda x: x.argument.term, terms))
+            return terms[0].pred.variable.name  # image, 1st sentence
+        else:
+            return terms[0].pred.variable.name  # fly, 3rd sentence
     if tag == 'NN':
         term = term.label()['SEM'].term
         terms = subterms(term)
-        # terms = list(map(lambda x: x.argument, terms))
-        pred_name = terms[0].pred  # price, head
-        return str(pred_name)
+        terms = list(map(lambda x: x.pred.variable.name, terms))
+        pred_name = terms[0]  # price, head
+        return pred_name
     if tag == 'NNS':
         term = term.label()['SEM'].term
         terms = subterms(term)
-        terms = list(map(lambda x: x.pred, terms))
-        return str(terms[0]) # thing
+        terms = list(map(lambda x: x.pred.variable.name, terms))
+        return terms[0]  # thing
     if tag == 'PRP' and 'PERS' in term.label().keys():  # Ex. \P.P(you) -> you
         term = term.label()['SEM'].term
         return term.argument.variable.name
@@ -239,5 +230,6 @@ def get_lemma(term):
     else:
         term = term.label()['SEM'].term
         terms = subterms(term)
+    # For all other Variables and functions calculated by the Lambda Calculus (such as \P)
     terms = list(map(lambda x: x.pred.variable.name, terms))
     return terms[0] if len(terms) > 0 else None
