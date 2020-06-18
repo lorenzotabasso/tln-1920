@@ -7,22 +7,25 @@ from part2.exercise1.utilities import *
 
 def parse_xml(path):
     """
-    Parsifica SemCor Corpus annotato manualmente sui Synset di WordNet
+    It parses the SemCor corpus, which has been annotated by hand on WordNet
+    Sysnsets.
 
-    1) carico file xml
-    2) prendo tutti tag s
-    3) ricavo la frase
-    4) selezione delle parole da disambiguare (selezionando quelle che servono) con num sensi >=2
-    5) ricavo senso annotato (golden) da wsn
+    In order:
+    1) Load XML file
+    2) Took all the tags "s"
+    3) Extract the sentence
+    4) Select the words to disambiguate (select only the needed ones) with
+    total number of senses >= 2
+    5) Extract Golden annotated sense from WSN
 
-    :param path: percorso del file XML (Brown Corpus)
+    :param path: the path to the XML file (Brown Corpus)
     :return: [(sentence, [(word, gold)])]
     """
 
     with open(path, 'r') as fileXML:
         data = fileXML.read()
 
-        # correzioni xml non ben formattato
+        # fixing XML's bad formatting
         data = data.replace('\n', '')
         replacer = re.compile("=([\w|:|\-|$|(|)|']*)")
         data = replacer.sub(r'="\1"', data)
@@ -60,7 +63,7 @@ def exercise1():
     output into a xml file.
     """
 
-    list_xml = parse_xml(options.input)
+    list_xml = parse_xml(options["input"])
 
     result = []
     count_word = 0
@@ -84,7 +87,7 @@ def exercise1():
 
     accuracy = count_exact / count_word
 
-    with open(options.output + 'exercise1_output.xml', 'wb') as out:
+    with open(options["output"] + 'exercise1_output.xml', 'wb') as out:
         out.write('<results accurancy="{0:.2f}">'.format(accuracy).encode())
         for i in range(len(result)):
             xml_s = ET.Element('sentence_wrapper')
@@ -103,25 +106,16 @@ def exercise1():
         out.write(b'</results>')
 
 
+global options  # Dictionary containing all the script settings. Used everywhere.
+
 if __name__ == "__main__":
     print("Running Lesks's algorithm...")
 
-    argv = sys.argv[1:]
-    parser = OptionParser()
-
-    parser.add_option("-b", "--input", help='path to the input file', action="store", type="string", dest="input",
-                      default="/Users/lorenzotabasso/Desktop/University/TLN/Progetto/19-20/tln-1920/part2/exercise1/input/semcor3.0/brown1/tagfiles/br-a01")
-
-    parser.add_option("-o", "--output", help='output directory', action="store", type="string", dest="output",
-                      default="/Users/lorenzotabasso/Desktop/University/TLN/Progetto/19-20/tln-1920/part2/exercise1/output/")
-
-    (options, args) = parser.parse_args()
-
-    if options.input is None:
-        print("Missing mandatory parameters")
-        sys.exit(2)
+    options = {
+        "input": "/Users/lorenzotabasso/Desktop/University/TLN/Progetto/19-20/tln-1920/part2/exercise1/input/semcor3"
+                 ".0/brown1/tagfiles/br-a01",
+        "output": "/Users/lorenzotabasso/Desktop/University/TLN/Progetto/19-20/tln-1920/part2/exercise1/output/"
+    }
 
     exercise1()
 
-    # sentence = 'I arrived at the bank after crossing the river'
-    # sentence = 'I arrived at the bank after crossing the road'

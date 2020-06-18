@@ -70,20 +70,6 @@ def compute_overlap(signature, context):
 
     return len(signature & context)
 
-
-# def find_synonims(sense):
-#     """
-#     :param sense: synset di cui trovare i sinonimi
-#     :return: lista di sinonimi (lemmi)
-#     """
-#
-#     synonyms = []
-#     for l in sense.lemmas():
-#         synonyms.append(l.name())
-#
-#     return synonyms
-
-
 def get_sense_index(word, sense):
     """
     Given a ambiguous word and a sense of that word, it returns the
