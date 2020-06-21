@@ -1,7 +1,9 @@
+import sys
 from pathlib import Path
 
-from part2.exercise3 import utilities
-from part2.exercise3.utilities import get_title_topic, create_context
+from tqdm import tqdm
+
+from part2.exercise3.src.utilities import get_title_topic, create_context
 
 
 def compute_overlap(signature, context):
@@ -167,6 +169,9 @@ if __name__ == "__main__":
     path = Path(options["input"])
     files_documents = list(path.glob('./*.txt'))
 
+    # showing progress bar
+    progress_bar = tqdm(desc="Percentage", total=4, file=sys.stdout)
+
     for file in files_documents:
         document = parse_document(file)
 
@@ -184,3 +189,5 @@ if __name__ == "__main__":
                   'w', encoding='utf-8') as out_summarized:
             for paragraph in sum_document:
                 out_summarized.write(paragraph + '\n')
+
+        progress_bar.update(1)
