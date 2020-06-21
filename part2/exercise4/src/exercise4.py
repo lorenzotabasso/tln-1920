@@ -200,9 +200,10 @@ if __name__ == "__main__":
 
     scores_algorithm = list(zip(*annotations))[1]
 
-    # Evaluation
+    # Task 1: Semantic Similarity
     pearson, spearman = evaluate_correlation_level(scores_human, scores_algorithm)
-    print('Task 1 Evaluation:\n Person: {0}, Spearman: {1}'.format(pearson, spearman))
+    print('Task 1: Semantic Similarity\n [1] - Person: {0}, Spearman: {1}'
+          .format(pearson, spearman))
 
     # ------------------------------------------------------------------------------------------------------------------
 
@@ -210,13 +211,11 @@ if __name__ == "__main__":
 
     with open(options["output"] + 'results.txt', "w", encoding="utf-8") as out:
 
+        # Progress bar
+        progress_bar = tqdm(desc="Percentage", total=50, file=sys.stdout)
+
         for couple in annotations:
             key = couple[0]
-
-            # Progress bar
-            # TODO: verificare che funzioni
-            progress_bar = tqdm(desc="Percentage".format(key[0], key[1]),
-                                total=50, file=sys.stdout)
 
             (s1, s2), score = similarity_vectors(italian_senses_dict[key[0]], italian_senses_dict[key[1]], nasari_dict)
 
