@@ -4,7 +4,7 @@ import json
 from anytree import AnyNode
 from anytree.exporter import JsonExporter
 
-from part1.src.utils import *
+from part1.src.utilities import *
 
 
 def parser(sentence, path_to_grammar):
