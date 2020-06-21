@@ -1,9 +1,11 @@
 import re
 import sys
-from optparse import OptionParser
 import xml.etree.ElementTree as ET
 from lxml import etree as Exml
-from part2.exercise1.utilities import *
+from tqdm import tqdm
+
+from part2.exercise1.src.wsd.utilities import *
+
 
 def parse_xml(path):
     """
@@ -45,7 +47,9 @@ def parse_xml(path):
                     w = word.text
                     pos = word.attrib['pos']
                     sent = sent + w + ' '
-                    if pos == 'NN' and '_' not in w and len(wn.synsets(w)) > 1 and 'wnsn' in word.attrib:
+                    if pos == 'NN' and '_' not in w \
+                            and len(wn.synsets(w)) > 1 \
+                            and 'wnsn' in word.attrib:
                         sense = word.attrib['wnsn']
                         t = (w, sense)
                         tuple_list.append(t)
@@ -55,12 +59,15 @@ def parse_xml(path):
     return result
 
 
-def exercise1():
+def word_sense_disambiguation(options):
     """
-    Exercise 1: Extracts sentences from the SemCor corpus (corpus annotated
-    with WN synset) and disambiguates at least one noun per sentence. It also
-    calculates the accuracy based on the senses noted in SemCor. Writes the
-    output into a xml file.
+    Word Sense Disambiguation: Extracts sentences from the SemCor corpus
+    (corpus annotated with WN synset) and disambiguates at least one noun per
+    sentence. It also calculates the accuracy based on the senses noted in
+    SemCor. Writes the output into a xml file.
+
+    :param options: a dictionary that contains the input and output paths.
+    Format: { "input": "...", "output": "..." }
     """
 
     list_xml = parse_xml(options["input"])
@@ -69,12 +76,16 @@ def exercise1():
     count_word = 0
     count_exact = 0
 
-    for i in range(len(list_xml)):
+    # showing progress bar
+    progress_bar = tqdm(desc="Percentage", total=50, file=sys.stdout)
+
+    i = 0
+    while i in range(len(list_xml)) and len(result) < 50:
         dict_list = []
         sentence = list_xml[i][0]
         words = list_xml[i][1]
         for t in words:
-            sense = lesk(t[0], sentence)
+            sense = lesk(t[0], sentence)  # running lesk's algorithm
             value = str(get_sense_index(t[0], sense))
             golden = t[1]
             count_word += 1
@@ -84,17 +95,20 @@ def exercise1():
 
         if len(dict_list) > 0:
             result.append((sentence, dict_list))
+            progress_bar.update(1)
+
+        i += 1
 
     accuracy = count_exact / count_word
 
-    with open(options["output"] + 'exercise1_output.xml', 'wb') as out:
+    with open(options["output"] + 'task2_output.xml', 'wb') as out:
         out.write('<results accurancy="{0:.2f}">'.format(accuracy).encode())
-        for i in range(len(result)):
+        for j in range(len(result)):
             xml_s = ET.Element('sentence_wrapper')
-            xml_s.set('sentence_number', str(i + 1))
+            xml_s.set('sentence_number', str(j + 1))
             xml_sentence = ET.SubElement(xml_s, 'sentence')
-            xml_sentence.text = result[i][0]
-            for tword in result[i][1]:
+            xml_sentence.text = result[j][0]
+            for tword in result[j][1]:
                 xml_word = ET.SubElement(xml_sentence, 'word')
                 xml_word.text = tword['word']
                 xml_word.set('golden', tword['gold'])
@@ -104,18 +118,3 @@ def exercise1():
             tree.write(out)
 
         out.write(b'</results>')
-
-
-global options  # Dictionary containing all the script settings. Used everywhere.
-
-if __name__ == "__main__":
-    print("Running Lesks's algorithm...")
-
-    options = {
-        "input": "/Users/lorenzotabasso/Desktop/University/TLN/Progetto/19-20/tln-1920/part2/exercise1/input/semcor3"
-                 ".0/brown1/tagfiles/br-a01",
-        "output": "/Users/lorenzotabasso/Desktop/University/TLN/Progetto/19-20/tln-1920/part2/exercise1/output/"
-    }
-
-    exercise1()
-
