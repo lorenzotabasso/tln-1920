@@ -18,7 +18,9 @@ class WordNetAPIClient:
 
     def depth_path(self, synset, lcs):
         """
-        :param synset: synset to calculate the path
+        It mesures the distance (depth) between the given Synset and the
+        WordNet's root.
+        :param synset: synset to reach from the root
         :param lcs: Lowest Common Subsumer - the first common sense
         :return: the minimum path which contains LCS
         """
