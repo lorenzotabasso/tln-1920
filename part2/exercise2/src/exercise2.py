@@ -2,16 +2,10 @@ import re
 import sys
 
 from nltk.corpus import framenet as fn
-from nltk.corpus.reader.framenet import PrettyList
-from operator import itemgetter
-from pprint import pprint
 import hashlib
-import random
 from random import randint
 from random import seed
 import nltk
-from nltk.corpus import wordnet as wn
-from nltk.corpus import stopwords
 from tqdm import tqdm
 
 from part2.exercise2.src.WordNetAPIClient import WordNetAPIClient
@@ -35,7 +29,7 @@ def get_frame_set_for_student(surname, list_len=5):
     offset = 0
     seed(1)
     while i < list_len:
-        fID = framenet_IDs[(base_idx+offset)%nof_frames]
+        fID = framenet_IDs[(base_idx + offset) % nof_frames]
         f = fn.frame(fID)
         fNAME = f.name
         print('\tID: {a:4d}\tframe: {framename}'.format(a=fID, framename=fNAME))
@@ -48,11 +42,11 @@ def print_frame(frameId):
     frame = fn.frame(frameId)
     print("FRAME ID, NAME: {}, {}".format(frame.ID, frame.name))
     print("{0}\n{1}".format(frame.definition, frame.FE))
-#     print('\n****************************\n\n')
-#     print("FRAME ELEMENTS: \n {}".format(frame.FE))
-#     print('\n****************************\n\n')
-#     print("Lexical Units: \n {}".format(frame.lexUnit))
-#     print('\n_________________________________________________________\n\n')
+    #     print('\n****************************\n\n')
+    #     print("FRAME ELEMENTS: \n {}".format(frame.FE))
+    #     print('\n****************************\n\n')
+    #     print("Lexical Units: \n {}".format(frame.lexUnit))
+    #     print('\n_________________________________________________________\n\n')
 
     print_frame(133)
     # print_frame(2980)
@@ -106,7 +100,6 @@ def populate_contexts(frame, mode):
 
 
 def mapping(ctx_fn, ctx_wn, mode):
-
     if mode == "Frame name":
 
         sentences_fn = set()
