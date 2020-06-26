@@ -1,5 +1,6 @@
 import re
 import sys
+import csv
 
 from nltk.corpus import framenet as fn
 import hashlib
@@ -155,12 +156,41 @@ def mapping(ctx_fn, ctx_wn, mode):
             list()
 
 
+def evaluate():
+    total_len = 0
+    test = 0
+    with open(options["output"] + 'results.csv', "r", encoding="utf-8") as results:
+        with open(options["golden"], "r", encoding="utf-8") as golden:
+            reader_out = csv.reader(results, delimiter=',')
+            reader_golden = csv.reader(golden, delimiter=',')
+
+            items_in_out = []
+            items_in_golden = []
+
+            for line_out in reader_out:
+                items_in_out.append(line_out[-1])
+
+            for line_golden in reader_golden:
+                items_in_golden.append(line_golden[-1])
+
+            i = 0
+            while i < len(items_in_out):
+                if items_in_out[i] == items_in_golden[i]:
+                    test += 1
+                i += 1
+
+            total_len = i
+
+    print("\nPrecision: {0} / {1} Synsets -> {2:.2f} %".format(test, total_len, (test/total_len)*100))
+
+
 global options  # Dictionary containing all the script settings. Used everywhere.
 
 if __name__ == "__main__":
 
     options = {
-        "output": "/Users/lorenzotabasso/Desktop/University/TLN/Progetto/19-20/tln-1920/part2/exercise2/output/"
+        "output": "/Users/lorenzotabasso/Desktop/University/TLN/Progetto/19-20/tln-1920/part2/exercise2/output/",
+        "golden": "/Users/lorenzotabasso/Desktop/University/TLN/Progetto/19-20/tln-1920/part2/exercise2/output/golden.csv"
     }
 
     # getFrameSetForStudent('Tabasso')
@@ -177,7 +207,8 @@ if __name__ == "__main__":
     with open(options["output"] + 'results.csv', "w", encoding="utf-8") as out:
 
         # Progress bar
-        progress_bar = tqdm(desc="Percentage", total=5, file=sys.stdout)
+        # progress_bar = tqdm(desc="Percentage", total=5, file=sys.stdout)
+        print("Assigning Synsets...")
 
         for frame_id in frame_ids:
             f = fn.frame_by_id(frame_id)
@@ -191,7 +222,6 @@ if __name__ == "__main__":
             i = 0
             while i < len(ctx_f) - 2:
                 fe = [ctx_f[i], ctx_f[i + 1]]
-                # TODO: passare anche il type (es.: start.v)
                 sense_fes = mapping(fe, ctx_w, "FEs")
                 out.write("Frame elements, {0}, Wordnet Synset, {1}\n".format(fe[0], sense_fes))
                 i += 2
@@ -201,4 +231,7 @@ if __name__ == "__main__":
                 sense_lus = mapping(lu, ctx_w, "LUs")
                 out.write("Frame lexical unit, {0}, Wordnet Synset, {1}\n".format(lu, sense_lus))
 
-            progress_bar.update(1)
+            # progress_bar.update(1)
+        print("Done. Starting evaluation.")
+
+    evaluate()
