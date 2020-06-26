@@ -84,7 +84,7 @@ def find_occurrences(tree, variable):
 
 def aux_find_semantic_occurrences(tree, variable):
     """
-    Auxiliary function of find_occurrences. It explroes the given tree and it
+    Auxiliary function of find_occurrences. It explores the given tree and it
     returns a list with all the nodes that contains the given variable.
 
     :param tree: the tree in which perform the search

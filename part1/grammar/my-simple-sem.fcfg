@@ -16,7 +16,7 @@
 
 S[SEM = <?subj(?vp)>] -> NP[NUM=?n,SEM=?subj] VP[NUM=?n,SEM=?vp]
 S[SEM = <?subj(?vp(?pp))>] -> NP[NUM=?n,SEM=?subj] VP[NUM=?n,SEM=?vp] PP[NUM=?n, SEM=?pp]
-#S[SEM = <?np(?vp)>] -> VP[NUM=?n,SEM=?vp] NP[NUM=?n,SEM=?np]
+S[SEM = <?np(?vp)>] -> VP[NUM=?n,SEM=?vp] NP[NUM=?n,SEM=?np]
 S[SEM = <?vp(?pp(?np))>] -> VP[NUM=?n,SEM=?vp] NP[NUM=?n,SEM=?np] PP[NUM=?n, SEM=?pp]
 
 # NP -> NN

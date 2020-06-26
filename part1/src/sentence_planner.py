@@ -269,7 +269,7 @@ def sentence_3(tree):
 
 if __name__ == "__main__":
 
-    grammar_path = "../grammars/my-simple-sem.fcfg"
+    grammar_path = "../grammar/my-simple-sem.fcfg"
 
     sentences = ["you are imagining things",
                  "there is a price on my head",
@@ -303,7 +303,7 @@ if __name__ == "__main__":
                 k = i
                 break
 
-        print("Match Found! RegExpr number {}.\n{}\n".format(str(k+1), semantic))
+        print("Match with RegExpr {}.\n{}\n".format(str(k+1), semantic))
 
         root = None
         if k == 0:
