@@ -1,63 +1,17 @@
 import re
-import sys
 import csv
-
-from nltk.corpus import framenet as fn
-import hashlib
-from random import randint
-from random import seed
 import nltk
-from tqdm import tqdm
+from nltk.corpus import framenet as fn
 
 from part2.exercise2.src.WordNetAPIClient import WordNetAPIClient
 
 
-def print_frames_with_ids():
-    for x in fn.frames():
-        print('{}\t{}'.format(x.ID, x.name))
-
-
-def get_frams_ids():
-    return [f.ID for f in fn.frames()]
-
-
-def get_frame_set_for_student(surname, list_len=5):
-    nof_frames = len(fn.frames())
-    base_idx = (abs(int(hashlib.sha512(surname.encode('utf-8')).hexdigest(), 16)) % nof_frames)
-    print('\nstudent: ' + surname)
-    framenet_IDs = get_frams_ids()
-    i = 0
-    offset = 0
-    seed(1)
-    while i < list_len:
-        fID = framenet_IDs[(base_idx + offset) % nof_frames]
-        f = fn.frame(fID)
-        fNAME = f.name
-        print('\tID: {a:4d}\tframe: {framename}'.format(a=fID, framename=fNAME))
-        offset = randint(0, nof_frames)
-        i += 1
-
-
-# Printing frames information.
-def print_frame(frameId):
-    frame = fn.frame(frameId)
-    print("FRAME ID, NAME: {}, {}".format(frame.ID, frame.name))
-    print("{0}\n{1}".format(frame.definition, frame.FE))
-    #     print('\n****************************\n\n')
-    #     print("FRAME ELEMENTS: \n {}".format(frame.FE))
-    #     print('\n****************************\n\n')
-    #     print("Lexical Units: \n {}".format(frame.lexUnit))
-    #     print('\n_________________________________________________________\n\n')
-
-    print_frame(133)
-    # print_frame(2980)
-    # print_frame(405)
-    # print_frame(1927)
-    # print_frame(2590)  # Business_closure: chiusura di business
-
-
-# get del reggente
 def get_main_clause(frame_name):
+    """
+    Get of the main clause from the frame name (in italian "reggente").
+    :param frame_name: the name of the frame
+    :return: the main clause inside the frame name
+    """
     tokens = nltk.word_tokenize(re.sub('\_', ' ', frame_name))
     tokens = nltk.pos_tag(tokens)
 
@@ -181,7 +135,7 @@ def evaluate():
 
             total_len = i
 
-    print("\nPrecision: {0} / {1} Synsets -> {2:.2f} %".format(test, total_len, (test/total_len)*100))
+    print("\nPrecision: {0} / {1} Synsets -> {2:.2f} %".format(test, total_len, (test / total_len) * 100))
 
 
 global options  # Dictionary containing all the script settings. Used everywhere.
@@ -206,8 +160,6 @@ if __name__ == "__main__":
 
     with open(options["output"] + 'results.csv', "w", encoding="utf-8") as out:
 
-        # Progress bar
-        # progress_bar = tqdm(desc="Percentage", total=5, file=sys.stdout)
         print("Assigning Synsets...")
 
         for frame_id in frame_ids:
@@ -231,7 +183,6 @@ if __name__ == "__main__":
                 sense_lus = mapping(lu, ctx_w, "LUs")
                 out.write("Frame lexical unit, {0}, Wordnet Synset, {1}\n".format(lu, sense_lus))
 
-            # progress_bar.update(1)
         print("Done. Starting evaluation.")
 
     evaluate()
