@@ -1,4 +1,6 @@
 import sys
+
+from numpy import mean
 from scipy.stats import pearsonr
 from scipy.stats import spearmanr
 import numpy as np
@@ -99,7 +101,7 @@ def parse_italian_synset():
     return sem_dict
 
 
-def parse_input(path):
+def parse_word(path):
     """
     it parses the annotated words's file.
     :param path to the annotated word's file.
@@ -116,7 +118,26 @@ def parse_input(path):
     return annotation_list
 
 
-def similarity_vectors(babel_id_word1, babel_id_word2, nasari_dict):
+def parse_sense(path):
+    """
+    it parses the senses in the file.
+    :param path to the senses file.
+    :return: list of annotated senses and associated terms. Format: [(s1, s2, t1, t2)]
+    """
+
+    sense_list = []
+    with open(path, 'r', encoding="utf-8-sig") as file:
+        for line in file.readlines():
+            # print(line)
+            splitted_line = line.split("\t")
+            couple_word = (splitted_line[0].lower(), splitted_line[1].lower())
+            copule_sense = (splitted_line[2].lower(), splitted_line[3].lower())
+            couple_terms = (splitted_line[4].lower(), splitted_line[5].lower().replace("\n", ""))
+            sense_list.append((couple_word[0], couple_word[1], copule_sense[0], copule_sense[1], couple_terms[0], couple_terms[1]))
+    return sense_list
+
+
+def similarity_vector(babel_id_word1, babel_id_word2, nasari_dict):
     """
     It computes the cosine similarity between the two given NASARI vectors
     (with Embedded representation).
@@ -161,24 +182,14 @@ def evaluate_correlation_level(v1, v2):
     return pearsonr(v1, v2)[0], spearmanr(v1, v2)[0]
 
 
-def evaluate_annotation_agreement(v1, v2):
-    """
-    It compute the agrement level for every annotation inside v1 and v2.
-    :param v1: the first annotated vector (human annotations)
-    :param v2: the second annotated vector (algorithm annotations)
-    :return: the Cohen Kappa index
-    """
-
-    return cohen_kappa_score(v1, v2)
-
-
 global options  # Dictionary containing all the script settings. Used everywhere.
 
 if __name__ == "__main__":
 
     options = {
-        "input": "input/text-documents",
-        "input_annotation": "input/my_words.txt",
+        "input_annotation_1": "input/mydata/my_words.txt",
+        "input_annotation_2": "input/mydata/my_words_2.txt",
+        "input_senses": "input/mydata/my_senses.txt",
         "input_italian_synset": "input/SemEval17_IT_senses2synsets.txt",
         "nasari": "input/mini_NASARI.tsv",
         "output": "output/"
@@ -187,57 +198,129 @@ if __name__ == "__main__":
     nasari_dict, babel_word_nasari = parse_nasari()
     italian_senses_dict = parse_italian_synset()
 
-    annotations = parse_input(options["input_annotation"])
+    # Task 1: Semantic Similarity
+    #
+    # 1. annotate by hand the couple of words in [0,4] range
+    # 2. compute inter-rate agreement with Spearman and Pearson indexes
+    # 3. Compute the cosine similarity between the hand-annotated scores and
+    # Nasari best score given the two terms
+    # 4. Evaluate the total quality using again the Spearman and Pearson
+    # indexes between the human annotation scores and the Nasari scores.
+
+    print('Task 1: Semantic Similarity')
+
+    annotations_1 = parse_word(options["input_annotation_1"])
+    annotations_2 = parse_word(options["input_annotation_2"])
 
     # Annotation's scores, used for evaluation
-    scores_human = list(zip(*annotations))[1]
+    scores_human_1 = list(zip(*annotations_1))[1]
+    scores_human_2 = list(zip(*annotations_2))[1]
 
+    # Computing the mean value for each couple of annotation score
+    scores_human_mean = [(x + y) / 2 for x, y in zip(scores_human_1, scores_human_2)]
+    print('\tMean value: {0:.2f}'.format(mean(scores_human_mean)))
+
+    # 2. Computing the inter-rate agreement. This express if the two annotations are consistent
+    inter_rate_pearson, inter_rate_spearman = evaluate_correlation_level(scores_human_1, scores_human_2)
+    print('\tInter-rate agreement - Person: {0:.2f}, Spearman: {1:.2f}'.format(inter_rate_pearson, inter_rate_spearman))
+
+    # 3. Computing the cosine similarity between the hand-annotated scores and
+    # Nasari best score given the two terms
     annotations_algorithm = []
-    for couple in annotations:
+    for couple in annotations_1:  # is equal to use annotations_1 or annotations_2, because the words are the same
         key = couple[0]
-        (s1, s2), score = similarity_vectors(italian_senses_dict[key[0]], italian_senses_dict[key[1]], nasari_dict)
+        (s1, s2), score = similarity_vector(italian_senses_dict[key[0]], italian_senses_dict[key[1]], nasari_dict)
         annotations_algorithm.append(((s1, s2), score))
 
-    scores_algorithm = list(zip(*annotations))[1]
+    scores_algorithm = list(zip(*annotations_algorithm))[1]
 
-    # Task 1: Semantic Similarity
-    pearson, spearman = evaluate_correlation_level(scores_human, scores_algorithm)
-    print('Task 1: Semantic Similarity\n [1] - Person: {0}, Spearman: {1}'
-          .format(pearson, spearman))
+    # 4. Evaluate the total quality using again the Spearman and Pearson
+    # indexes between the human annotation scores and the Nasari scores.
+    pearson, spearman = evaluate_correlation_level(scores_human_mean, scores_algorithm)
+    print('\tEvaluation - Person: {0:.2f}, Spearman: {1:.2f}'.format(pearson, spearman))
 
     # ------------------------------------------------------------------------------------------------------------------
 
-    print("Computing semantic similarity. Please wait.\n")
+    print("\nTask 2: Sense Identification.")
+    # Task 2: Sense Identification
+    #
+    # 1. annotate by hand the couple of words in the format specified in the README
+    # 2. compute inter-rate agreement with the Cohen's Kappa score
+    # 3. Compute the cosine similarity between the hand-annotated scores and
+    # Nasari best score given the two terms
+    # 4. Evaluate the total quality using the argmax function. Evaluate both
+    # the single sense and both the senses in the couple.
+
+    int_score_human_1 = [int(x) for x in scores_human_1]
+    int_score_human_2 = [int(x) for x in scores_human_2]
+
+    # 2. Computing the inter-rate agreement. This express if the two score are consistent
+    k = cohen_kappa_score(int_score_human_1, int_score_human_2)
+    print('\tInter-rate agreement - Cohen Kappa: {0:.2f}'.format(k))
+
+    senses = parse_sense(options["input_senses"])
 
     with open(options["output"] + 'results.txt', "w", encoding="utf-8") as out:
 
-        # Progress bar
-        progress_bar = tqdm(desc="Percentage", total=50, file=sys.stdout)
+        i = 0  # used for print progress bar
 
-        for couple in annotations:
-            key = couple[0]
+        # used for final comparison. It is a in-memory copy of the output file
+        nasari_out = []
+        for row in senses:
 
-            (s1, s2), score = similarity_vectors(italian_senses_dict[key[0]], italian_senses_dict[key[1]], nasari_dict)
+            # In this case I re-use the similarity_vector function, which use
+            # the cosine similarity to compute again the two senses that
+            # produce the maximal similarity score. The "score" variable is
+            # unused, so it's substituted by the don't care variable "_".
+            (s1, s2), _ = similarity_vector(italian_senses_dict[row[0]], italian_senses_dict[row[1]], nasari_dict)
 
+            # if both Babel Synset exists and are not None
             if s1 is not None and s2 is not None:
-                out.write("{}\t{}\t{}\t{}\t".format(key[0], key[1], s1, s2))
+                out.write("{}\t{}\t{}\t{}\t".format(row[0], row[1], s1, s2))
 
-                # print("{} - {}\n".format(key[0], key[1]))
+                out_terms_1 = get_synset_terms(s1)
+                out_terms_2 = get_synset_terms(s2)
+                nasari_terms_1 = ""
+                nasari_terms_2 = ""
 
-                terms1 = get_synset_terms(s1)
-                terms2 = get_synset_terms(s2)
-
-                for g1 in terms1:
-                    if g1 != terms1[len(terms1) - 1]:
-                        out.write(g1 + ",")
+                for t1 in out_terms_1:
+                    if t1 != out_terms_1[len(out_terms_1) - 1]:
+                        out.write(t1 + ",")  # if not the last term, put a ","
+                        nasari_terms_1 += t1 + ","
                     else:
-                        out.write(g1 + "\t")
-                for g2 in terms2:
-                    if g2 != terms2[len(terms2) - 1]:
-                        out.write(g2 + ",")
+                        out.write(t1 + "\t")  # otherwise put a separator
+                        nasari_terms_1 += t1
+
+                for t2 in out_terms_2:
+                    if t2 != out_terms_2[len(out_terms_2) - 1]:
+                        out.write(t2 + ",")  # if not the last term, put a ","
+                        nasari_terms_2 += t2 + ","
                     else:
-                        out.write(g2 + "\n")
+                        out.write(t2 + "\n")  # otherwise put a separator
+                        nasari_terms_2 += t2
             else:
                 out.write("None\tNone\n")
 
-            progress_bar.update(1)
+            # updating percentage
+            i += 1
+            if i % 10 == 0:
+                print('#', end="")
+            else:
+                print('-', end="")
+
+            # populate the nasari_out list.
+            nasari_out.append((row[0], row[1], s1, s2, nasari_terms_1, nasari_terms_2))
+
+        count_single = 0
+        count_couple = 0
+        for sense_row in senses:
+            for nasari_row in nasari_out:
+                arg0 = sense_row[2] == nasari_row[2]
+                arg1 = sense_row[3] == nasari_row[3]
+                if arg0:
+                    count_single += 1
+                if arg1:
+                    count_single += 1
+                if arg0 and arg1:
+                    count_couple += 1
+        print("single: {} / 100 - Couple: {} / 50".format(count_single, count_couple))

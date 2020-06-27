@@ -1,0 +1,50 @@
+﻿antropologia	archeologia	bn:00004584n	bn:00005391n	antropologia,Antropologica,Antropologico	archeologia,scienze archeologiche,scienze archeologiche
+dell	dingle	bn:14739384n	bn:02452439n	Dell	Dingle (Irlanda),An Daingean,Dingle
+succo	cucchiaio	bn:00048532n	bn:00075828n	sugo,Succo di frutta,succo	cucchiaiata,cucchiaio,cucchiaio da tavola
+pfizer	medicinale	bn:03463336n	bn:00061887n	Pfizer,Wyeth (azienda)	farmaco,Adiuvante,Farmachi
+camion	pacco	bn:00015022n	bn:16912174n	autocarro,truck,camion	pacchetto,pacco,pacco postale
+recettore	molecola proteica	bn:14945754n	bn:00064856n	recettore (biochimica),recettore,Recettore (farmacologia)	molecola proteica
+google drive	driver	bn:02697062n	bn:00026721n	Google Drive,Drive,Google docs	driver,Device driver,driver del dispositivo
+miliardario	senzatetto	bn:00010443n	bn:00044537n	miliardario,miliardari	Senzatetto,Clochard,Homeless
+episodio	capitolo	bn:16016193n	bn:00182115n	episodio,Episodi,puntata	capitolo (testo)
+infinito	zero	bn:00046667n	bn:00000004n	infinito,infinito (modo),infinitivo	zero,0 (numero)
+servo	schiavo	bn:00072080n	bn:00072080n	schiavo,servo	schiavo,servo
+suffisso	affisso	bn:00030757n	bn:00001777n	suffisso,Suffissazione,Suffissi	affisso,confisso,Affissazione
+riscaldamento globale	calore	bn:00040681n	bn:03234191n	riscaldamento globale,riscaldamento globale dell'atmosfera,riscaldamento planetario	energia termica,Agitazione termica,calore
+ormone della crescita	somatotropina	bn:00041984n	bn:00041984n	Somatotropina,Growth Hormone,Ormone della crescita	Somatotropina,Growth Hormone,Ormone della crescita
+cielo	sogno	bn:00029734n	bn:03677299n	eden,paradiso,Eden	Sogno (personaggio),Sogno
+prezzo di offerta	londra	bn:00010264n	bn:00013179n	cambio denaro,corso del denaro,corso denaro	Londra,Grande Londra,Greater London
+fertilizzante	crescita	bn:00034136n	bn:00026697n	composto azotato,concime,fertilizzante	crescita,embriogenesi,evoluzione
+hashtag	argomento	bn:01354049n	bn:00074900n	hashtag,#,hash tag	argomento,materia,oggetto
+orione	costellazione	bn:00045249n	bn:00022046n	Orione,Orione (costellazione),Il Cacciatore	costellazione,Constellazione,Costellazioni
+nietzsche	chelsea	bn:00036537n	bn:02451834n	Friedrich Nietzsche,Friedrich Wilhelm Nietzsche,Friedrich W. Nietzsche	Chelsea (Londra),Chelsea,London
+rispetto reciproco	competizione	bn:00031654n	bn:00021338n	rispetto,stima,considerazione	competizione,concorso,confronto
+ramo	braccio	bn:00066120n	bn:00005702n	ramo	arto superiore,braccio,arto superiore libero
+vittima	telefono	bn:15632248n	bn:00062020n	vittima	telefono,apparecchio telefonico,telefono fisso
+deviazione standard	accumulazione	bn:00073919n	bn:00751221n	Scarto quadratico medio,deviazione standard,Scarto tipo	Accumulazione
+valanga	neve	bn:00007428n	bn:00072455n	lavina,valanga,slavina	neve,nevicata,caduta di neve
+insegnante	studente	bn:00046958n	bn:00029806n	istruttore,docente,insegnante	allievo,alunno,studente
+bestiame	yogurt	bn:00033678n	bn:00081929n	bestiame,Bestiame,animale di fattoria	iogurt,yogurt,jogurt
+sessismo	discriminazione di genere	bn:00070792n	bn:00070792n	sessismo,antisessismo,antisessista	sessismo,antisessismo,antisessista
+polo sud	danza	bn:00004479n	bn:01126934n	Antartide,Polo Sud,Antartico	danza
+pubblico ministero	avvocato	bn:00064806n	bn:00007051n	accusatore,pm,Pubblico Ministero	avvocato,avvocatessa,avvocati
+racchetta	palla	bn:00065848n	bn:00008120n	racchetta,Racchetta	palla,pallone
+mutuo	debito	bn:00051693n	bn:00025638n	prestito,prestito (finanza),Finanziamento	chiodo,debito,debiti
+prospettiva	distanza	bn:00051351n	bn:00027749n	proiezione prospettica,prospettiva,prospettiva geometrica	distanza,distanza (matematica),distanza minima
+federer	dylan	bn:15468810n	bn:00351933n	Federer	Dylan
+avvocato	galleria	bn:00007051n	bn:00005373n	avvocato,avvocatessa,avvocati	arcata,galleria,porticato
+aspettativa di vita	misura statistica	bn:01120526n	bn:03147780n	speranza di vita,aspettativa di vita,aspettativa di vita alla nascita	misura statistica,parametro statistico
+membrana cellulare	provirus	bn:00017036n	bn:00064920n	parete cellulare,membrana cellulare,Citomembrana	Provirus,provirus
+unione europea	mosca	bn:00021127n	bn:00015634n	CEE,Comunità economica europea,Unione europea	Mosca,Mosca (Russia),Governo di Mosca
+mondo	asia	bn:00045153n	bn:03667810n	collettivita' umana,genere umano,gente	Asia (Oceanina),Asia,Asia (Oceanine)
+paint	photoshop	bn:15180584n	bn:01834403n	Paint,Microsoft Paint	Adobe Photoshop,Photoshop,PS
+senato	costituzione	bn:03335417n	bn:00022052n	Camera alta,camera alta,Senato	costituzione,statuto,Legge organica
+prezzemolo	muffin	bn:00060755n	bn:00037608n	prezzemolo,petrosello,Petroselinum crispum	muffin,Muffin
+mente	cervello	bn:00047020n	bn:00013131n	cervello,intelligenza,levatura	cervello,genialità,genio
+mercedes	opel	bn:01103847n	bn:21706116n	Mercedes	Opel,Adam Opel AG
+martello	dente	bn:00042731n	bn:00077593n	martello,martello (anatomia),Martello	dente,Arcata dentale,Dentatura
+rinascimento	rinascimento	bn:00067098n	bn:00067098n	rinascimento,Rinascimento,epoca rinascimentale	Rinascimento,rinascimento,epoca rinascimentale
+gonna	orologio	bn:00072004n	bn:00081700n	gonna,gonnella,sottana	orologio da polso,orologio
+opera	cinema	bn:00059107n	bn:00019129n	opera,opera lirica,lirica	cine,cinema,cinematografo
+insegnante	istruttore	bn:00046958n	bn:00046958n	istruttore,docente,insegnante	istruttore,docente,insegnante
+sole	cavo	bn:00073964n	bn:00014458n	stella,sole,astro	cavo,cavi,cavo elettrico
