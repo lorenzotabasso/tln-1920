@@ -144,7 +144,7 @@ if __name__ == "__main__":
 
     options = {
         "output": "/Users/lorenzotabasso/Desktop/University/TLN/Progetto/19-20/tln-1920/part2/exercise2/output/",
-        "golden": "/Users/lorenzotabasso/Desktop/University/TLN/Progetto/19-20/tln-1920/part2/exercise2/output/golden.csv"
+        "golden": "/Users/lorenzotabasso/Desktop/University/TLN/Progetto/19-20/tln-1920/part2/exercise2/input/golden.csv"
     }
 
     # getFrameSetForStudent('Tabasso')

@@ -1,0 +1,56 @@
+Frame name, Process_start, Wordnet Synset, start.n.01
+Frame elements, Event, Wordnet Synset, event.n.01
+Frame elements, Place, Wordnet Synset, place.n.03
+Frame elements, Explanation, Wordnet Synset, explanation.n.01
+Frame elements, Time, Wordnet Synset, clock.v.01
+Frame elements, Initial_subevent, Wordnet Synset, initial.s.01
+Frame elements, Depictive, Wordnet Synset, depictive.s.01
+Frame elements, Manner, Wordnet Synset, manner.n.01
+Frame elements, Result, Wordnet Synset, result.n.01
+Frame elements, Duration, Wordnet Synset, duration.n.01
+Frame lexical unit, start, Wordnet Synset, start.n.01
+Frame lexical unit, begin, Wordnet Synset, begin.v.06
+Frame lexical unit, commence, Wordnet Synset, commence.v.01
+Frame lexical unit, erupt, Wordnet Synset, outbreak.n.01
+Frame lexical unit, break out, Wordnet Synset, outbreak.n.01
+Frame lexical unit, commencement, Wordnet Synset, start.n.02
+Frame lexical unit, incipient, Wordnet Synset, incipient.s.01
+Frame lexical unit, onset, Wordnet Synset, onset.n.01
+Frame lexical unit, nascent, Wordnet Synset, nascent.a.01
+Frame lexical unit, eruption, Wordnet Synset, outbreak.n.01
+Frame name, Transition_to_a_situation, Wordnet Synset, situation.n.01
+Frame elements, Place, Wordnet Synset, place.n.03
+Frame elements, Time, Wordnet Synset, clock.v.01
+Frame elements, Manner, Wordnet Synset, manner.n.01
+Frame elements, Entity, Wordnet Synset, entity.n.01
+Frame elements, Transitional_period, Wordnet Synset, time_period.n.01
+Frame elements, Circumstances, Wordnet Synset, context.n.02
+Frame elements, Group, Wordnet Synset, group.n.01
+Frame elements, Explanation, Wordnet Synset, explain.v.01
+Frame lexical unit, come, Wordnet Synset, come.v.04
+Frame name, Performing_arts, Wordnet Synset, art.n.02
+Frame elements, Performer, Wordnet Synset, medium.n.01
+Frame elements, Personnel, Wordnet Synset, staff.n.01
+Frame elements, Audience, Wordnet Synset, audience.n.01
+Frame elements, Performance, Wordnet Synset, performance.n.03
+Frame elements, Script, Wordnet Synset, script.n.01
+Frame elements, Score, Wordnet Synset, score.n.02
+Frame elements, Type, Wordnet Synset, medium.n.01
+Frame lexical unit, music, Wordnet Synset, music.n.01
+Frame lexical unit, performance, Wordnet Synset, maneuver.n.03
+Frame lexical unit, play, Wordnet Synset, maneuver.n.03
+Frame name, Scope, Wordnet Synset, scope.n.01
+Frame elements, Event, Wordnet Synset, event.n.01
+Frame elements, Attribute, Wordnet Synset, attribute.n.02
+Frame lexical unit, scope, Wordnet Synset, None
+Frame name, Business_closure, Wordnet Synset, closure.n.07
+Frame elements, Entity, Wordnet Synset, entity.n.01
+Frame elements, Explanation, Wordnet Synset, explanation.n.01
+Frame elements, Time, Wordnet Synset, clock.v.01
+Frame elements, Place, Wordnet Synset, place.n.03
+Frame elements, Circumstances, Wordnet Synset, context.n.02
+Frame elements, Manner, Wordnet Synset, manner.n.01
+Frame elements, Containing_event, Wordnet Synset, cause.n.01
+Frame lexical unit, founder, Wordnet Synset, founder.n.02
+Frame lexical unit, close its doors, Wordnet Synset, close_up.v.01
+Frame lexical unit, close down, Wordnet Synset, close_up.v.01
