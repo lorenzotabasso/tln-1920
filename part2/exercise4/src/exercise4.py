@@ -263,6 +263,7 @@ if __name__ == "__main__":
     with open(options["output"] + 'results.txt', "w", encoding="utf-8") as out:
 
         i = 0  # used for print progress bar
+        first_print = True # used for print progress bar
 
         # used for final comparison. It is a in-memory copy of the output file
         nasari_out = []
@@ -303,6 +304,11 @@ if __name__ == "__main__":
 
             # updating percentage
             i += 1
+
+            if first_print:
+                print('Downloading terms from BabelNet.')
+                print('\t#', end="")
+                first_print = False
             if i % 10 == 0:
                 print('#', end="")
             else:
@@ -323,4 +329,5 @@ if __name__ == "__main__":
                     count_single += 1
                 if arg0 and arg1:
                     count_couple += 1
-        print("single: {} / 100 - Couple: {} / 50".format(count_single, count_couple))
+        print("\n\tSingle: {0} / 100 ({0}%) - Couple: {1} / 50 ({2:.0f}%)"
+              .format(count_single, count_couple, (count_couple * 100 / 50)))
