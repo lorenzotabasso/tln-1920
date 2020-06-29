@@ -18,7 +18,7 @@ public class Start {
 
         ArrayList<String> sentences = new ArrayList<>();
 
-        // For each file (sentence) in the output folder, run the Realizer
+        // For each file (sentence plan) in the output folder, run the Realizer
         if (directoryListing != null) {
             for (File child : directoryListing) {
                 try {

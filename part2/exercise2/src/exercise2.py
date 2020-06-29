@@ -21,115 +21,121 @@ def get_main_clause(frame_name):
 
 
 def populate_contexts(frame, mode):
-    ctx_f = []
-    ctx_w = []
+    """
+    It populates 2 disambiguation context (one for Framenet and onw for Wordnet)
+    given a frame name.
+
+    :param frame: the frame name.
+    :param mode: a string indicating the way to create context the possibility
+    are: "Frame name", "FEs" and "LUs".
+    :return: two list (ctx_f, ctx_w) representing the populated contexts.
+    """
+    ctx_f = []  # the Framenet context
+    ctx_w = {}  # the Wordnet context
     wnac = WordNetAPIClient()
 
     if mode == "Frame name":
+        # The context in this case contains the frame name and his definition.
         ctx_f = [get_main_clause(frame.name), frame.definition]
+
+        # Here, the context is a list of synset associated to the frame name.
+        # In each synset are usually present word, glosses and examples.
         ctx_w = wnac.get_disambiguation_context(get_main_clause(frame.name))
 
     elif mode == "FEs":
-        fe_key = ""
-
         # Populating ctx_w for FEs
         for key in frame.FE:
-            fe_key = key
             ctx_f.append(key)
             ctx_f.append(frame.FE[key].definition)
 
-        ctx_w = wnac.get_disambiguation_context(fe_key)
+            # copying all the values inside the ctx_w dictionary.
+            temp = wnac.get_disambiguation_context(key)
+            for k in temp:
+                ctx_w[k] = temp[k]
 
     elif mode == "LUs":
-        lu_key = ""
-
         # Populating ctx_w for LUs
         for key in frame.lexUnit:
             lu_key = re.sub('\.[a-z]+', '', key)
             ctx_f.append(lu_key)
             # ctx_f.append(frame.lexUnit[key].definition)
 
-        ctx_w = wnac.get_disambiguation_context(lu_key)
+            # copying all the values inside the ctx_w dictionary.
+            temp = wnac.get_disambiguation_context(lu_key)
+            for k in temp:
+                ctx_w[k] = temp[k]
 
     return ctx_f, ctx_w
 
 
-def mapping(ctx_fn, ctx_wn, mode):
-    if mode == "Frame name":
+def bag_of_words(ctx_fn, ctx_wn):
+    """
+    Given two disambiguation context, it returns the bag of words mapping
+    between the input arguments.
+    :param ctx_fn: the first disambiguation context (from Framenet)
+    :param ctx_wn: the second disambiguation context (from Wordnet)
+    :return: the synset with the highest score
+    """
+    sentences_fn = set()  # set of all Framenet FEs and their descriptions
+    sentences_wn = {}  # dictionary of all Wordnet sysnset, glosses and examples.
+    ret = None  # temporary return variable
+    temp_max = 0  # temporary variable for the score
 
-        sentences_fn = set()
-        for sentence in ctx_fn:
-            for word in sentence.split():
-                word_clean = re.sub('[^A-Za-z0-9 ]+', '', word)
-                sentences_fn.add(word_clean)
+    for sentence in ctx_fn:
+        for word in sentence.split():
+            word_clean = re.sub('[^A-Za-z0-9 ]+', '', word)
+            sentences_fn.add(word_clean)
 
-        sentences_wn = {}
-        ret = None
-        temp_max = 0
-        for key in ctx_wn:
-            temp_set = set()
-            for sentence in ctx_wn[key]:
-                if sentence:
-                    for word in sentence.split():
-                        temp_set.add(word)
-            sentences_wn[key] = (len(temp_set.intersection(sentences_fn)), temp_set)
+    # transform the ctx_w dictionary into a set, in order to compute
+    # intersection.
+    for key in ctx_wn:  # for each WN synset
+        temp_set = set()
+        for sentence in ctx_wn[key]:  # for each sentence inside WN synset
+            if sentence:
+                for word in sentence.split():
+                    temp_set.add(word)  # add words to temp_set
 
-            if temp_max < sentences_wn[key][0]:
-                temp_max = sentences_wn[key][0]
-                ret = (key, sentences_wn[key])
+        # computing intersection between temp_set and sentences_fn.
+        # Putting the result inside sentences_wn[key].
+        # Each entry in sentences_wn will have the cardinality of the
+        # intersection as his "score" at the first position.
+        sentences_wn[key] = (len(temp_set.intersection(sentences_fn)), temp_set)
 
-        # print("Max:{}".format(ret))
-        return ret[0]
+        # update max score and save the associated sentence.
+        if temp_max < sentences_wn[key][0]:
+            temp_max = sentences_wn[key][0]
+            ret = (key, sentences_wn[key])
 
-    elif mode == "FEs" or mode == "LUs":
-        sentences_fn = set()
-        for sentence in ctx_fn:
-            for word in sentence.split():
-                word_clean = re.sub('[^A-Za-z0-9 ]+', '', word)
-                sentences_fn.add(word_clean)
-
-        sentences_wn = {}
-        ret = None
-        temp_max = 0
-        for key in ctx_wn:
-            temp_set = set()
-            for sentence in ctx_wn[key]:
-                if sentence:
-                    for word in sentence.split():
-                        temp_set.add(word)
-            sentences_wn[key] = (len(temp_set.intersection(sentences_fn)), temp_set)
-
-            if temp_max < sentences_wn[key][0]:
-                temp_max = sentences_wn[key][0]
-                ret = (key, sentences_wn[key])
-
-        # print("Max:{}".format(ret))
-        if ret:
-            return ret[0]
-        else:
-            list()
+    if ret:
+        return ret[0]  # return the synset with the highest score
+    else:
+        ""
 
 
 def evaluate():
+    """
+    Doing output evaluation and print the result on the console.
+    """
     total_len = 0
     test = 0
     with open(options["output"] + 'results.csv', "r", encoding="utf-8") as results:
         with open(options["golden"], "r", encoding="utf-8") as golden:
-            reader_out = csv.reader(results, delimiter=',')
+            reader_results = csv.reader(results, delimiter=',')
             reader_golden = csv.reader(golden, delimiter=',')
 
-            items_in_out = []
-            items_in_golden = []
+            items_in_results = []  # list of items in results
+            items_in_golden = []  # list of items in gold
 
-            for line_out in reader_out:
-                items_in_out.append(line_out[-1])
+            for line_out in reader_results:
+                items_in_results.append(line_out[-1])
 
             for line_golden in reader_golden:
                 items_in_golden.append(line_golden[-1])
 
+            # counting equal elements
             i = 0
-            while i < len(items_in_out):
-                if items_in_out[i] == items_in_golden[i]:
+            while i < len(items_in_results):
+                if items_in_results[i] == items_in_golden[i]:
                     test += 1
                 i += 1
 
@@ -144,11 +150,10 @@ if __name__ == "__main__":
 
     options = {
         "output": "/Users/lorenzotabasso/Desktop/University/TLN/Progetto/19-20/tln-1920/part2/exercise2/output/",
-        "golden": "/Users/lorenzotabasso/Desktop/University/TLN/Progetto/19-20/tln-1920/part2/exercise2/input/golden.csv"
+        "golden": "/Users/lorenzotabasso/Desktop/University/TLN/Progetto/19-20/tln-1920/part2/exercise2/input/gold.csv"
     }
 
     # getFrameSetForStudent('Tabasso')
-
     # student: Tabasso
     # 	ID:  133	frame: Process_start
     # 	ID: 2980	frame: Transition_to_a_situation
@@ -162,11 +167,11 @@ if __name__ == "__main__":
 
         print("Assigning Synsets...")
 
-        for frame_id in frame_ids:
-            f = fn.frame_by_id(frame_id)
+        for frame in frame_ids:
+            f = fn.frame_by_id(frame)
 
             ctx_f, ctx_w = populate_contexts(f, "Frame name")
-            sense_name = mapping(ctx_f, ctx_w, "Frame name")
+            sense_name = bag_of_words(ctx_f, ctx_w)
 
             out.write("Frame name, {0}, Wordnet Synset, {1}\n".format(f.name, sense_name))
 
@@ -174,13 +179,13 @@ if __name__ == "__main__":
             i = 0
             while i < len(ctx_f) - 2:
                 fe = [ctx_f[i], ctx_f[i + 1]]
-                sense_fes = mapping(fe, ctx_w, "FEs")
+                sense_fes = bag_of_words(fe, ctx_w)
                 out.write("Frame elements, {0}, Wordnet Synset, {1}\n".format(fe[0], sense_fes))
                 i += 2
 
             ctx_f, ctx_w = populate_contexts(f, "LUs")
             for lu in ctx_f:
-                sense_lus = mapping(lu, ctx_w, "LUs")
+                sense_lus = bag_of_words(lu, ctx_w)
                 out.write("Frame lexical unit, {0}, Wordnet Synset, {1}\n".format(lu, sense_lus))
 
         print("Done. Starting evaluation.")

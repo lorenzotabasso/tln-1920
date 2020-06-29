@@ -68,7 +68,7 @@ def conceptual_similarity(options):
                 for s2 in synset2:
                     count_total_senses += 1
                     maxs.append(metric(s1, s2))
-            if len(maxs) == 0:  # parole prive di sensi (e.g nomi propri)
+            if len(maxs) == 0:  # word without senses (ex.: proper nouns)
                 maxs = [-1]
                 to_remove.append(j)
             sim_metric.append(max(maxs))

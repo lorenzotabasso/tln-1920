@@ -1,6 +1,6 @@
 Frame name, Process_start, Wordnet Synset, start.n.01
 Frame elements, Event, Wordnet Synset, event.n.01
-Frame elements, Place, Wordnet Synset, place.n.03
+Frame elements, Place, Wordnet Synset, topographic_point.n.01
 Frame elements, Explanation, Wordnet Synset, explanation.n.01
 Frame elements, Time, Wordnet Synset, clock.v.01
 Frame elements, Initial_subevent, Wordnet Synset, initial.s.01
@@ -19,7 +19,7 @@ Frame lexical unit, onset, Wordnet Synset, onset.n.01
 Frame lexical unit, nascent, Wordnet Synset, nascent.a.01
 Frame lexical unit, eruption, Wordnet Synset, outbreak.n.01
 Frame name, Transition_to_a_situation, Wordnet Synset, situation.n.01
-Frame elements, Place, Wordnet Synset, place.n.03
+Frame elements, Place, Wordnet Synset, topographic_point.n.01
 Frame elements, Time, Wordnet Synset, clock.v.01
 Frame elements, Manner, Wordnet Synset, manner.n.01
 Frame elements, Entity, Wordnet Synset, entity.n.01
@@ -37,8 +37,8 @@ Frame elements, Script, Wordnet Synset, script.n.01
 Frame elements, Score, Wordnet Synset, score.n.02
 Frame elements, Type, Wordnet Synset, medium.n.01
 Frame lexical unit, music, Wordnet Synset, music.n.01
-Frame lexical unit, performance, Wordnet Synset, maneuver.n.03
-Frame lexical unit, play, Wordnet Synset, maneuver.n.03
+Frame lexical unit, performance, Wordnet Synset, performance.n.02
+Frame lexical unit, play, Wordnet Synset, performance.n.02
 Frame name, Scope, Wordnet Synset, scope.n.01
 Frame elements, Event, Wordnet Synset, event.n.01
 Frame elements, Attribute, Wordnet Synset, attribute.n.02

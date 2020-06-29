@@ -70,6 +70,7 @@ def compute_overlap(signature, context):
 
     return len(signature & context)
 
+
 def get_sense_index(word, sense):
     """
     Given a ambiguous word and a sense of that word, it returns the

@@ -10,15 +10,15 @@ class WordNetAPIClient:
     def get_disambiguation_context(self, word):
         """
         :param word: word for which we need to find meaning
-        :return: Synset list associated to the given word
+        :return: a dictionary of Synset associated to the given word
         """
-
         synsets = wn.synsets(word)
+        ret = {}  # return variable
 
-        ret = {}
         for s in synsets:
             if s.examples():
                 t = [s.lemma_names()[0], s.examples()[0]]
+
                 i = 0
                 for hypo in s.hyponyms():
                     if i == 3:
@@ -28,6 +28,7 @@ class WordNetAPIClient:
                     if hypo.examples():
                         t.append(hypo.examples()[0])
                     i += 1
+
                 i = 0
                 for hyper in s.hypernyms():
                     if i == 3:
@@ -39,6 +40,7 @@ class WordNetAPIClient:
                     i += 1
             else:
                 t = [s.lemma_names()[0], []]
+
                 i = 0
                 for hypo in s.hyponyms():
                     if i == 3:
@@ -48,6 +50,7 @@ class WordNetAPIClient:
                     if hypo.examples():
                         t.append(hypo.examples()[0])
                     i += 1
+
                 i = 0
                 for hyper in s.hypernyms():
                     if i == 3:

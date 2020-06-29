@@ -1,3 +1,4 @@
+import re
 import sys
 
 from numpy import mean
@@ -7,7 +8,6 @@ import numpy as np
 import requests
 from sklearn.metrics import cohen_kappa_score
 from sklearn.metrics.pairwise import cosine_similarity
-from tqdm import tqdm
 
 
 def get_synset_terms(sense):
@@ -36,9 +36,13 @@ def get_synset_terms(sense):
     while j < len(data["senses"]) and i < 3:
         term = data["senses"][j]["properties"]["fullLemma"]
 
+        # added some preprocess
+        term = re.sub('\_', ' ', term).lower()
+
         if term not in synset_terms:
             synset_terms.append(term)
             i += 1
+
         j += 1
 
     if len(synset_terms) == 0:
@@ -189,7 +193,7 @@ if __name__ == "__main__":
     options = {
         "input_annotation_1": "input/mydata/my_words.txt",
         "input_annotation_2": "input/mydata/my_words_2.txt",
-        "input_senses": "input/mydata/my_senses.txt",
+        "input_senses": "input/mydata/my_senses.tsv",
         "input_italian_synset": "input/SemEval17_IT_senses2synsets.txt",
         "nasari": "input/mini_NASARI.tsv",
         "output": "output/"
@@ -222,7 +226,8 @@ if __name__ == "__main__":
 
     # 2. Computing the inter-rate agreement. This express if the two annotations are consistent
     inter_rate_pearson, inter_rate_spearman = evaluate_correlation_level(scores_human_1, scores_human_2)
-    print('\tInter-rate agreement - Person: {0:.2f}, Spearman: {1:.2f}'.format(inter_rate_pearson, inter_rate_spearman))
+    print('\tInter-rate agreement - Pearson: {0:.2f}, Spearman: {1:.2f}'
+          .format(inter_rate_pearson, inter_rate_spearman))
 
     # 3. Computing the cosine similarity between the hand-annotated scores and
     # Nasari best score given the two terms
@@ -260,7 +265,7 @@ if __name__ == "__main__":
 
     senses = parse_sense(options["input_senses"])
 
-    with open(options["output"] + 'results.txt', "w", encoding="utf-8") as out:
+    with open(options["output"] + 'results.tsv', "w", encoding="utf-8") as out:
 
         i = 0  # used for print progress bar
         first_print = True # used for print progress bar
@@ -300,13 +305,13 @@ if __name__ == "__main__":
                         out.write(t2 + "\n")  # otherwise put a separator
                         nasari_terms_2 += t2
             else:
-                out.write("None\tNone\n")
+                out.write("{}\t{}\tNone\tNone\tNone\tNone\n".format(row[0], row[1]))
 
             # updating percentage
             i += 1
 
             if first_print:
-                print('Downloading terms from BabelNet.')
+                print('\tDownloading terms from BabelNet.')
                 print('\t#', end="")
                 first_print = False
             if i % 10 == 0:
