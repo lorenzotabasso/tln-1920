@@ -66,15 +66,19 @@ def sentence_1(tree):
     terms = get_semantics(tree)
 
     term_verb = terms[1 + (len(terms) - 2)]  # When modifiers aren't present, terms's length is 2
-    var_subj, variable_obj = get_arguments(term_verb)
-    verb = match_pred_pos(tree, term_verb)
+    var_subj, variable_obj = get_arguments(term_verb)  # subj: "You", obj: "z1"
+    verb = match_pred_pos(tree, term_verb)  # {'pred': 'image', 'tag': 'VBG', 'num': 'sg', 'tns': 'ger'}
 
     # Finding the subject ------------------------------------------------------
-    subj = match_pred_pos(tree, var_subj)
+    subj = match_pred_pos(tree, var_subj)  # {'pred': 'you', 'tag': 'PRP', 'num': 'sg'}
 
     # Finding the object -------------------------------------------------------
+
+    # [{'pred': 'image', 'tag': 'VBG', 'num': 'sg', 'tns': 'ger'},
+    #  {'pred': 'thing', 'tag': 'NNS', 'num': 'pl', 'gen': 'f'}]
     occurrences_obj = find_occurrences(tree, variable_obj)
     obj = list(filter(lambda x: 'NNS' == x['tag'], occurrences_obj))[0]  # all the rest will be modifiers
+    # {'pred': 'thing', 'tag': 'NNS', 'num': 'pl', 'gen': 'f'}
 
     occurrences_obj.remove(obj)
     # the verb will appear in both Obj and Verb (because is a function of type f(x,y))

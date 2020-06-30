@@ -6,15 +6,15 @@ from tqdm import tqdm
 from part2.exercise3.src.utilities import get_title_topic, create_context
 
 
-def compute_overlap(signature, context):
+def compute_overlap(topic, paragraph):
     """
     Support function used in Weighted Overlap's function below.
-    :param signature: firma del testo (BoW)
-    :param context: contesto (BoW)
-    :return: l'interesezione insiemistica tra i due insiemi
+    :param topic: Vector representation of the topic
+    :param paragraph: Vector representation of the paragraph
+    :return: intesection between the given parameters
     """
 
-    return signature & context
+    return topic & paragraph
 
 
 def rank(vector, nasari_vector):

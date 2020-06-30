@@ -36,7 +36,6 @@ def create_vectors(topic, nasari):
     return vectors
 
 
-# TODO: fondere create_vectors e create_context
 def create_context(text, nasari):
     """
     It creates a list of Nasari vectors (a list of {term:score}). Every vector
