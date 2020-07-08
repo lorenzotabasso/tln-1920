@@ -101,16 +101,20 @@ def summarization(document, nasari_dict, percentage):
         paragraph_wo = 0  # Weighted Overlap average inside the paragraph.
 
         for word in context:
-            # Average Weighted Overlap of the context, generated from the topic.
+            # Computing WO for each word inside the paragraph.
             topic_wo = 0
             for vector in topics:
                 topic_wo = topic_wo + weighted_overlap(word, vector)
             if topic_wo != 0:
-                topic_wo /= len(topics)
+                topic_wo = topic_wo / len(topics)
+
+            # Sum all words WO in the paragraph's WO
             paragraph_wo += topic_wo
 
         if len(context) > 0:
-            paragraph_wo /= len(context)
+            paragraph_wo = paragraph_wo / len(context)
+            # append in paragraphs a tuple with the index of the paragraph (to
+            # preserve order), he WO of the paragraph and the paragraph's text.
             paragraphs.append((i, paragraph_wo, paragraph))
         i += 1
 
@@ -120,8 +124,10 @@ def summarization(document, nasari_dict, percentage):
     new_document = sorted(paragraphs, key=lambda x: x[1], reverse=True)[:to_keep]
     # Restore the original order.
     new_document = sorted(new_document, key=lambda x: x[0], reverse=True)
-    # delete unnecessary fields inside new_document (I associated to each
-    # paragraph a score based on the "importance").
+    # delete unnecessary fields (x[0] which contains the "i" and x[1] which
+    # contains the WO of the paragraph) inside new_document in order to
+    # keep oly the text (I associated to each paragraph a score based on the
+    # "importance").
     new_document = list(map(lambda x: x[2], new_document))
 
     new_document = [document[0]] + new_document
@@ -158,7 +164,7 @@ if __name__ == "__main__":
         "input": "input/text-documents",
         "nasari": "input/dd-small-nasari-15.txt",
         "output": "output/",
-        "percentage": 30
+        "percentage": 10
     }
 
     print("Summarization.\nReduction percentage: {}".format(options["percentage"]))
