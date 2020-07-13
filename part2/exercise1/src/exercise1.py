@@ -20,7 +20,7 @@ if __name__ == "__main__":
     }
 
     print("Task 1: Conceptual Similarity")
-    # conceptual_similarity(options_conceptual_similarity)
+    conceptual_similarity(options_conceptual_similarity)
 
     print("\nTask 2: Word Sense Disambiguation")
     print("[2] - Running Lesks's algorithm...")

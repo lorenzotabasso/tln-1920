@@ -1,11 +1,11 @@
 import re
 import sys
 
+import numpy as np
 from numpy import mean
+import requests
 from scipy.stats import pearsonr
 from scipy.stats import spearmanr
-import numpy as np
-import requests
 from sklearn.metrics import cohen_kappa_score
 from sklearn.metrics.pairwise import cosine_similarity
 
@@ -216,7 +216,7 @@ if __name__ == "__main__":
     annotations_1 = parse_word(options["input_annotation_1"])
     annotations_2 = parse_word(options["input_annotation_2"])
 
-    # Annotation's scores, used for evaluation
+    # 1. Annotation's scores, used for evaluation
     scores_human_1 = list(zip(*annotations_1))[1]
     scores_human_2 = list(zip(*annotations_2))[1]
 
@@ -256,6 +256,8 @@ if __name__ == "__main__":
     # 4. Evaluate the total quality using the argmax function. Evaluate both
     # the single sense and both the senses in the couple.
 
+    # 1. I already done the step 1 in the Task 1 (lines 216-221). Here, I just
+    # cast "scores_human" from Floats to Integers.
     int_score_human_1 = [int(x) for x in scores_human_1]
     int_score_human_2 = [int(x) for x in scores_human_2]
 
@@ -268,7 +270,7 @@ if __name__ == "__main__":
     with open(options["output"] + 'results.tsv', "w", encoding="utf-8") as out:
 
         i = 0  # used for print progress bar
-        first_print = True # used for print progress bar
+        first_print = True  # used for print progress bar
 
         # used for final comparison. It is a in-memory copy of the output file
         nasari_out = []
