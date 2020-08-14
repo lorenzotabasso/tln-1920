@@ -2,6 +2,7 @@ import csv
 import nltk
 from nltk.corpus import stopwords
 import numpy as np
+import pandas as pd
 
 
 def load_data():
@@ -27,7 +28,7 @@ def load_data():
             else:
                 first = False
 
-        return def_concrete_generic, def_concrete_specific, def_abstract_generic, def_abstract_specific
+        return def_abstract_generic, def_concrete_generic, def_abstract_specific, def_concrete_specific
 
 
 def preprocess(definition):
@@ -58,7 +59,7 @@ def compute_overlap(definitions):
     :param definitions: a list of definitions (strings)
     :return: a list containing the similarity score of each definition.
     """
-    temp = 0
+    max_value = 0
     results = []  # list of the best similarity score for each type of definition
 
     for d1 in definitions:
@@ -67,11 +68,12 @@ def compute_overlap(definitions):
             b = preprocess(d2)  # set of terms of the second definition
 
             # Computing similarity between definitions
-            k = len(b & a) / min(len(d1), len(d2))
+            t = len(a & b) / min(len(a), len(b))
 
-            if k > temp:
-                temp = k
-        results.append(temp)
+            if not t == 1.0 and t > max_value:
+                max_value = t
+        results.append(max_value)
+        max_value = 0
 
     return results
 
@@ -82,28 +84,43 @@ if __name__ == "__main__":
         "output": "/Users/lorenzotabasso/Desktop/University/TLN/Progetto/19-20/tln-1920/part3/exercise1/input/",
     }
 
-    defs = load_data()
-
-    # The ability of one to make free choices and act by following his (NON mia)
-    # The ability of make independent choices
-    # When you feel sad for someone of you forgive him for something.
+    defs = load_data()  # Loading the definitions.csv file
 
     count = 0
+    first_row = []  # generic abstract, concrete
+    second_row = []  # specific abstract, concrete
 
     for d in defs:
-        mean = np.mean(compute_overlap(d))
+        # computing the mean of the overlap of the definitions
+        overlap = compute_overlap(d)
+        mean = np.mean(overlap)
 
-        index = ""
+        # making the percentage of the mean
+        # percentage = mean * 100 / len(d)
+
+        # filling the rows
         if count == 0:
-            index = "Concrete Generic"
+            first_row.append('{:.0%}'.format(mean))
         elif count == 1:
-            index = "Concrete Specific"
+            first_row.append('{:.0%}'.format(mean))
         elif count == 2:
-            index = "Abstract Generic"
+            second_row.append('{:.0%}'.format(mean))
         else:
-            index = "Abstract Specific"
+            second_row.append('{:.0%}'.format(mean))
 
-        print("{}: {:.3f}".format(index, mean))
         count += 1
 
-        # TODO: Make report.
+    # build and print dataframe
+    df = pd.DataFrame([first_row, second_row], columns=["Abstract", "Concrete"],
+                      index=["Generic", "Specific"])
+    print(df)
+
+    # TODO: Make report.
+
+    # Aggiunte le seguenti frasi:
+    # 1. The ability of one to make free choices and act by following his (NON mia)
+    # 2. The ability of make independent choices
+    # 3. When you feel sad for someone of you forgive him for something.
+
+    # vedere minuto 13 - 16
+    # al massimo chiedere a fede o a Telli
