@@ -1,9 +1,9 @@
 import csv
 import nltk
 from nltk.corpus import stopwords
-from part3.exercise2.WordNetAPIClient import WordNetAPIClient
-from collections import OrderedDict
+from nltk.corpus import wordnet as wn
 
+from part3.exercise2.utilities import lesk
 
 
 def load_data():
@@ -45,6 +45,18 @@ def preprocess(definition):
     return lemmatized_tokens
 
 
+def preprocess_synset(synset):
+    """
+    It does some preprocess: removes the stopword, punctuation and does the
+    lemmatization of the tokens inside the sentence.
+    :param definition: a string representing a definition
+    :return: a set of string which contains the preprocessed string tokens.
+    """
+    pre_synset = synset.split(".")
+    clean_synset = pre_synset[0]
+    return clean_synset
+
+
 if __name__ == "__main__":
 
     options = {
@@ -53,36 +65,31 @@ if __name__ == "__main__":
 
     content = load_data()  # Loading the content-to-form.csv file
 
-    preprocess_content = {}
-    i = 0
-    for row in content:
-        temp = []
-        for sentence in content[row]:
-            temp.append(preprocess(sentence))
-        preprocess_content[i] = temp
-        i += 1
+    final_test = {}
+    final = {}
 
-    print(preprocess_content)
+    for index in content:
+        max = ("", 0)
+        for definition in content[index]:
+            for word in preprocess(definition):
+                common = set()
 
-    wnac = WordNetAPIClient()
+                for s in wn.synsets(word):
+                    common.add(s.name())
 
-    last_synset = OrderedDict()
+                for synset_name in common:
+                    best_synset = lesk(preprocess_synset(synset_name), definition)
+                    value = best_synset.name()
 
-    for definitions in preprocess_content:
-        for d in preprocess_content[0]:  # TODO: cercare nella stessa riga
-            #print(d)
-            for word in d:
-                #print(word)
-                synsets = wnac.get_synsets(word)
-                # print(synsets)
-                for s in synsets:
-                    sett = preprocess(s.definition())
-                    if not len(sett & d) == 0:
-                        #print("\tIntersection: {}".format(sett & d))
-                        last_synset[s.name()] = sett & d
+                    if not value in final_test:
+                        final_test[value] = 1
+                    else:
+                        final_test[value] += 1
+                        if final_test[value] > max[1]:
+                            max = (value, final_test[value])
 
-    print(last_synset)
-    for syn, inter in last_synset.items():
-        print("{}, {}, {}".format(syn, len(inter), inter))
+        final[index] = max
+        print("INDEX: {}, MAX: {}".format(index, max))
+        final_test = {}
 
-        print("---------------------------------------------------------------")
+    print(final)
