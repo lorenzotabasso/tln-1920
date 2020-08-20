@@ -3,7 +3,7 @@ import nltk
 from nltk.corpus import stopwords
 from nltk.corpus import wordnet as wn
 
-from part3.exercise2.utilities import lesk
+from part3.exercise2.utilities.lesk import lesk
 
 
 def load_data():
