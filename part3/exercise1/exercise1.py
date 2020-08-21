@@ -57,10 +57,41 @@ def compute_overlap(definitions):
     """
     It computes the overlap between the two set of the preprocessed definitions
     :param definitions: a list of definitions (strings)
-    :return: a list containing the similarity score of each definition.
+    :return: a list of length pow(len(definition)) containing the similarity
+    score of each definition.
+    """
+
+    # list of similarity score for each type of definition (length: pow(len(definition)))
+    results = []
+
+    for d1 in definitions:
+        a = preprocess(d1)  # set of terms of the first definition
+        for d2 in definitions:
+            b = preprocess(d2)  # set of terms of the second definition
+
+            # Computing similarity between definitions
+            t = len(a & b) / min(len(a), len(b))
+
+            if not t == 1.0:  # A and B are the same
+                results.append(t)
+
+    # DEBUG
+    # mean = np.mean(results)
+    # print("MEAN: {} - RESULTS: {}".format(mean, results))
+
+    return results
+
+
+def compute_overlap_max(definitions):
+    """
+    It computes the overlap between the two set of the preprocessed definitions
+    :param definitions: a list of definitions (strings)
+    :return: a list of length |definitions| containing the maximum similarity
+    score of each definition.
     """
     max_value = 0
-    results = []  # list of the best similarity score for each type of definition
+    # list of the best similarity score for each type of definition (length: len(definitions))
+    results = []
 
     for d1 in definitions:
         a = preprocess(d1)  # set of terms of the first definition
@@ -74,6 +105,10 @@ def compute_overlap(definitions):
                 max_value = t
         results.append(max_value)
         max_value = 0
+
+    # DEBUG
+    # mean = np.mean(results)
+    # print("MEAN: {} - RESULTS: {}".format(mean, results))
 
     return results
 
@@ -89,11 +124,16 @@ if __name__ == "__main__":
     count = 0
     first_row = []  # generic abstract, concrete
     second_row = []  # specific abstract, concrete
+    third_row = []  # generic 2 abstract, concrete
+    fourth_row = []  # specific 2 abstract, concrete
 
     for d in defs:
         # computing the mean of the overlap of the definitions
         overlap = compute_overlap(d)
         mean = np.mean(overlap)
+
+        overlap_max = compute_overlap_max(d)
+        mean_max = np.mean(overlap_max)
 
         # making the percentage of the mean
         # percentage = mean * 100 / len(d)
@@ -101,23 +141,30 @@ if __name__ == "__main__":
         # filling the rows
         if count == 0:
             first_row.append('{:.0%}'.format(mean))
+            third_row.append('{:.0%}'.format(mean_max))
         elif count == 1:
             first_row.append('{:.0%}'.format(mean))
+            third_row.append('{:.0%}'.format(mean_max))
         elif count == 2:
             second_row.append('{:.0%}'.format(mean))
+            fourth_row.append('{:.0%}'.format(mean_max))
         else:
             second_row.append('{:.0%}'.format(mean))
+            fourth_row.append('{:.0%}'.format(mean_max))
 
         count += 1
 
     # build and print dataframe
     df = pd.DataFrame([first_row, second_row], columns=["Abstract", "Concrete"],
                       index=["Generic", "Specific"])
+    df_max = pd.DataFrame([third_row, fourth_row], columns=["Abstract", "Concrete"],
+                      index=["Generic", "Specific"])
     print(df)
+    print("\nMax experiment:\n")
+    print(df_max)
 
     # TODO: Make report.
-
-    # Aggiunte le seguenti frasi:
+    # Sono state aggiunte le seguenti frasi:
     # 1. The ability of one to make free choices and act by following his (NON mia)
     # 2. The ability of make independent choices
     # 3. When you feel sad for someone of you forgive him for something.

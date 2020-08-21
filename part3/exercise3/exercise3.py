@@ -21,7 +21,6 @@ obj_dept = ['dobj', 'iobj']
 
 def text_extraction():
     """
-    It
     It analyzes the Brown Corpus and extracts the sentences containing the
     desired verb given as global input.
     :return: list of sentences (in which each sentence is a list of words)
