@@ -58,25 +58,19 @@ def lesk(word, sentence):
     :return: best sense of word
     """
 
-    # Calculating the synset of the given word inside WN
-    word_senses = wn.synsets(word)
-    best_sense = word_senses[0]
-    max_overlap = 0
+    senses = wn.synsets(word)
+    if len(senses) <= 0:
+        return None
 
-    # I choose the bag of words approach
+    best_sense = senses[0]
+    max_overlap = 0
     context = bag_of_word(sentence)
 
-    for sense in word_senses:
-        # set of words in the gloss
+    for sense in senses:
         signature = bag_of_word(sense.definition())
-
-        # and examples of the given sense
         examples = sense.examples()
         for ex in examples:
-            # after this line, signature will contain for all the words, their
-            # bag of words definition and their examples
-            signature = signature.union(bag_of_word(ex))
-
+            signature = signature.union(bag_of_word(ex))  # bag of words of definition and examples
         overlap = compute_overlap(signature, context)
         if overlap > max_overlap:
             max_overlap = overlap

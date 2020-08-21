@@ -25,7 +25,7 @@ def load_data():
 
 def preprocess(definition):
     """
-    It does some preprocess: removes the stopword, punctuation and does the
+    It does some preprocess: removes stopwords, punctuation and does the
     lemmatization of the tokens inside the sentence.
     :param definition: a string representing a definition
     :return: a set of string which contains the preprocessed string tokens.
