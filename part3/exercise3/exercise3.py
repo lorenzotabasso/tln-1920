@@ -13,13 +13,13 @@ from nltk.stem import WordNetLemmatizer
 from part3.exercise3.utilities.DependencyGraph import DependencyGraph
 from part3.exercise3.utilities.lesk import *
 
-verbs = ['VB', 'VBD', 'VBG', 'VBN', 'VBP', 'VBZ']
-verb = "meet"  # take, put, give, get, meet
+# global parameter for WordNet search
+verbs_pos = ['VB', 'VBD', 'VBG', 'VBN', 'VBP', 'VBZ']
 subj_dept = ['nsubj', 'nsubjpass']
 obj_dept = ['dobj', 'iobj']
 
 
-def text_extraction():
+def text_extraction(verb):
     """
     It analyzes the Brown Corpus and extracts the sentences containing the
     desired verb given as global input.
@@ -36,7 +36,7 @@ def text_extraction():
     for sent in list_sent:
         tags = dict(nltk.pos_tag(sent))
         for word in sent:
-            if tags[word] in verbs:
+            if tags[word] in verbs_pos:
                 word = lemmatizer.lemmatize(word, 'v')
                 if word == verb:
                     sentences.append(sent)
@@ -56,7 +56,7 @@ def lemmatize(graph, tags):
     new_dict = {}
     for k in graph.dict:
         word = graph.dict[k]
-        if word in tags.keys() and tags[word] in verbs:
+        if word in tags.keys() and tags[word] in verbs_pos:
             new_dict[k] = lemmatizer.lemmatize(word, 'v')
         else:
             new_dict[k] = word
@@ -64,7 +64,7 @@ def lemmatize(graph, tags):
     return DependencyGraph(graph.graph, new_dict)
 
 
-def hanks():
+def hanks(verb):
     """
     Implementation of P. Hanks theory
     """
@@ -76,7 +76,7 @@ def hanks():
     dependency_parser = CoreNLPDependencyParser(url="http://localhost:9000")
 
     print('[1] - Extracting sentences...')
-    list_word_sentences = text_extraction()
+    list_word_sentences = text_extraction(verb)
     for sent in list_word_sentences:
         sentence = ' '.join(sent)
         sentences.append(sentence.strip())
@@ -122,7 +122,6 @@ def hanks():
     print("\n[3] - Total of {} Fillers".format(str(tot)))
     for f in fillers:
         print("\t{}".format(f))
-    print("\n")
 
     semantic_types = {}  # {(s1, s2): count}
     for f in fillers:
@@ -155,4 +154,6 @@ if __name__ == "__main__":
     After that, you can run this exercise.
     """
 
-    hanks()
+    # take, put, give, get, meet
+    verb = input("Enter a verb to search in the Brown corpus: ")
+    hanks(verb)
