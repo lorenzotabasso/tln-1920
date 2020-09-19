@@ -48,24 +48,26 @@ def beam_search(model, vocab, hps):
         data[:, step] = tokens
 
         all_hyps = []
+
         # probabilità del singolo carattere del vocabolario, dal primo all'ultimo
         all_probs = model.predict(data)
+
         # per ogni cammino nella beam search
         for i, h in enumerate(hyps):
-            # generiamo la distribuzione di probabilita'
+            # generiamo la distribuzione di probabilità
 
             # per ogni passo prende le probabilità
             probs = list(all_probs[i, step])
             probs = probs / np.sum(probs)  # normalizzazione
 
             # array degli indici delle posizioni dei caratteri più probabili per quel passo
-            # esempio: alla prima iterazione avremo come primo carattere (+ probabile)
+            # esempio: alla prima iterazione avremo come primo carattere (più probabile)
             # il carattere in posizione 63, che è la "e"
             indexes = probs.argsort()[::-1]
 
             # scegliamo 2 * beam_size possibili espansioni dei cammini
             for j in range(hps.beam_size * 2):
-                # Aggiungiamo a all_hyps l'estensione delle ipotesi con
+                # aggiungiamo a all_hyps l'estensione delle ipotesi con
                 # il j-esimo indice e la sua probabilità
                 temp = h.extend(indexes[j], probs[indexes[j]])
                 all_hyps.append(temp)
@@ -76,7 +78,8 @@ def beam_search(model, vocab, hps):
             if h.last_token == vocab.char2id("</s>"):
                 # if step >= hps.seq_len:
                 # Confronta questa guardia con quella del while a riga 44
-                # e troverai che è l'opposto, ovvero non entrerà mai in questo if
+                # e troverai che è l'opposto, ovvero non entrerà mai in questo if,
+                # per questo l'ho commentato
                 results.append(h)
             else:
                 hyps.append(h)

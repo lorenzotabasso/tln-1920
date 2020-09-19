@@ -82,24 +82,30 @@ def make_name_beam(model, vocab, hps):
     print(tokens)
 
 
-iteration = 0
-while True:
+if __name__ == "__main__":
+    message_start = "Select the run mode for the NN:\n\t1. Greedy Search\n\t2. Beam Search\n-> "
+    mode = input(message_start)
 
-    batch = batcher.next_batch()
-    model.train_on_batch(batch.input, batch.target)
+    message_iterations = "Specify the numer of iterations (min 2500, is suggested more) -> "
+    max_iterations = input(message_iterations)
 
-    if iteration % 500 == 0:
-        print('Names generated after iteration {}:'.format(iteration))
+    iteration = 0
+    while iteration < int(max_iterations) + 1:
+        batch = batcher.next_batch()
+        model.train_on_batch(batch.input, batch.target)
 
-        # TODO: il for i in range(3) Funziona solo col greedy, perchè il greedy
-        # è non deterministico, con il beam ti stampa 3 nomi uguali perchè il
-        # primo è sempre il più probabile
-        make_name_beam(model, vocab, hps)
+        if iteration % 500 == 0:
+            print('Names generated after iteration {}:'.format(iteration))
 
-        # uncomment for greedy search
-        # for i in range(3):
-        #     make_name(model, vocab, hps)
+            if int(mode) == 1:
+                for i in range(3):
+                    make_name(model, vocab, hps)
+            else:
+                # il "for i in range(3)" funziona solo col greedy, perché il greedy
+                # è non deterministico, con il beam ti stampa 3 nomi uguali perché il
+                # primo è sempre il più probabile
+                make_name_beam(model, vocab, hps)
 
-        print("")
+            print("")
 
-    iteration += 1
+        iteration += 1

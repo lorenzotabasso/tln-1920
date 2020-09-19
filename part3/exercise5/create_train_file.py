@@ -57,6 +57,6 @@ def create_train_file(data):
 
 if __name__ == '__main__':
     # Se si vuole cambiare il dataset, è sufficente passare il Path qui.
-    data = extract_data('bands.csv')
+    data = extract_data('starwars.csv')
     generate_vocabulary(data)
     create_train_file(data)
