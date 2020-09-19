@@ -3,7 +3,6 @@ from data import Vocabulary
 from batcher import Batcher
 from keras.models import Sequential
 from keras.layers import GRU, Dense, Embedding, Dropout
-from keras.callbacks import LambdaCallback
 from beam_search import beam_search
 
 import numpy as np
@@ -64,9 +63,6 @@ def make_name(model, vocab, hps):
             break
         elif i + 1 < hps.seq_len:
             x[0, i + 1] = index
-        # else:
-        #     x[0, i + 1] = index
-        # Originariamente non c'era l'else, ma solo l'elif, da controlla re se serve o è corretto l'else
 
         i += 1
 
@@ -90,21 +86,20 @@ iteration = 0
 while True:
 
     batch = batcher.next_batch()
-
     model.train_on_batch(batch.input, batch.target)
 
     if iteration % 500 == 0:
-        print('Names generated after iteration %d:' % iteration)
+        print('Names generated after iteration {}:'.format(iteration))
 
-        # TODO: Funziona solo col greedy, perchè il greedy è non deterministico,
-        # con il beam ti stampa 3 nomi uguali perchè il primo è sempre il più
-        # probabile, basta commentarlo
+        # TODO: il for i in range(3) Funziona solo col greedy, perchè il greedy
+        # è non deterministico, con il beam ti stampa 3 nomi uguali perchè il
+        # primo è sempre il più probabile
         make_name_beam(model, vocab, hps)
 
         # uncomment for greedy search
         # for i in range(3):
         #     make_name(model, vocab, hps)
 
-        print()
+        print("")
 
     iteration += 1

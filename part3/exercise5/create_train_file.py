@@ -38,7 +38,7 @@ def generate_vocabulary(data):
     for line in data:
         counter.update(line)
 
-    with open('./vocabulary.txt', 'w') as writer:
+    with open('vocabulary.txt', 'w') as writer:
         for (c, f) in counter.most_common(1000):
             writer.write(f"{c}\t{str(f)}\n")
 
@@ -56,6 +56,7 @@ def create_train_file(data):
 
 
 if __name__ == '__main__':
+    # Se si vuole cambiare il dataset, è sufficente passare il Path qui.
     data = extract_data('bands.csv')
     generate_vocabulary(data)
     create_train_file(data)
