@@ -1,0 +1,11 @@
+INDEX: 0, MAX: ('right.n.01', 96)
+INDEX: 1, MAX: ('brand.n.02', 31)
+INDEX: 2, MAX: ('desire.n.02', 26)
+INDEX: 3, MAX: ('set.n.01', 21)
+INDEX: 4, MAX: ('thing.n.01', 22)
+INDEX: 5, MAX: ('hot.a.01', 60)
+INDEX: 6, MAX: ('good.n.02', 34)
+INDEX: 7, MAX: ('run.v.11', 68)
+{0: ('right.n.01', 96), 1: ('brand.n.02', 31), 2: ('desire.n.02', 26), 3: ('set.n.01', 21), 4: ('thing.n.01', 22), 5: ('hot.a.01', 60), 6: ('good.n.02', 34), 7: ('run.v.11', 68)}
+
+Process finished with exit code 0
