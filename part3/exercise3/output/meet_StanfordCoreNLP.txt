@@ -1,0 +1,635 @@
+Last login: Sat Sep 19 18:13:41 on console
+➜  stanford-corenlp-4.1.0 git:(master) ✗ java -mx4g -cp "*" edu.stanford.nlp.pipeline.StanfordCoreNLPServer -port 9000 -timeout 15000
+[main] INFO CoreNLP - --- StanfordCoreNLPServer#main() called ---
+[main] INFO CoreNLP - Server default properties:
+			(Note: unspecified annotator properties are English defaults)
+			inputFormat = text
+			outputFormat = json
+			prettyPrint = false
+[main] INFO CoreNLP - Threads: 4
+[main] INFO CoreNLP - Starting server...
+[main] INFO CoreNLP - StanfordCoreNLPServer listening at /[0:0:0:0:0:0:0:0]:9000
+[pool-1-thread-1] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+salinger said the work president kennedy , advisers , and members of his staff were doing on the address involved composition and wording , rather than last minute decisions on administration plans to meet the latest berlin crisis precipitated by russia's demands and proposals for the city
+[pool-1-thread-1] INFO edu.stanford.nlp.pipeline.StanfordCoreNLP - Adding annotator tokenize
+[pool-1-thread-1] INFO edu.stanford.nlp.pipeline.StanfordCoreNLP - Adding annotator ssplit
+[pool-1-thread-1] INFO edu.stanford.nlp.pipeline.StanfordCoreNLP - Adding annotator pos
+[pool-1-thread-1] INFO edu.stanford.nlp.tagger.maxent.MaxentTagger - Loading POS tagger from edu/stanford/nlp/models/pos-tagger/english-left3words-distsim.tagger ... done [1.2 sec].
+[pool-1-thread-1] INFO edu.stanford.nlp.pipeline.StanfordCoreNLP - Adding annotator lemma
+[pool-1-thread-1] INFO edu.stanford.nlp.pipeline.StanfordCoreNLP - Adding annotator depparse
+[pool-1-thread-1] INFO edu.stanford.nlp.parser.nndep.DependencyParser - Loading depparse model: edu/stanford/nlp/models/parser/nndep/english_UD.gz ... Time elapsed: 2.1 sec
+[pool-1-thread-1] INFO edu.stanford.nlp.parser.nndep.Classifier - PreComputed 20000 vectors, elapsed Time: 2.754 sec
+[pool-1-thread-1] INFO edu.stanford.nlp.parser.nndep.DependencyParser - Initializing dependency parser ... done [4.9 sec].
+[pool-1-thread-2] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+he said his plan is designed to `` meet the needs of those millions who have no wish to receive care at the taxpayers' expense , but who are nevertheless staggered by the drain on their savings -- or those of their children -- caused by an extended hospital stay ''
+[pool-1-thread-3] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+`` this is a very modest proposal cut to meet absolutely essential needs '' , he said , `` and with sufficient ' deductible ' requirements to discourage any malingering or unnecessary overcrowding of our hospitals
+[pool-1-thread-4] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+the president said the nation's 92 medical and 47 dental schools cannot now handle the student load needed to meet the rising need for health care
+[pool-1-thread-1] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+in oslo , the ministers have met in a climate of candor , and made a genuine attempt to get information and understanding one another's problems
+[pool-1-thread-2] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+mr martinelli said yesterday that the citizens group of johnston will meet again july 24 to plan further strategy in the charter movement
+[pool-1-thread-3] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+he said mitchell is against the centralization of government in washington but looks to the kennedy administration for aid to meet new jersey school and transportation crises
+[pool-1-thread-4] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+but i shall campaign on the meyner record to meet the needs of the years ahead ''
+[pool-1-thread-1] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+three groups to meet
+[pool-1-thread-2] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+if barnett doesn't call a special session in 1961 , it will be the first year in the last decade that the legislature has not met in regular or special session
+[pool-1-thread-3] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+`` the church's ability to change her methods is going to determine her ability to meet the challenge of this hour ''
+[pool-1-thread-4] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+the texans have two more road games -- at buffalo and houston -- before they play for the home folks again , and it looks as if coach hank stram's men will meet the bills just as they are developing into the kind of team they were expected to be in pre-season reckonings
+[pool-1-thread-1] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+on friday , roger maris , the yankee outfielder and winner of the american league's most-valuable-player award , will meet with roy hamey , the general manager
+[pool-1-thread-2] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+the last obstacle in mrs geraghty's globe-girdling trip was smoothed out when a representative of syria called upon her to explain that his brother would meet her at the border of that country -- so newly separated from egypt and the united arab republic that she hadn't been able to obtain a visa
+[pool-1-thread-3] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+the richard s burkes' home in wayne may be the setting for the wedding reception for their daughter , helen lambert , and the young italian she met last year while studying in florence during her junior year at smith college
+[pool-1-thread-4] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+he is aldo rostagno , son of the guglielmo rostagnos of florence whom the burkes met last year in europe
+[pool-1-thread-1] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+a cheer here for francis lorenz , state treasurer , who will meet with the probate advisory board of the chicago bar association , for suggestions on how to handle the opening of safety deposit boxes after somebody dies
+[pool-1-thread-2] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+a 14-power conference on laos should then meet on may 5 , he said
+[pool-1-thread-3] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+`` emory could not continue to operate according to its present standards as an institution of higher learning , of true university grade , and meet its financial obligations , without the tax-exemption privileges which are available to it only so long as it conforms to the aforementioned constitutional and statutory provisions '' , the statement said
+[pool-1-thread-4] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+charles a black , coahr chairman , said friday that three theater representatives had agreed to meet with the students on oct 31 but had failed to show up
+[pool-1-thread-1] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+stein said he needed the money , leavitt said , to `` meet the payroll '' at national maintenance company
+[pool-1-thread-2] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+it is no coincidence that the texas cotton ginner's association is meeting here this week for the 46th time in their 52-year history
+[pool-1-thread-3] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+he cited , as an example , how the american camera industry has been able to meet successfully the competition of japan despite lower japanese labor costs , by improving its production know-how and technology
+[pool-1-thread-4] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+president kennedy will meet with soviet premier nikita s khrushchev in vienna june 3 and 4
+[pool-1-thread-1] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+the u s and soviet heads of government have met three times since sir winston churchill in 1953 introduced a new word into international diplomacy with his call for a fresh approach to the problem of peace `` at the summit of the nations ''
+[pool-1-thread-2] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+there was also the fact that by the time he meets mr khrushchev , the president will have completed conversations with all the other principal allied leaders
+[pool-1-thread-3] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+moreover , the president is meeting the soviet leader at a time when the administration has still not decided on the scope of america's firm foreign policy commitments
+[pool-1-thread-4] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+for while the past needs of the church in this country may have been adequately met by collegiate institutions , which in temper and tone closely resembled junior colleges and finishing schools , it would seem that today's need is for the college which more closely resembles the university in its `` pursuit of excellence ''
+[pool-1-thread-1] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+paradoxically , the same week in which senator mcclellan was attempting to extend the anti-trust act to labor in transportation , the civil aeronautics board was assuring the airlines that if they met in concert to eliminate many costly features of air travel , the action would not be deemed a violation of the anti-trust act
+[pool-1-thread-2] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+one good indication of the two men's personalities is the way they reacted to meeting their own heroes
+[pool-1-thread-3] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+chaplin , 71 , who met k when the soviet boss visited england in 1956 , confided that he hopes to visit russia some time this summer because `` i have marveled at your grandiose experiment and i believe in your future ''
+[pool-1-thread-4] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+vague in wording , it called for withdrawal of belgian troops and authorized the secretary-general `` to take the necessary steps to provide the ( congolese ) government with such military assistance as may be necessary , until , through the efforts of the congolese government with the technical assistance of the united nations , the national security forces may be able , in the opinion of the government , to meet fully their tasks
+[pool-1-thread-1] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+a startlingly high percentage do not exceed $500 annually , which includes the librarian's salary , and not even the new york public has enough money to meet its needs -- this in the world's richest city
+[pool-1-thread-2] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+it was faced immediately with a showdown on the schools , an issue which was met squarely in conjunction with the governor with a decision not to risk abandoning public education
+[pool-1-thread-3] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+it is good to know that georgia will continue to have sufficient electrical power not only to meet the demands of normal growth but to encourage a more rapid rate of industrialization
+[pool-1-thread-4] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+thirteen italian airmen who went to the congo to serve the cause of peace under the united nations banner have instead met violent death at the hands of congolese troops supposedly their friends
+[pool-1-thread-1] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+but the internationalists have taken over the governing body of the bar , and when the lads met in st louis , it was not to grumble about the humidity but to vote unanimously that the united nations was scarcely less than wonderful , despite an imperfection here and there
+[pool-1-thread-2] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+the un session scheduled for today will meet under the cloud of his passing
+[pool-1-thread-3] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+the inter-american press association , which blankets the western hemisphere from northern canada to cape horn , is meeting in new york city this week for the first time in eleven years
+[pool-1-thread-4] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+when a person meets god's requirements for the experience of forgiveness he is forgiven
+[pool-1-thread-1] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+the three would never meet again , but for some reason or other mr podger was sure he would always remember the incident
+[pool-1-thread-2] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+it met a serious rebuff in new orleans , where the two schools selected for the first moves toward integration were boycotted by white parents
+[pool-1-thread-3] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+generally , throughout the south , there is a growing impatience with the pattern of violence with which every step of desegregation is met
+[pool-1-thread-4] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+president kennedy's latest warning to the communist world that the united states will build up its military strength to meet any challenge in berlin or elsewhere was , somewhat surprisingly , reported in full text or fairly accurate excerpts behind the iron curtain
+[pool-1-thread-1] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+`` sure , we met a barrel of rich men but it's hard to find the real thing when you're young , beautiful and the toast of two continents '' `` remember fanny brice promised my mother she would look after me on the road '' ? ?
+[pool-1-thread-2] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+it is not much better if he meets with old classmates
+[pool-1-thread-3] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+if they do meet and recognize one another , slap backs and embrace , the moment soon is done
+[pool-1-thread-4] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+the demand for these lots can be met for some time to come
+[pool-1-thread-1] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+with our current $3 per hundred tax rate , it is safe to assume that this will qualify when you suggest a community should `` try to develop a modest industrial plant '' as the best way to meet these problems
+[pool-1-thread-2] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+until professional planners meet this situation squarely and update the concepts of zoning in a manner acceptable to the courts , i hope we in east greenwich can continue to shape our own destiny
+[pool-1-thread-3] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+i feel that few burglars would be prone to break and enter into someone's apartment if they were met with a good hardy growl that a dog would provide
+[pool-1-thread-4] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+that is why the united nations was formed so that intelligent men with good intentions from all countries could meet and solve problems without resorting to war
+[pool-1-thread-1] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+`` in many corners of the globe '' , he said , `` the major source of impressions about this country are in the movies they meet
+[pool-1-thread-2] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+the reader meets a few old friends like blimp and the tuc horse , and becomes better acquainted with new members of the cast of characters like the bomb itself , and civilization in her classic robe watching the nuclear arms race , her hair standing straight out
+[pool-1-thread-3] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+if mr kennan is sometimes a little somber in his appraisals , if his analysis of how western diplomacy met the challenge of an era of great wars and social revolutions is often critical and pessimistic -- well , the record itself is not too encouraging
+[pool-1-thread-4] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+all went home happy except the newport police , who feared that the throng departing at 6:35 might meet head-on the night crowd drawing nigh , and those deprived of their happy hour at the cocktail bar
+[pool-1-thread-1] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+he met with enthusiastic audience approval , especially when he swung from jazz to latin american things like the mambo
+[pool-1-thread-2] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+for this story of an american couple who meet and fall in love in israel , mr herman has written songs that are warmly melodious and dance music that sparkles
+[pool-1-thread-3] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+sergei vikulov , as the lone male , meets the competition well with some brilliant hits , but the work is designed to belong to the ladies
+[pool-1-thread-4] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+the tragic irony of the play is that the very belief in and concern with a devil who could be met in the woods and combatted with formulae set out in books was the very thing that prevented them from detecting the real devil when he came among them
+[pool-1-thread-1] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+when that fear has been removed by faith in jesus christ , when we know that he is our savior , that he has paid our debt with his blood , that he has met the demands of god's justice and thus has turned his wrath away -- when we know that , we have peace with god in our hearts ; ;
+[pool-1-thread-2] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+others meet on sunday night , at the mid-week service , or for a series of four nights
+[pool-1-thread-3] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+ask the new members to meet thirty minutes before the service to complete `` talent sheets '' and pledge cards
+[pool-1-thread-4] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+but what significance attaches to `` professional '' , beyond the narrow sense of skillfulness in meeting a client's stated needs as already noted ? ?
+[pool-1-thread-1] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+how can we have the wisdom to meet such a new and difficult challenge ? ?
+[pool-1-thread-2] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+still others sprang up late in the century to meet conditions which arose from fresh stages of the revolutionary age
+[pool-1-thread-3] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+but actually these accounts reveal the supernatural powers that the masters were in fact supposed to possess , as well as the extreme degree of popular credulity : `` hwang pah ( o baku ) , one day going up mount tien tai which was believed to have been inhabited by arhats with supernatural powers , met with a monk whose eyes emitted strange light
+[pool-1-thread-4] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+then the monk praised yang shan saying : `` i have come over to china in order to worship manjucri , and met unexpectedly with minor shakya '' , and after giving the master some palm leaves he brought from india , went back through the air
+[pool-1-thread-1] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+for example , early in my life , when one of my editorial workers wanted to find out how churches and philanthropic organizations met the needs of new york's down-and-outers , he didn't just ask questions
+[pool-1-thread-2] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+they say all personnel have spiritual needs which guideposts helps to meet
+[pool-1-thread-3] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+at the recent horse show convention in new york it was stated that this intermediate judging class is meeting with great success and will be a great help to future judges in the horse world
+[pool-1-thread-4] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+if ever a rifle met the needs of the whitetail hunter , this is it
+[pool-1-thread-1] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+in looking for the best sites available that meet the requirements , you need information to compare the site with others
+[pool-1-thread-2] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+look at the physical features of the land to determine how desirable it is for use , what can be done to correct the faults , and what it will cost to make the area meet your needs in comparison to other sites
+[pool-1-thread-3] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+the following year he devoted to the customary `` wanderjahr '' , traveling in germany , france , and the netherlands , meeting the philosophers schelling , fichte , and tieck
+[pool-1-thread-4] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+he also met count rumford ( born benjamin thompson in woburn , mass ) who was then serving the elector of bavaria , and the physicist ritter ; ;
+[pool-1-thread-1] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+and further he must understand his obligation to the client to not only meet his physical necessities but also to enhance and improve his life and to enlarge the cultural horizon of our society
+[pool-1-thread-2] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+if you use company transportation to meet trains or to haul visitors , would taxis be cheaper ? ?
+[pool-1-thread-3] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+they are struggling to meet the demand for camping space , but families are being turned away , especially on holiday weekends
+[pool-1-thread-4] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+neither are shelters , because there is one to meet the needs of every camper or prospective camper
+[pool-1-thread-1] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+sixty miles north of new york city where the wooded hills of dutchess county meet the broad sweep of the hudson river there is a new home development called `` oakwood heights ''
+[pool-1-thread-2] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+the earlier new haven development was public housing , so it easily leaped over the problems met in a private venture
+[pool-1-thread-3] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+truck and materials-handling equipment makers now offer specialized units to meet almost every homebuilding need
+[pool-1-thread-4] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+and you don't meet the folks from home in northwest spain which has remained almost untouched by time and tourists since the middle ages
+[pool-1-thread-1] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+just about the most enthralling real-life example of meeting cute is the charles macarthur-helen hayes saga : reputedly all he did was give her a handful of peanuts , but he said simultaneously , `` i wish they were emeralds ''
+[pool-1-thread-2] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+that the dream was a reality on the infinite progressions of universal , gradient frequencies , across which the modern professor and the priest of ancient nippur met ? ?
+[pool-1-thread-3] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+chauncey depew , one-time runner-up for the republican presidential nomination , was attending a convention at saratoga , where he was scheduled to nominate colonel theodore roosevelt for governor of new york when he noticed that the temporary chairman was a man he had never met
+[pool-1-thread-4] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+throughout the adirondack region abandoned farm homes and wild orchards bear ghostly testimony that their owners met defeat
+[pool-1-thread-1] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+each time in , the unhappy pilot , pushing his luck , begged the postal officials that met him to find a safer landing place , preferably on the flat-topped hills across the winooski river
+[pool-1-thread-2] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+in the spring and early summer of that year she met a wealthy foreign tycoon who took her to france , where she later met a very wealthy man and toured all europe with him
+[pool-1-thread-3] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+in the spring and early summer of that year she met a wealthy foreign tycoon who took her to france , where she later met a very wealthy man and toured all europe with him
+[pool-1-thread-4] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+`` at deauville she met an egyptian by the name of pulley bey
+[pool-1-thread-1] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+`` then she went to deauville where she met a member of a powerful greek syndicate of gamblers ''
+[pool-1-thread-2] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+she thought royal status might come her way when , while she was still in rome , she met pulley bey , a personal procurer to king farouk of egypt
+[pool-1-thread-3] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+she had a hard time making him understand that it was farouk she wished to meet
+[pool-1-thread-4] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+front teeth not meeting when the back teeth close
+[pool-1-thread-1] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+instead he brought with him the names of some people he had never met and of whom the medium knew nothing
+[pool-1-thread-2] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+one way to do this is by `` proxy sittings '' , wherein the person seeking a message does not himself meet with the medium but is represented by a substitute , the proxy sitter
+[pool-1-thread-3] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+the farmer's life must be arranged to meet the demands of crops and livestock
+[pool-1-thread-4] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+part-time farming gives a measure of security if the regular job is lost , provided the farm is owned free of debt and furnishes enough income to meet fixed expenses and minimum living costs
+[pool-1-thread-1] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+finally , if the mission of the trial was to convict anti-semitism , how could it have failed to post before the world the contrasting fates of the countries in which the final solution was aided by native jew-haters -- ie , germany , poland , hungary , czechoslovakia -- and those in which it met the obstacle of human solidarity -- denmark , holland , italy , bulgaria , france ? ?
+[pool-1-thread-2] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+in september 1817 at fort daer ( pembina ) dickson met the noble lord whom , with the help of a band of sioux , he escorted to prairie du chien
+[pool-1-thread-3] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+but as november 1924 drew close the democratic hierarchy was sorely troubled by grapevine reports that o'banion was being wooed by the opposition , and was meeting and conferring with important republicans
+[pool-1-thread-4] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+but everyone i met had sought cover first and asked questions later
+[pool-1-thread-1] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+`` we '' were bill garrett of the national geographic illustrations staff , whose three cameras and eight lenses made him look as formidable as any fighting man we met ; ;
+[pool-1-thread-2] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+he met nobody he knew on this walk
+[pool-1-thread-3] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+nice country to meet a lion in face to face
+[pool-1-thread-4] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+it is here that the local and ecumenical must meet
+[pool-1-thread-1] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+and are not the state department men who dispense this largesse merely crackpots and do-gooders who have never met a payroll ? ?
+[pool-1-thread-2] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+a newspaperman who met him at a reception swore that he asked menshikov : `` what should we call you '' ? ?
+[pool-1-thread-3] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+in the evening the former oregon state science teachers met for dinner at the new tokyo restaurant where i had my first raw fish and found it good
+[pool-1-thread-4] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+my instructions were that mr nishimo would meet me at the hotel , but instead he and three others were at the station with a very warm welcome
+[pool-1-thread-1] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+here mr yoneda met us after a three-hour train trip from the town where he teaches
+[pool-1-thread-2] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+hiroshima is a better city than it was before -- in the minds of the people i met was a strong determination for peace and understanding
+[pool-1-thread-3] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+on arriving in tokyo later we were met by masu who took us immediately to her university , the japanese women's university
+[pool-1-thread-4] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+after a fine luncheon in the cafeteria , the kitchen of which masu had planned , mr washizu and i left to meet representatives of the usis for a visit to the university of tokyo
+[pool-1-thread-1] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+in recent weeks , as a result of a sweeping defense policy reappraisal by the kennedy administration , basic united states strategy has been modified -- and large new sums allocated -- to meet the accidental-war danger and to reduce it as quickly as possible
+[pool-1-thread-2] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+a man and a girl happen to meet ; ;
+[pool-1-thread-3] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+his letter had suggested we meet at my hotel at noon on sunday , and i came into the lobby as the clock struck twelve
+[pool-1-thread-4] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+my wish to meet samuel beckett had been prompted by simple curiosity and interest in his work
+[pool-1-thread-1] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+that , i thought , is at least one thing i can find out when we meet
+[pool-1-thread-2] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+one can meet with aloofness almost anywhere : the thidiu viewpoint , it doesn't affect us ! !
+[pool-1-thread-3] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+for the occasion on which everyone already knows everyone else and the host wishes them to meet one or a few honored newcomers , then the `` open house '' system is advantageous because the honored guests are fixed connective points and the drifting guests make and break connections at the door
+[pool-1-thread-4] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+the connective system , or network , is tailored to meet the requirements of the objective , and it is therefore not surprising that a military body acting as a single coordinated unit has a different communication network than a factory , a college , or a rural village
+[pool-1-thread-1] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+that , however , may also bring the police , if the thinking does not meet with social approval
+[pool-1-thread-2] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+these could be met only by considering the dynamical elements of several planets at one time
+[pool-1-thread-3] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+and , in the last case , a bitter disappointment but too often meets the confiding nature
+[pool-1-thread-4] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+no wonder wright was enchanted -- no two better suited people ever met
+[pool-1-thread-1] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+the bank of wisconsin sent a representative to the judge's chambers in madison to give information on wright's ability to meet the terms
+[pool-1-thread-2] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+it is a dedication which began the moment she met carl
+[pool-1-thread-3] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+mrs sandburg received a phi beta kappa key from the university of chicago and she was busy writing and teaching when she met sandburg
+[pool-1-thread-4] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+carl and paula met in milwaukee in 1907 during paula's christmas holiday visit to her parents
+[pool-1-thread-1] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+the courage to meet every challenge ; ;
+[pool-1-thread-2] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+we must meet this situation by promoting a rising volume of exports and world trade
+[pool-1-thread-3] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+to meet situations of less than general nuclear war , we continue to maintain our carrier forces , our many service units abroad , our always ready army strategic forces and marine corps divisions , and the civilian components
+[pool-1-thread-4] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+a year ago , when i met with you , the nation was emerging from an economic downturn , even though the signs of resurgent prosperity were not then sufficiently convincing to the doubtful
+[pool-1-thread-1] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+on january 24 paul bang-jensen , accompanied by adolf berle , was met by dragoslav protitch and colonel frank begley , former police chief of farmington , conn , and now head of un special police
+[pool-1-thread-2] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+it sounded like a fair enough invitation , peter marshall reflected , and bang-jensen must have thought so too , because on the thirteenth , he met the group of three on the thirty-sixth floor of the un
+[pool-1-thread-3] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+but one afternoon mrs mercer met her ; ;
+[pool-1-thread-4] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+while with the whiteman band mercer met jerry arlen
+[pool-1-thread-1] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+he had yet to meet harold arlen , for although they had `` collaborated '' on `` satan's li'l lamb '' , mercer and harburg had worked from a lead sheet the composer had furnished them
+[pool-1-thread-2] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+they include harmonies and conflicts within the whole man , and mechanisms whereby inner components are more or less smoothly met
+[pool-1-thread-3] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+after all , the large ( and probably unreliable ) reader's digest literature on the `` most unforgettable character i ever met '' deals with village grocers , country doctors , favorite if illiterate aunts , and so forth
+[pool-1-thread-4] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+in a small way this is illustrated by the nineteenth-century novelist who argued for the powerful influence of literature as a teacher of society and who illustrated this with the way a girl learned to meet her lover , how to behave , how to think about this new experience , how to exercise restraint
+[pool-1-thread-1] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+in his fight for the illinois and indiana delegations , hearst made several trips to chicago to confer with andrew lawrence , the former san francisco examiner man who was now his chicago kingpin , and once to meet with bryan
+[pool-1-thread-2] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+on one visit he stopped at the office of the american , where he was known surreptitiously as `` the great white chief '' , and for the first time met his managing editor , fat moses koenigsberg
+[pool-1-thread-3] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+we would all meet at ten o'clock at the kehl bridge , five miles from strasbourg , and march triumphantly across into germany
+[pool-1-thread-4] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+as i got off the trolley at kehl bridge the next morning , i was met by what looked like 5,000 students , some of whom were carrying sticks apparently for the coming `` battle '' with the police
+[pool-1-thread-1] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+thomas tried hard to have his cavalry ready for the test it was to meet , but his plans were wrecked when it was forced into a campaign without optimum mobility and with its commander stripped from it
+[pool-1-thread-2] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+and general the count pallavicini , founder of the austrian branch of that celebrated italian house , a courtier littlepage could have met at madrid in december , 1780
+[pool-1-thread-3] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+this of course was not true of the educated and sophisticated people we met , who loved their pets , but kindness is not a basic human instinct
+[pool-1-thread-4] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+we met some charming athenians , and among them our chauffeur panyotis ranked high
+[pool-1-thread-1] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+`` little rock is , without any flattery , one of the dullest towns in the united states and i would not have remained two hours in the place , if i had not met with some good friends who made me forget its dreariness ''
+[pool-1-thread-2] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+the younger men , vere , and pembroke , who was also edward's cousin and whose lusignan blood gave him the swarthy complexion that caused edward of carnarvon's irreverent friend , piers gaveston , to nickname him `` joseph the jew '' , were relatively new to the game of diplomacy , but pontissara had been on missions to rome before , and hotham , a man of great learning , `` jocund in speech , agreeable to meet , of honest religion , and pleasing in the eyes of all '' , and an archbishop to boot , was as reliable and experienced as othon himself
+[pool-1-thread-3] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+the low countries , where the middle ages were to last for another two centuries and die out only when charles the bold of burgundy met his first defeat in the fields and forests below the walls of grandson
+[pool-1-thread-4] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+i never met john dewey , whose style was a sort of verbal fog and who had written asking me to go to mexico with him when he was investigating the cause of trotsky ; ;
+[pool-1-thread-1] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+mr burlingham , -- `` ccb '' -- wrote to me once about an old friend of mine , s k ratcliffe , whom i had first met in london in 1914 and who also came out for a week-end in weston
+[pool-1-thread-2] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+would he meet him in baltimore in drawing room a , car three on the train leaving washington at nine o'clock next morning ? ?
+[pool-1-thread-3] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+nowhere before in malraux's pages have we met such impassioned defenders of a `` quality of man '' which transcends the realm of politics and even the realm of action altogether -- both the action of malraux's early anarchist-adventurers like perken and garine , and the self-sacrificing action of dedicated communists like kyo gisors and katow in man's fate
+[pool-1-thread-4] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+citing the advances of communist power in recent years , sir anthony observed : `` this very grave state of affairs will continue until the free nations accept together the reality of the danger that confronts them and unite their policies and resources to meet it ''
+[pool-1-thread-1] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+art `` makings '' or pseudo-anthropological myths did not meet all of patchen's requirements for a poetic frame of reference
+[pool-1-thread-2] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+such measures are essential to its job of presenting business and government with the facts required to meet the objective of expanding business and improving the operation of the economy
+[pool-1-thread-3] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+to qualify for either type of loan , an applicant must be a small business or approved small business `` pool '' and must meet certain credit requirements
+[pool-1-thread-4] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+to be eligible to borrow from a bank for cooperatives , a cooperative must be an association in which farmers act together in processing and marketing farm products , purchasing farm supplies , or furnishing farm business services , and must meet the requirements set forth in the farm credit act of 1933 , as amended
+[pool-1-thread-1] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+once we have made clear that we are genuinely concerned with a country's development potential , we can be blunt in suggesting the technical conditions that must be met for development to occur
+[pool-1-thread-2] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+it met these problems by the creation of the state automobile maintenance unit ( more popularly called the motor pool ) , a centralized operation for the maintenance and control of all state transportation
+[pool-1-thread-3] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+they had been through trying times , but their faith in the almighty had given them the courage and the strength to meet and overcome the many problems and difficulties that were the price they had to pay for freedom
+[pool-1-thread-4] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+in view of the increasing shortage of usable surface and ground water in many parts of the nation and the importance of finding new sources of supply to meet its present and future water needs , it is the policy of the congress to provide for the development of practicable low-cost means for the large-scale production of water of a quality suitable for municipal , industrial , agricultural , and other beneficial consumptive uses from saline water , and for studies and research related thereto
+[pool-1-thread-1] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+in march , 1961 , representatives of the national laboratories of australia , canada , the netherlands , united kingdom , ussr , united states , and west germany , met at the nbs to devise means for reaching international agreement on a temperature scale between 10 and 90 af
+[pool-1-thread-2] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+once these conditions of international law are met , countries that try to run the blockade do so at their own risk
+[pool-1-thread-3] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+it could , by avoiding direct intervention , provide a short-of-war strategy to meet short-of-war infiltration
+[pool-1-thread-4] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+some special health requirements might have to be met
+[pool-1-thread-1] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+the peace corps offers an opportunity to bring home to the united states the problems of the world as well as an opportunity to meet urgent host country needs for trained manpower
+[pool-1-thread-2] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+and this is meeting the world's need , too , since what the world most needs from this country is better understanding of the world
+[pool-1-thread-3] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+i recommend to the congress the establishment of a permanent peace corps -- a pool of trained american men and women sent overseas by the us government or through private organizations and institutions to help foreign countries meet their urgent needs for skilled manpower
+[pool-1-thread-4] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+to meet this urgent need for skilled manpower we are proposing the establishment of a peace corps -- an organization which will recruit and train american volunteers , sending them abroad to work with the people of other nations
+[pool-1-thread-1] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+it is proposed that in 10 years all commercial timberlands , all critical watersheds , and other lands in the national forest system developed or proposed for intensive use will be given protection from fire adequate to meet the fire situation in the worst years and under serious peak loads
+[pool-1-thread-2] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+an additional 15 million acres will be given a lesser degree of protection but adequate to meet the average fire situation
+[pool-1-thread-3] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+the long-range objective of this department is to provide and maintain a system of forest development roads and trails which will adequately service the national forest system at the levels needed to meet expected needs and optimum production of products and services
+[pool-1-thread-4] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+about 80 percent of these long-range requirements should be met by the year 2000
+[pool-1-thread-1] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+these strengths are considered adequate to meet the essential roles and missions of the reserves in support of our national security objectives
+[pool-1-thread-2] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+the growing communications needs of this new state can best be met , as they have in other states , through the operation and development of such facilities by private enterprise
+[pool-1-thread-3] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+as a designer and manufacturer of textile production machinery , leesona and other companies in its industry have sought to meet this challenge with new or improved equipment and methods that would increase production , yet maintain both quality and flexibility
+[pool-1-thread-4] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+occasional meetings are held for the whole membership , usually with a guest speaker , while smaller discussion groups meet more frequently
+[pool-1-thread-1] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+the group meets once a week in the boliou student workshop
+[pool-1-thread-2] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+a busy president , conversant with a problem and its ramifications and beset by pressures to meet deadlines , tends naturally to assume that others must be as familiar with a problem as he is
+[pool-1-thread-3] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+on those rare occasions when a faculty member on tenure is not meeting the standards of the institution , the president must also bear the ultimate burden of decision and action
+[pool-1-thread-4] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+large numbers of potential builders have been investigated , but none have been found to be as effective as the polyphosphates over the relatively wide range of conditions met in practice
+[pool-1-thread-1] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+in considering bw defense , it must be recognized that a number of critical meterological parameters must be met for an aerosol to exhibit optimum effect
+[pool-1-thread-2] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+there are , of course , certain times during the 24-hour daily cycle when most of these conditions will be met
+[pool-1-thread-3] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+an agent would likely be selected which would possess sufficient viability and virulence stability to meet realistic minimal logistic requirements
+[pool-1-thread-4] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+an ordinary point will be any point of intersection a such that in every neighborhood of a in the c-plane , af meets both the interior and the exterior of c
+[pool-1-thread-1] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+these are defined by a simple involutorial transformation of the points in which a general line meets a nonsingular quadric surface bearing a curve of symbol af
+[pool-1-thread-2] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+then in 2 we show that any line involution with the properties that ( a ) it has no complex of invariant lines , and ( b ) its singular lines form a complex consisting exclusively of the lines which meet a twisted curve , is necessarily of the type discussed in 1
+[pool-1-thread-3] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+we observe first that no line , l , can meet its image except at one of its intersections with q
+[pool-1-thread-4] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+moreover , from the definitive transformation of intercepts on the generators of af , it is clear that the only points of q at which a line can meet its image are the points of aj
+[pool-1-thread-1] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+hence the totality of singular lines is the t order complex of lines which meet aj
+[pool-1-thread-2] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+for the lines of any plane , **yp , meeting q in a conic c , are transformed into the congruence of secants of the curve c' into which c is transformed in the point involution on q
+[pool-1-thread-3] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+this curve is of symbol af since it meets **yl , and hence every line of af in the af invariant points on **yl and since it obviously meets every line of af in a single point
+[pool-1-thread-4] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+this curve is of symbol af since it meets **yl , and hence every line of af in the af invariant points on **yl and since it obviously meets every line of af in a single point
+[pool-1-thread-1] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+a conic , c , being a ( 1 , 1 ) curve on q , meets the image of any line of af , which we have already found to be a af curve on q , in af points
+[pool-1-thread-2] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+hence its image , c' , meets any line of af in af points
+[pool-1-thread-3] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+moreover , c' obviously meets any line af in a single point
+[pool-1-thread-4] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+the preceding observations make it clear that there exist line involutions of all orders greater than 1 with no complex of invariant lines and with a complex of singular lines consisting exclusively of the lines which meet a twisted curve aj
+[pool-1-thread-1] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+to do this we must first show that every line which meets **zg in a point p meets its image at p
+[pool-1-thread-2] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+to do this we must first show that every line which meets **zg in a point p meets its image at p
+[pool-1-thread-3] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+by ( 1 ) , the image of this pencil is a ruled surface of order af which is met by the plane of the pencil in a curve , c , of order af
+[pool-1-thread-4] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+since c is rational , this correspondence has k coincidences , each of which implies a line of the pencil which meets its image
+[pool-1-thread-1] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+the first possibility requires that there be a line through p which meets **zg in af points ; ;
+[pool-1-thread-2] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+the second requires that there be a line through p which meets **zg in af points
+[pool-1-thread-3] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+for if such were the case , either the plane of the two lines would meet **zg in more than k points or , alternatively , the order of the image regulus of the pencil determined by the two lines would be too high
+[pool-1-thread-4] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+we now observe that the case in which **zg is a af curve on a quadric is impossible if the complex of singular lines consists exclusively of the lines which meet aj
+[pool-1-thread-1] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+for any pencil in a plane containing a af-fold secant of **zg has an image regulus which meets the plane of the pencil in af lines , namely the images of the lines of the pencil which pass through the intersection of **zg and the multiple secant , plus an additional component to account for the intersections of the images of the general lines of the pencil
+[pool-1-thread-2] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+now consider an arbitrary line , l , meeting q in two points , af and af
+[pool-1-thread-3] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+if **ya is the multiple secant of **zg which passes through af and **yb is the simple secant of **zg which passes through af , and if af are the points in which **ya meets **zg , and if af is the image of af on the generator **yb , it follows that the image of the line af is af
+[pool-1-thread-4] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+to establish an emotionally meaningful relationship the worker must demonstrate actual or potential helpfulness immediately , preferably within the first interview , by meeting the client's specific needs
+[pool-1-thread-1] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+adaptation to the social and non-social environment through the economy has been met to a degree through a type of occupational segregation
+[pool-1-thread-2] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+they began to meet in the evenings and carry forward various discussions they felt not fully enough covered in class
+[pool-1-thread-3] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+another patient , a paranoid woman , for many months infuriated not only me but the ward-personnel and her fellow patients by arrogantly behaving as though she owned the whole building , as though she were the only person in it whose needs were to be met
+[pool-1-thread-4] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+any free elections that were to be held in poland would have to produce a government in which moscow had complete confidence , and all pressure from the west for free voting by anti-soviet elements in poland would be met by restrictions on voting by these elements
+[pool-1-thread-1] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+annual authorizations of $15 million were added for area vocational education programs that meet national defense needs for highly skilled technicians
+[pool-1-thread-2] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+only the federal government is likely to be able to take a long-run and nation-wide view and to pay for training to meet national skilled manpower needs
+[pool-1-thread-3] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+if it were not for judicial development of certain exceptions , this section would prohibit a suit for refund by an acquiring corporation for taxes paid by a transferor corporation , even though the reorganization meets the requirements of section 381(a)
+[pool-1-thread-4] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+the first reason would never apply to a reorganization transfer which meets the conditions of section 381(a) , which is the only type presently under discussion
+[pool-1-thread-1] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+these attempts met with little sucess for a variety of reasons
+[pool-1-thread-2] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+ridiculing a child for being afraid or forcing him to meet the feared situation alone are poor ways of dealing with the problem ; ;
+[pool-1-thread-3] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+the student will certainly want to explore more deeply into the fascinating study of immature individuals , struggling to meet their developmental needs , and at the same time trying to learn the rules of the game in the ever-expanding number of groups in which they hold membership
+[pool-1-thread-4] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+much progress has been made in the last two decades in developing techniques for understanding children , yet in almost any classroom today can be found children whose needs are not being met by the school program
+[pool-1-thread-1] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+these specialists perform valuable services by helping teachers learn to identify children who need special attention , by suggesting ways of meeting the needs of individual children in the regular classroom , and by providing clinical services for severely maladjusted children
+[pool-1-thread-2] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+teachers and administrators in many elementary schools have assumed that dividing the pupils in any grade into groups on the basis of test scores solves the problem of meeting the needs of individuals
+[pool-1-thread-3] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+when a child fails to meet the standards of the school in his rate of learning , insecurity , unhappiness , and other forms of maladjustment frequently follow
+[pool-1-thread-4] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+) has amounted to about one third of those total revenue requirements which the carload freight business is supposed to be called upon to meet
+[pool-1-thread-1] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+as american artists , it was natural that we would want to meet as many soviet artists as possible
+[pool-1-thread-2] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+this letter might not have been necessary had our efforts to meet and talk with you been more successful
+[pool-1-thread-3] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+just yesterday we had met and talked with a living writer , a contemporary of the dead poet , who is known for his ability of manipulating his ideas and his craft more advantageously
+[pool-1-thread-4] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+turning from these problems of the use of evidence , one meets another type of difficulty in fromm's analysis , which is his loose and ambiguous use of certain important terms
+[pool-1-thread-1] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+this is met with scorn by the hearers , who claim that mityukh is lying or drunk
+[pool-1-thread-2] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+and in meeting the demands for urethane foam as a garment interlining , new adhesives and new methods of laminating foam to a substrate have been developed
+[pool-1-thread-3] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+if a branch extended out too far , each man held it back for the next , and if they met a low overhang , each warned the other
+[pool-1-thread-4] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+brittany , that stone-gray mystery through which he traveled for thirty days , sleeping in the barns of farmers or alongside roads , had worked some subtle change in him , he knew , and it was in brittany that he had met pierre
+[pool-1-thread-1] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+but when this proposal was made to his deacon board , he met unanimous opposition
+[pool-1-thread-2] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+he started down the steps to meet the near-blind preacher , who had been one of the early gospelers in paris
+[pool-1-thread-3] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+i did have the decency to call up thelma and tell her i'd met old friends and would be home late
+[pool-1-thread-4] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+i wrote her that i'd met up with eileen and that old bonds had proved too strong and asked her to send my clothes down by express
+[pool-1-thread-1] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+at last he consented to meet her , and following that brief interview claire wrote him a yet more remarkable proposal :
+[pool-1-thread-2] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+turning in at the flannagans' driveway , he tried to remember if he had ever met them
+[pool-1-thread-3] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+her voice was ripe and full and her teeth flashed again in sicilian brilliance before the warm curved lips met and her mouth settled in repose
+[pool-1-thread-4] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+they've never met , you know
+[pool-1-thread-1] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+was it preferable to meet her at home or in the city ? ?
+[pool-1-thread-2] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+in december i wrote her with authority that we would meet on the steps of the hotel astor , a rendezvous spot that i had learned was the most sophisticated
+[pool-1-thread-3] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+she met my eyes , suddenly angry
+[pool-1-thread-4] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+want to try and meet him there '' ? ?
+[pool-1-thread-1] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+we've got one other call to make before i meet alvarez ''
+[pool-1-thread-2] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+`` remember to tell that to the next corpse you meet ''
+[pool-1-thread-3] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+she could always predict what stanley was going to do , ever since she first met him
+[pool-1-thread-4] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+a second scene flashed before his mind , the interior of the garage at the new house and the young bartlett girl turning startled to meet him , the dim dark and the sudden confusion and fear and then the brightness as mae had clicked on the light
+[pool-1-thread-1] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+shrugs met that , from room clerks , from bellhops
+[pool-1-thread-2] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+shrugs met that
+[pool-1-thread-3] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+pamela north said , `` hi '' , to her cats , and added that proper cats met their humans at the door
+[pool-1-thread-4] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+the important thing was that burton had gone somewhere to meet a blackmailer with a gun in his pocket
+[pool-1-thread-1] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+but he was surprised to meet it here
+[pool-1-thread-2] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+we met at maxine's and decided we were set to stay as long as it took , into or even through the evening , to talk things out
+[pool-1-thread-3] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+`` mclish '' , he said as he kicked the horse into motion , `` i'd be a mighty sad man if we never met again ''
+[pool-1-thread-4] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+`` just let me meet up with that damned bushwhackin' coward face-to-face '' ! !
+[pool-1-thread-1] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+glowering looks met them in the bar , but there was no attempt to halt them
+[pool-1-thread-2] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+just as i straightened up with my duffel bag , i heard : `` sahjunt yoorick , meet mrs major j a roebuck ''
+[pool-1-thread-3] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+it was a disturbingly familiar face , too , but i couldn't remember where we had met
+[pool-1-thread-4] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+`` they were supposed to meet thor at nine pm for a conference concerning the ad campaign for their soap , a new angle based on this sx-21 stuff ''
+[pool-1-thread-1] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+i was aware that when our eyes met we both quickly averted them
+[pool-1-thread-2] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+when our eyes met the air was filled with an unuttered message of `` me , too ''
+[pool-1-thread-3] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+i've noticed the way you've been looking at me ever since we met ''
+[pool-1-thread-4] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+she took it grudgingly , her dark eyes baleful as they met his
+[pool-1-thread-1] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+that was where he met penny
+[pool-1-thread-2] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+but they met in one searing moment that gave them to one another instantly
+[pool-1-thread-3] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+keith's eyes met penny's as they stood there in this strange marriage of destruction
+[pool-1-thread-4] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+about keeping warm , about keeping well , about meeting the minor emergencies that came up once , twice , fifty times a day
+[pool-1-thread-1] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+she said to maggie that it was one thing to meet an emergency and another to wallow in it , and it was beginning to look at if this one was going to last forever
+[pool-1-thread-2] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+`` a swell party , send an invite to ever'body but them -- those folks you met at the galt house , the ones i've got to know in this new jockey club affair , the whole dang neighborhood
+[pool-1-thread-3] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+if tommy sat long enough , she would be sure to see all the young officers she had met in san diego and long beach
+[pool-1-thread-4] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+the two met in the captain's cabin
+[pool-1-thread-1] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+in the tiny cabin , alexander met with gansevoort , heiser and wales to speak and to listen
+[pool-1-thread-2] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+the hazel eyes met alexander's
+[pool-1-thread-3] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+he had known when he first helped her to meet the right people and work with them that she did not intend to marry him
+[pool-1-thread-4] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+the night we first met , at one of mrs monmouth's giant parties , he was wearing a brown cashmere jacket with silver buttons and a soft pink viyella shirt ; ;
+[pool-1-thread-1] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+besides , it's important to the way a painter thinks that he should move in a certain atmosphere , an atmosphere in which he may absorb the ideas of other masters , as durer went to italy to meet bellini and mantegna ''
+[pool-1-thread-2] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+the upshot of the evening was that i got the address of pendleton's studio -- or rather , of the studio in which he gave his classes , for he didn't work there himself -- and joined the life class , which met every tuesday and thursday from ten to twelve in the morning
+[pool-1-thread-3] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+it is when i meet someone who was a close friend of the family , and therefore of mine , and they nod to me so coolly and walk away , that it hurts
+[pool-1-thread-4] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+then via called to say they had decided to cremate her -- as they had ellen , the thought leaped to my mind -- and did i want to meet her at the funeral home the next morning
+[pool-1-thread-1] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+just the same , the old woman said , she would write to her nephew in his boxcar and tell him she had met a nice man from his adopted country
+[pool-1-thread-2] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+and sam thanked her , and hoped he might meet her nephew back home , and asked her if she had any further news of the pope
+[pool-1-thread-3] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+devout , orthodox and plain like a family she might meet in brooklyn or malta or ireland
+[pool-1-thread-4] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+they met next morning and all the mornings thereafter
+[pool-1-thread-1] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+pete came to meet us when we stepped out of the elevator on seven -- he'd had a case of post-operative shock , but it was all taken care of now
+[pool-1-thread-2] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+i met claire , which was better
+[pool-1-thread-3] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+but there is more in this than meets the eye
+[pool-1-thread-4] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+i'd never even petted with a boy , and after i met johnnie he never touched me for the longest while , not until i all but threw myself at him
+[pool-1-thread-1] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+the first meeting was held in faneuil hall , a great big place where we were able to meet members from all the other states
+[pool-1-thread-2] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+then he met the grave eyes of his wife , anne , from the photograph next to david's
+[pool-1-thread-3] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+in the first place , it was difficult for us to meet
+[pool-1-thread-4] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+under the circumstances , i had difficulty keeping up with the conversation on the phone , but when i hung up i was reasonably certain that francesca had wanted to remind me of our town meeting the next evening , and how important it was that hank and i be there
+[pool-1-thread-1] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+we didn't even know them till about a month after we moved -- at that time , they had called on us , after i met fran at a pta meeting , and had taken us in hand socially
+[pool-1-thread-2] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+fran and he had met about two years after she had arrived in manhattan from nebraska , or was it wyoming ? ?
+[pool-1-thread-3] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+it was during her `` writing '' period that she and herb met and decided that they were in love
+[pool-1-thread-4] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+the husbands of these women and others i had met in catatonia were distinguished only in that they were , to me at least , indistinguishable
+[pool-1-thread-1] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+these boys acknowledged an introduction to anybody by gently pressing one of his hands in both of theirs , while they gazed , misty-eyed with care , into the eyes of the person they were meeting
+[pool-1-thread-2] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+a woman met a famous author at a literary tea
+[pool-1-thread-3] INFO CoreNLP - [/[0:0:0:0:0:0:0:1]:50020] API call w/annotators tokenize,ssplit,pos,lemma,depparse
+`` oh , i'm so delighted to meet you '' , she gushed
+
