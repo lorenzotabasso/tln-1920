@@ -66,7 +66,7 @@ def make_name(model, vocab, hps):
             x[0, i + 1] = index
         # else:
         #     x[0, i + 1] = index
-        # Originariamente non c'era l'else, ma solo l'elif, da controllre se serve o è corretto l'else
+        # Originariamente non c'era l'else, ma solo l'elif, da controlla re se serve o è corretto l'else
 
         i += 1
 
@@ -93,12 +93,18 @@ while True:
 
     model.train_on_batch(batch.input, batch.target)
 
-    if iteration % 1000 == 0:
+    if iteration % 500 == 0:
 
         print('Names generated after iteration %d:' % iteration)
 
-        for i in range(3):
-            make_name(model, vocab, hps)
+        # TODO: Funziona solo col greedy, perchè il greedy è non deterministico,
+        # con il beam ti stampa 3 nomi uguali perchè il primo è sempre il più
+        # probabile, basta commentarlo
+        make_name_beam(model, vocab, hps)
+
+        # uncomment for greedy search
+        # for i in range(3):
+        #     make_name(model, vocab, hps)
 
         print()
 

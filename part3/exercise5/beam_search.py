@@ -49,31 +49,42 @@ def beam_search(model, vocab, hps):
         tokens = np.transpose(np.array([h.last_token for h in hyps]))
         data[:, step] = tokens
 
-
         all_hyps = []
+        # probabilità del singolo carattere del vocabolario, dal primo all'ultimo
         all_probs = model.predict(data)
         # per ogni cammino nella beam search
         for i, h in enumerate(hyps):
             # generiamo la distribuzione di probabilita'
-            probs = list(all_probs[i,step])
-            probs = probs / np.sum(probs)
+            probs = list(all_probs[i,step]) # per ogni passo prende le probabilità
+            probs = probs / np.sum(probs)  # normalizzazione
+            # array degli indici delle posizioni dei caratteri più probabili per quel passo
+            # esempio: alla prima iterazione avremo come primo carattere (+ probabile)
+            # il carattere in posizione 63, che è la "e"
             indexes = probs.argsort()[::-1]
             # scegliamo 2 * beam_size possibili espansioni dei cammini
             for j in range(hps.beam_size*2):
                 # TODO: aggiungere ad all_hyps l'estensione delle ipotesi con il j-esimo indice e la sua probabilità
-                pass
+                temp = h.extend(indexes[j], probs[indexes[j]])
+                all_hyps.append(temp)
+
 
         # teniamo solo beam_size cammini migliori
         hyps = []
         for h in sort_hyps(all_hyps):
             if h.last_token == vocab.char2id("</s>"):
-                if step >= hps.seq_len:
-                    results.append(h)
+                # if step >= hps.seq_len:
+                # Confronta questa guardia con quella del while a riga 46
+                # contro:
+                results.append(h)
             else:
                 hyps.append(h)
 
             if len(hyps) == hps.beam_size or len(results) == hps.beam_size:
                 break
+
+        # TODO: Aggiunta per farlo funzionare
+        if len(hyps) == 0:
+            hyps = results
 
         # aggiorniamo data con i token migliori
         if step+2 < hps.seq_len:
@@ -96,4 +107,5 @@ def sort_hyps(hyps):
     # 1. Basta richimare la funzione corretta tra avg_log_prob e log_prob
     # (proprieties della classe top-level)
     # 2. per completarla, prendre spunto dalla versione greedy della makename
-    pass
+    toret = sorted(hyps, key=lambda x: x.avg_log_prob, reverse=True)
+    return toret
