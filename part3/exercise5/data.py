@@ -5,7 +5,6 @@ from tensorflow.core.example import example_pb2
 
 
 def example_generator(data_path):
-
     while True:
 
         filelist = glob.glob(data_path)
@@ -53,11 +52,10 @@ class Vocabulary(object):
                 i += 1
 
                 if i == voc_size:
-                    print(f"raggiunta dimensione massima vocabolario. Ultima parola inserita: {self._id2char[i-1]}")
+                    print(f"raggiunta dimensione massima vocabolario. Ultima parola inserita: {self._id2char[i - 1]}")
                     break
 
             self._size = i
-
 
     def char2id(self, char):
 
@@ -76,6 +74,5 @@ class Vocabulary(object):
 
 
 if __name__ == '__main__':
-
     vocab = Vocabulary('vocabulary.txt', 400)
     print(vocab.size)

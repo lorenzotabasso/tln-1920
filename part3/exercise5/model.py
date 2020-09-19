@@ -94,7 +94,6 @@ while True:
     model.train_on_batch(batch.input, batch.target)
 
     if iteration % 500 == 0:
-
         print('Names generated after iteration %d:' % iteration)
 
         # TODO: Funziona solo col greedy, perchè il greedy è non deterministico,

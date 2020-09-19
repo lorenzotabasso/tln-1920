@@ -1,16 +1,15 @@
 import numpy as np
 
+
 class Hypothesis(object):
 
     def __init__(self, tokens, log_probs):
-
         self._tokens = tokens
         self._log_probs = log_probs
 
     def extend(self, token, log_prob):
-
-        return Hypothesis(self._tokens+[token],
-                          self._log_probs+[log_prob])
+        return Hypothesis(self._tokens + [token],
+                          self._log_probs + [log_prob])
 
     @property
     def last_token(self):
@@ -34,7 +33,6 @@ class Hypothesis(object):
 
 
 def beam_search(model, vocab, hps):
-
     start_id = vocab.char2id('<s>')
 
     hyps = [Hypothesis([start_id], [0.0]) for _ in range(hps.beam_size)]
@@ -55,18 +53,17 @@ def beam_search(model, vocab, hps):
         # per ogni cammino nella beam search
         for i, h in enumerate(hyps):
             # generiamo la distribuzione di probabilita'
-            probs = list(all_probs[i,step]) # per ogni passo prende le probabilità
+            probs = list(all_probs[i, step])  # per ogni passo prende le probabilità
             probs = probs / np.sum(probs)  # normalizzazione
             # array degli indici delle posizioni dei caratteri più probabili per quel passo
             # esempio: alla prima iterazione avremo come primo carattere (+ probabile)
             # il carattere in posizione 63, che è la "e"
             indexes = probs.argsort()[::-1]
             # scegliamo 2 * beam_size possibili espansioni dei cammini
-            for j in range(hps.beam_size*2):
+            for j in range(hps.beam_size * 2):
                 # TODO: aggiungere ad all_hyps l'estensione delle ipotesi con il j-esimo indice e la sua probabilità
                 temp = h.extend(indexes[j], probs[indexes[j]])
                 all_hyps.append(temp)
-
 
         # teniamo solo beam_size cammini migliori
         hyps = []
@@ -87,9 +84,9 @@ def beam_search(model, vocab, hps):
             hyps = results
 
         # aggiorniamo data con i token migliori
-        if step+2 < hps.seq_len:
+        if step + 2 < hps.seq_len:
             tokens = np.matrix([h.tokens for h in hyps])
-            data[:, :step+2] = tokens
+            data[:, :step + 2] = tokens
 
         step += 1
 
