@@ -5,6 +5,11 @@ from nltk.corpus import stopwords
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
+from numpy.linalg import norm
+import Levenshtein
+from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.metrics.pairwise import cosine_similarity
+
 
 
 def load_data():
@@ -72,7 +77,7 @@ def compute_overlap_terms(definitions):
         a = preprocess(definitions[i])  # set of terms of the first definition
         j = i + 1
         while j < len(definitions) - 1:
-            print(i,j)  # DEBUG
+            # print(i,j)  # DEBUG
             b = preprocess(definitions[j])  # set of terms of the second definition
             # Computing similarity between definitions
             t = len(a & b) / min(len(a), len(b))
@@ -103,7 +108,7 @@ def compute_overlap_pos(definitions):
 
         j = i + 1
         while j < len(definitions) - 1:
-            print(i,j)  # DEBUG
+            # print(i,j)  # DEBUG
             text2 = word_tokenize(definitions[j])
             temp_b = nltk.pos_tag(text2)
             b = set(y[1] for y in temp_b)
@@ -119,6 +124,66 @@ def compute_overlap_pos(definitions):
     return results
 
 
+def compute_overlap_cosine(definitions):
+    """
+    It computes the overlap between the two set of the preprocessed definitions 
+    using cosine similarity.
+    :param definitions: a list of definitions (strings)
+    :return: a list of length |definitions| containing the maximum similarity
+    score of each definition.
+    """
+    
+    # Preprocess step.
+    # It returns original array preprocessed without eliminating duplicates (no Sets)
+    clean_defs = []
+    for d in definitions:
+        # Removing stopwords
+        d = d.lower()
+        stop_words = set(stopwords.words('english'))
+        punct = {',', ';', '(', ')', '{', '}', ':', '?', '!', '.'}
+        wnl = nltk.WordNetLemmatizer()
+        tokens = nltk.word_tokenize(d)
+        tokens = list(
+            filter(lambda x: x not in stop_words and x not in punct, tokens))
+
+        # Lemmatization
+        lemmatized_tokens = ' '.join(list(wnl.lemmatize(t) for t in tokens))
+
+        clean_defs.append(lemmatized_tokens)
+    
+    '''
+    CountVectorizer will create k vectors in n-dimensional space, where:
+    - k is the number of sentences,
+    - n is the number of unique words in all sentences combined.
+    If a sentence contains a certain word, the value will be 1 and 0 otherwise
+    '''
+    vectorizer = CountVectorizer().fit_transform(clean_defs)
+    vectors = vectorizer.toarray()
+
+    results = []
+    i = 0
+    while i < len(vectors):
+        a = vectors[i]
+        j = i + 1
+        while j < len(definitions) - 1:
+            # print(i,j)  # DEBUG
+            b = vectors[j]
+
+            # Computing cosine similarity between definitions.
+            # Cosine_similarity() expect 2D arrays, and the input vectors are 
+            # 1D arrays, so we need reshaping.
+            a = a.reshape(1, -1)
+            b = b.reshape(1, -1)
+            res = cosine_similarity(a, b)[0][0]
+            
+            results.append(res)
+            j = j + 1
+
+        i = i + 1
+
+    return results
+    
+
 if __name__ == "__main__":
 
     options = {
@@ -132,6 +197,8 @@ if __name__ == "__main__":
     second_row = []  # specific abstract, concrete
     third_row = []  # generic 2 abstract, concrete
     fourth_row = []  # specific 2 abstract, concrete
+    fifth_row = []  # generic 3 abstract, concrete
+    sixth_row = []  # specific 3 abstract, concrete
 
     percentage1 = {
         "generic_abstract": 0,
@@ -147,6 +214,13 @@ if __name__ == "__main__":
         "specific_concrete": 0
     }
 
+    percentage3 = {
+        "generic_abstract": 0,
+        "generic_concrete": 0,
+        "specific_abstract": 0,
+        "specific_concrete": 0
+    }
+
     for d in defs:
         # computing the mean of the overlap of the definitions
         overlap_terms = compute_overlap_terms(d)
@@ -154,6 +228,9 @@ if __name__ == "__main__":
 
         overlap_pos = compute_overlap_pos(d)
         mean_pos = np.mean(overlap_pos)
+
+        overlap_cosine = compute_overlap_cosine(d)
+        mean_cosine = np.mean(overlap_cosine)
 
         # making the percentage of the mean
         # percentage = mean * 100 / len(d)
@@ -164,32 +241,46 @@ if __name__ == "__main__":
             percentage1["generic_abstract"] = mean_terms
             third_row.append('{:.0%}'.format(mean_pos))
             percentage2["generic_abstract"] = mean_pos
+            fifth_row.append('{:.0%}'.format(mean_cosine))
+            percentage3["generic_abstract"] = mean_cosine
         elif count == 1:
             first_row.append('{:.0%}'.format(mean_terms))
             percentage1["generic_concrete"] = mean_terms
             third_row.append('{:.0%}'.format(mean_pos))
             percentage2["generic_concrete"] = mean_pos
+            fifth_row.append('{:.0%}'.format(mean_cosine))
+            percentage3["generic_abstract"] = mean_cosine
         elif count == 2:
             second_row.append('{:.0%}'.format(mean_terms))
             percentage1["specific_abstract"] = mean_terms
             fourth_row.append('{:.0%}'.format(mean_pos))
             percentage2["specific_abstract"] = mean_pos
+            sixth_row.append('{:.0%}'.format(mean_cosine))
+            percentage3["generic_abstract"] = mean_cosine
         else:
             second_row.append('{:.0%}'.format(mean_terms))
             percentage1["specific_concrete"] = mean_terms
             fourth_row.append('{:.0%}'.format(mean_pos))
             percentage2["specific_concrete"] = mean_pos
+            sixth_row.append('{:.0%}'.format(mean_cosine))
+            percentage3["generic_abstract"] = mean_cosine
 
         count += 1
 
     # build and print dataframe
-    df = pd.DataFrame([first_row, second_row], columns=["Abstract", "Concrete"],
+    df_baseline = pd.DataFrame([first_row, second_row], columns=["Abstract", "Concrete"],
                       index=["Generic", "Specific"])
-    df_max = pd.DataFrame([third_row, fourth_row], columns=["Abstract", "Concrete"],
+    df_pos = pd.DataFrame([third_row, fourth_row], columns=["Abstract", "Concrete"],
                           index=["Generic", "Specific"])
-    print(df)
+    df_cosine = pd.DataFrame([fifth_row, sixth_row], columns=["Abstract", "Concrete"],
+                          index=["Generic", "Specific"])
+
+    print("\nBaseline:\n")
+    print(df_baseline)
     print("\nPOS Experiment:\n")
-    print(df_max)
+    print(df_pos)
+    print("\nCosine Similarity Experiment:\n")
+    print(df_cosine)
 
     # Pandas Print -------------------------------------------------------------
 
@@ -198,11 +289,12 @@ if __name__ == "__main__":
               [percentage1["specific_abstract"], percentage1["specific_concrete"]]]
     df1 = pd.DataFrame(print1, columns=["Abstract", "Concrete"],
                       index=["Generic", "Specific"])
+                      
     df1.plot.bar()
     plt.xticks(rotation=30, horizontalalignment="center")
     plt.title("Baseline")
-    plt.xlabel("Similarity (higher is better)")
-    plt.ylabel("Concepts")
+    plt.xlabel("Concepts")
+    plt.ylabel("Similarity (higher is better)")
     plt.show()
 
     # POS Experiment
@@ -213,6 +305,20 @@ if __name__ == "__main__":
     df2.plot.bar()
     plt.xticks(rotation=30, horizontalalignment="center")
     plt.title("POS Experiment")
+    plt.xlabel("Concepts")
+    plt.ylabel("Similarity (higher is better)")
+    plt.show()
+
+    # Cosine Similarity Experiment
+    print3 = [[percentage3["generic_abstract"], percentage3["generic_concrete"]],
+              [percentage3["specific_abstract"], percentage3["specific_concrete"]]]
+    df3 = pd.DataFrame(print2, columns=["Abstract", "Concrete"],
+                       index=["Generic", "Specific"])
+    df3.plot.bar()
+    plt.xticks(rotation=30, horizontalalignment="center")
+    plt.title("Cosine Similarity Experiment")
+    plt.xlabel("Concepts")
+    plt.ylabel("Similarity (higher is better)")
     plt.show()
 
     # TODO: fare le cloud word?
@@ -222,5 +328,3 @@ if __name__ == "__main__":
     # 1. The ability of one to make free choices and act by following his (NON mia)
     # 2. The ability of make independent choices
     # 3. When you feel sad for someone of you forgive him for something.
-
-    # vedere minuto 13 - 16
