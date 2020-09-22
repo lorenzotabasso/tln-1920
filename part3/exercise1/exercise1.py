@@ -72,7 +72,7 @@ def compute_overlap_terms(definitions):
         a = preprocess(definitions[i])  # set of terms of the first definition
         j = i + 1
         while j < len(definitions) - 1:
-            # print(i,j)  # DEBUG
+            print(i,j)  # DEBUG
             b = preprocess(definitions[j])  # set of terms of the second definition
             # Computing similarity between definitions
             t = len(a & b) / min(len(a), len(b))
@@ -103,7 +103,7 @@ def compute_overlap_pos(definitions):
 
         j = i + 1
         while j < len(definitions) - 1:
-            # print(i,j)  # DEBUG
+            print(i,j)  # DEBUG
             text2 = word_tokenize(definitions[j])
             temp_b = nltk.pos_tag(text2)
             b = set(y[1] for y in temp_b)
@@ -122,7 +122,7 @@ def compute_overlap_pos(definitions):
 if __name__ == "__main__":
 
     options = {
-        "output": "./input/definitions.csv"
+        "output": "./part3/exercise1/input/definitions.csv"
     }
 
     defs = load_data()  # Loading the definitions.csv file
@@ -201,6 +201,8 @@ if __name__ == "__main__":
     df1.plot.bar()
     plt.xticks(rotation=30, horizontalalignment="center")
     plt.title("Baseline")
+    plt.xlabel("Similarity (higher is better)")
+    plt.ylabel("Concepts")
     plt.show()
 
     # POS Experiment
@@ -212,6 +214,8 @@ if __name__ == "__main__":
     plt.xticks(rotation=30, horizontalalignment="center")
     plt.title("POS Experiment")
     plt.show()
+
+    # TODO: fare le cloud word?
 
     # TODO: Make report.
     # Sono state aggiunte le seguenti frasi:
