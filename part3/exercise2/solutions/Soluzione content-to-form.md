@@ -2,11 +2,11 @@
 
 Concetti:
 
-- politics,
 - justice,
-- greed,
 - patience,
+- greed,
+- politics,
 - food,
+- radiator
 - vehicle,
 - screw,
-- radiator
