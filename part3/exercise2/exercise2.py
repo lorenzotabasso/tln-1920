@@ -1,7 +1,9 @@
 import csv
 import nltk
+from nltk import word_tokenize
 from nltk.corpus import stopwords
 from nltk.corpus import wordnet as wn
+from sklearn.feature_extraction.text import CountVectorizer
 
 from part3.exercise2.utilities.lesk import lesk
 
@@ -65,31 +67,77 @@ if __name__ == "__main__":
 
     content = load_data()  # Loading the content-to-form.csv file
 
-    final_test = {}
-    final = {}
+    '''
+    1. prendo definzione, disambiguo con pos-tagging. il primo nome è il genus
+    2. come approccio personalizzato, teveno un dizionario di genus (dopo aver esplorato tutte le definizioni) e espandevo solo il genus più frequente
+    riducendo la ricerca
+    3. prendo da wordnet i synsets di quel sostantivo, e per ognuno di essi parto in basso con gli iponimi
+    4. calcolo l'iponimo dell'iponimo dell'iponimo..., per non sclerare utilizza la closure (chiusura trasitiva). Calcolo gli iponimi fino a un certo 
+    livello
+    5. calcola iponimo con più overlapping, stili classifica
+    '''
 
     for index in content:
-        max = ("", 0)
+        # for index in range(1):
+
+        hyponyms_list = []
+
         for definition in content[index]:
-            for word in preprocess(definition):
-                common = set()
+            # for definition in content[0]:
+            local_genus = {}
+            hyponyms = []
 
-                for s in wn.synsets(word):
-                    common.add(s.name())
+            def_tokens = word_tokenize(definition)
+            results = nltk.pos_tag(def_tokens)
 
-                for synset_name in common:
-                    best_synset = lesk(preprocess_synset(synset_name), definition)
-                    value = best_synset.name()
+            possibles_genus = list(filter(lambda x: x[1] == "NN", results))
+            # Es.: [('abstract', 'NN'), ('concept', 'NN'), ('idea', 'NN'), ('fairness', 'NN'), ('front', 'NN'), ('code', 'NN'), ('community', 'NN')]
 
-                    if not value in final_test:
-                        final_test[value] = 1
-                    else:
-                        final_test[value] += 1
-                        if final_test[value] > max[1]:
-                            max = (value, final_test[value])
+            for g in possibles_genus:
+                if not g[0] in local_genus:
+                    local_genus[g[0]] = 1
+                else:
+                    local_genus[g[0]] += 1
 
-        final[index] = max
-        print("INDEX: {}, MAX: {}".format(index, max))
-        final_test = {}
+            #         print(index, genus)
+            #         print("{} - {}\n".format(index, local_genus))
 
-    print(final)
+            if len(local_genus) > 0:
+                genus = max(local_genus, key=local_genus.get)
+                #             print("GENUS: " + genus)
+
+                syns = wn.synsets(genus)
+
+                # Prendiamo tutti gli iponimi per il genus della singola definizione
+                for i, s in enumerate(syns, start=0):
+                    hypon = lambda s: s.hyponyms()  # SOTTONOME, significato semantico incluso in altra parola
+                    all_hypon = list(s.closure(hypon, depth=10))  # TODO: aumentare a 2,3
+                    hyponyms.extend([x.name().split(".")[0] for x in all_hypon])
+            #                 print("SYN: {} \t HYPER: {}".format(s,t))
+
+            #             print(index, hyponyms, "\n")
+            #         else:
+            #             print("NADA")
+
+            hyponyms_list.append(' '.join(hyponyms))
+
+        #     print(hyponyms_list)
+
+        '''
+        CountVectorizer will create k vectors in n-dimensional space, where:
+        - k is the number of sentences,
+        - n is the number of unique words in all sentences combined.
+        If a sentence contains a certain word, the value will be 1 and 0 otherwise
+        '''
+
+        vectorizer = CountVectorizer()
+        matrix = vectorizer.fit_transform(hyponyms_list)
+
+        feature_list = vectorizer.get_feature_names()
+        vectors = matrix.toarray()
+
+        m = vectors.sum(axis=0).argmax()
+
+        print(m)
+        print(feature_list[m] + '\n')
+    #     print(feature_list)
