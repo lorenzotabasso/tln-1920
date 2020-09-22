@@ -187,7 +187,7 @@ def compute_overlap_cosine(definitions):
 if __name__ == "__main__":
 
     options = {
-        "output": "./part3/exercise1/input/definitions.csv"
+        "output": "./input/definitions.csv"
     }
 
     defs = load_data()  # Loading the definitions.csv file
