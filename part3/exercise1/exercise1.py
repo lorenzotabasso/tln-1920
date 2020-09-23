@@ -11,7 +11,6 @@ from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
 
-
 def load_data():
     """
     It reads che definition's CSV
@@ -231,9 +230,6 @@ if __name__ == "__main__":
 
         overlap_cosine = compute_overlap_cosine(d)
         mean_cosine = np.mean(overlap_cosine)
-
-        # making the percentage of the mean
-        # percentage = mean * 100 / len(d)
 
         # filling the rows
         if count == 0:

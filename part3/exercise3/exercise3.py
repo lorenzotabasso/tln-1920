@@ -138,7 +138,7 @@ def hanks(verb):
             else:
                 semantic_types[t] = 1
 
-    print('[4] - Finding Semantic Clusters (percentage, count of instances, semantic cluster):')
+    print('\n[4] - Finding Semantic Clusters (percentage, count of instances, semantic cluster):')
     for key, value in sorted(semantic_types.items(), key=lambda x: x[1]):
         to_print = str(round((value / tot) * 100, 2))
         print("\t[{}%] - {} - {}".format(to_print, value, key))

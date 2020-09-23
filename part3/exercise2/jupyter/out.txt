@@ -1,0 +1,613 @@
+0, ['Salinger', 'said', 'the', 'work', 'President', 'Kennedy', ',', 'advisers', ',', 'and', 'members', 'of', 'his', 'staff', 'were', 'doing', 'on', 'the', 'address', 'involved', 'composition', 'and', 'wording', ',', 'rather', 'than', 'last', 'minute', 'decisions', 'on', 'administration', 'plans', 'to', 'meet', 'the', 'latest', 'Berlin', 'crisis', 'precipitated', 'by', "Russia's", 'demands', 'and', 'proposals', 'for', 'the', 'city', '.']
+
+1, ['He', 'said', 'his', 'plan', 'is', 'designed', 'to', '``', 'meet', 'the', 'needs', 'of', 'those', 'millions', 'who', 'have', 'no', 'wish', 'to', 'receive', 'care', 'at', 'the', "taxpayers'", 'expense', ',', 'but', 'who', 'are', 'nevertheless', 'staggered', 'by', 'the', 'drain', 'on', 'their', 'savings', '--', 'or', 'those', 'of', 'their', 'children', '--', 'caused', 'by', 'an', 'extended', 'hospital', 'stay', "''", '.']
+
+2, ['``', 'This', 'is', 'a', 'very', 'modest', 'proposal', 'cut', 'to', 'meet', 'absolutely', 'essential', 'needs', "''", ',', 'he', 'said', ',', '``', 'and', 'with', 'sufficient', "'", 'deductible', "'", 'requirements', 'to', 'discourage', 'any', 'malingering', 'or', 'unnecessary', 'overcrowding', 'of', 'our', 'hospitals', '.']
+
+3, ['The', 'President', 'said', 'the', "nation's", '92', 'medical', 'and', '47', 'dental', 'schools', 'cannot', 'now', 'handle', 'the', 'student', 'load', 'needed', 'to', 'meet', 'the', 'rising', 'need', 'for', 'health', 'care', '.']
+
+4, ['In', 'Oslo', ',', 'the', 'ministers', 'have', 'met', 'in', 'a', 'climate', 'of', 'candor', ',', 'and', 'made', 'a', 'genuine', 'attempt', 'to', 'get', 'information', 'and', 'understanding', 'one', "another's", 'problems', '.']
+
+5, ['Mr.', 'Martinelli', 'said', 'yesterday', 'that', 'the', 'Citizens', 'Group', 'of', 'Johnston', 'will', 'meet', 'again', 'July', '24', 'to', 'plan', 'further', 'strategy', 'in', 'the', 'charter', 'movement', '.']
+
+6, ['He', 'said', 'Mitchell', 'is', 'against', 'the', 'centralization', 'of', 'government', 'in', 'Washington', 'but', 'looks', 'to', 'the', 'Kennedy', 'Administration', 'for', 'aid', 'to', 'meet', 'New', 'Jersey', 'school', 'and', 'transportation', 'crises', '.']
+
+7, ['But', 'I', 'shall', 'campaign', 'on', 'the', 'Meyner', 'record', 'to', 'meet', 'the', 'needs', 'of', 'the', 'years', 'ahead', "''", '.']
+
+8, ['Three', 'groups', 'to', 'meet']
+
+9, ['If', 'Barnett', "doesn't", 'call', 'a', 'special', 'session', 'in', '1961', ',', 'it', 'will', 'be', 'the', 'first', 'year', 'in', 'the', 'last', 'decade', 'that', 'the', 'Legislature', 'has', 'not', 'met', 'in', 'regular', 'or', 'special', 'session', '.']
+
+10, ['``', 'The', "church's", 'ability', 'to', 'change', 'her', 'methods', 'is', 'going', 'to', 'determine', 'her', 'ability', 'to', 'meet', 'the', 'challenge', 'of', 'this', 'hour', "''", '.']
+
+11, ['The', 'Texans', 'have', 'two', 'more', 'road', 'games', '--', 'at', 'Buffalo', 'and', 'Houston', '--', 'before', 'they', 'play', 'for', 'the', 'home', 'folks', 'again', ',', 'and', 'it', 'looks', 'as', 'if', 'coach', 'Hank', "Stram's", 'men', 'will', 'meet', 'the', 'Bills', 'just', 'as', 'they', 'are', 'developing', 'into', 'the', 'kind', 'of', 'team', 'they', 'were', 'expected', 'to', 'be', 'in', 'pre-season', 'reckonings', '.']
+
+12, ['On', 'Friday', ',', 'Roger', 'Maris', ',', 'the', 'Yankee', 'outfielder', 'and', 'winner', 'of', 'the', 'American', "League's", 'most-valuable-player', 'award', ',', 'will', 'meet', 'with', 'Roy', 'Hamey', ',', 'the', 'general', 'manager', '.']
+
+13, ['The', 'last', 'obstacle', 'in', 'Mrs.', "Geraghty's", 'globe-girdling', 'trip', 'was', 'smoothed', 'out', 'when', 'a', 'representative', 'of', 'Syria', 'called', 'upon', 'her', 'to', 'explain', 'that', 'his', 'brother', 'would', 'meet', 'her', 'at', 'the', 'border', 'of', 'that', 'country', '--', 'so', 'newly', 'separated', 'from', 'Egypt', 'and', 'the', 'United', 'Arab', 'Republic', 'that', 'she', "hadn't", 'been', 'able', 'to', 'obtain', 'a', 'visa', '.']
+
+14, ['The', 'Richard', 'S.', "Burkes'", 'home', 'in', 'Wayne', 'may', 'be', 'the', 'setting', 'for', 'the', 'wedding', 'reception', 'for', 'their', 'daughter', ',', 'Helen', 'Lambert', ',', 'and', 'the', 'young', 'Italian', 'she', 'met', 'last', 'year', 'while', 'studying', 'in', 'Florence', 'during', 'her', 'junior', 'year', 'at', 'Smith', 'college', '.']
+
+15, ['He', 'is', 'Aldo', 'Rostagno', ',', 'son', 'of', 'the', 'Guglielmo', 'Rostagnos', 'of', 'Florence', 'whom', 'the', 'Burkes', 'met', 'last', 'year', 'in', 'Europe', '.']
+
+16, ['A', 'cheer', 'here', 'for', 'Francis', 'Lorenz', ',', 'state', 'treasurer', ',', 'who', 'will', 'meet', 'with', 'the', 'probate', 'advisory', 'board', 'of', 'the', 'Chicago', 'Bar', 'association', ',', 'for', 'suggestions', 'on', 'how', 'to', 'handle', 'the', 'opening', 'of', 'safety', 'deposit', 'boxes', 'after', 'somebody', 'dies', '.']
+
+17, ['A', '14-power', 'conference', 'on', 'Laos', 'should', 'then', 'meet', 'on', 'May', '5', ',', 'he', 'said', '.']
+
+18, ['``', 'Emory', 'could', 'not', 'continue', 'to', 'operate', 'according', 'to', 'its', 'present', 'standards', 'as', 'an', 'institution', 'of', 'higher', 'learning', ',', 'of', 'true', 'university', 'grade', ',', 'and', 'meet', 'its', 'financial', 'obligations', ',', 'without', 'the', 'tax-exemption', 'privileges', 'which', 'are', 'available', 'to', 'it', 'only', 'so', 'long', 'as', 'it', 'conforms', 'to', 'the', 'aforementioned', 'constitutional', 'and', 'statutory', 'provisions', "''", ',', 'the', 'statement', 'said', '.']
+
+19, ['Charles', 'A.', 'Black', ',', 'COAHR', 'chairman', ',', 'said', 'Friday', 'that', 'three', 'theater', 'representatives', 'had', 'agreed', 'to', 'meet', 'with', 'the', 'students', 'on', 'Oct.', '31', 'but', 'had', 'failed', 'to', 'show', 'up', '.']
+
+20, ['Stein', 'said', 'he', 'needed', 'the', 'money', ',', 'Leavitt', 'said', ',', 'to', '``', 'meet', 'the', 'payroll', "''", 'at', 'National', 'Maintenance', 'company', '.']
+
+21, ['It', 'is', 'no', 'coincidence', 'that', 'the', 'Texas', 'Cotton', "Ginner's", 'Association', 'is', 'meeting', 'here', 'this', 'week', 'for', 'the', '46th', 'time', 'in', 'their', '52-year', 'history', '.']
+
+22, ['He', 'cited', ',', 'as', 'an', 'example', ',', 'how', 'the', 'American', 'camera', 'industry', 'has', 'been', 'able', 'to', 'meet', 'successfully', 'the', 'competition', 'of', 'Japan', 'despite', 'lower', 'Japanese', 'labor', 'costs', ',', 'by', 'improving', 'its', 'production', 'know-how', 'and', 'technology', '.']
+
+23, ['President', 'Kennedy', 'will', 'meet', 'with', 'Soviet', 'Premier', 'Nikita', 'S.', 'Khrushchev', 'in', 'Vienna', 'June', '3', 'and', '4', '.']
+
+24, ['The', 'U.', 'S.', 'and', 'Soviet', 'heads', 'of', 'Government', 'have', 'met', 'three', 'times', 'since', 'Sir', 'Winston', 'Churchill', 'in', '1953', 'introduced', 'a', 'new', 'word', 'into', 'international', 'diplomacy', 'with', 'his', 'call', 'for', 'a', 'fresh', 'approach', 'to', 'the', 'problem', 'of', 'peace', '``', 'at', 'the', 'summit', 'of', 'the', 'nations', "''", '.']
+
+25, ['There', 'was', 'also', 'the', 'fact', 'that', 'by', 'the', 'time', 'he', 'meets', 'Mr.', 'Khrushchev', ',', 'the', 'President', 'will', 'have', 'completed', 'conversations', 'with', 'all', 'the', 'other', 'principal', 'Allied', 'leaders', '.']
+
+26, ['Moreover', ',', 'the', 'President', 'is', 'meeting', 'the', 'Soviet', 'leader', 'at', 'a', 'time', 'when', 'the', 'Administration', 'has', 'still', 'not', 'decided', 'on', 'the', 'scope', 'of', "America's", 'firm', 'foreign', 'policy', 'commitments', '.']
+
+27, ['For', 'while', 'the', 'past', 'needs', 'of', 'the', 'Church', 'in', 'this', 'country', 'may', 'have', 'been', 'adequately', 'met', 'by', 'collegiate', 'institutions', ',', 'which', 'in', 'temper', 'and', 'tone', 'closely', 'resembled', 'junior', 'colleges', 'and', 'finishing', 'schools', ',', 'it', 'would', 'seem', 'that', "today's", 'need', 'is', 'for', 'the', 'college', 'which', 'more', 'closely', 'resembles', 'the', 'university', 'in', 'its', '``', 'pursuit', 'of', 'excellence', "''", '.']
+
+28, ['Paradoxically', ',', 'the', 'same', 'week', 'in', 'which', 'Senator', 'McClellan', 'was', 'attempting', 'to', 'extend', 'the', 'anti-trust', 'act', 'to', 'labor', 'in', 'transportation', ',', 'the', 'Civil', 'Aeronautics', 'Board', 'was', 'assuring', 'the', 'airlines', 'that', 'if', 'they', 'met', 'in', 'concert', 'to', 'eliminate', 'many', 'costly', 'features', 'of', 'air', 'travel', ',', 'the', 'action', 'would', 'not', 'be', 'deemed', 'a', 'violation', 'of', 'the', 'anti-trust', 'act', '.']
+
+29, ['One', 'good', 'indication', 'of', 'the', 'two', "men's", 'personalities', 'is', 'the', 'way', 'they', 'reacted', 'to', 'meeting', 'their', 'own', 'heroes', '.']
+
+30, ['Chaplin', ',', '71', ',', 'who', 'met', 'K.', 'when', 'the', 'Soviet', 'boss', 'visited', 'England', 'in', '1956', ',', 'confided', 'that', 'he', 'hopes', 'to', 'visit', 'Russia', 'some', 'time', 'this', 'summer', 'because', '``', 'I', 'have', 'marveled', 'at', 'your', 'grandiose', 'experiment', 'and', 'I', 'believe', 'in', 'your', 'future', "''", '.']
+
+31, ['Vague', 'in', 'wording', ',', 'it', 'called', 'for', 'withdrawal', 'of', 'Belgian', 'troops', 'and', 'authorized', 'the', 'Secretary-General', '``', 'to', 'take', 'the', 'necessary', 'steps', 'to', 'provide', 'the', '(', 'Congolese', ')', 'Government', 'with', 'such', 'military', 'assistance', 'as', 'may', 'be', 'necessary', ',', 'until', ',', 'through', 'the', 'efforts', 'of', 'the', 'Congolese', 'Government', 'with', 'the', 'technical', 'assistance', 'of', 'the', 'United', 'Nations', ',', 'the', 'national', 'security', 'forces', 'may', 'be', 'able', ',', 'in', 'the', 'opinion', 'of', 'the', 'Government', ',', 'to', 'meet', 'fully', 'their', 'tasks', '.']
+
+32, ['A', 'startlingly', 'high', 'percentage', 'do', 'not', 'exceed', '$500', 'annually', ',', 'which', 'includes', 'the', "librarian's", 'salary', ',', 'and', 'not', 'even', 'the', 'New', 'York', 'Public', 'has', 'enough', 'money', 'to', 'meet', 'its', 'needs', '--', 'this', 'in', 'the', "world's", 'richest', 'city', '.']
+
+33, ['It', 'was', 'faced', 'immediately', 'with', 'a', 'showdown', 'on', 'the', 'schools', ',', 'an', 'issue', 'which', 'was', 'met', 'squarely', 'in', 'conjunction', 'with', 'the', 'governor', 'with', 'a', 'decision', 'not', 'to', 'risk', 'abandoning', 'public', 'education', '.']
+
+34, ['It', 'is', 'good', 'to', 'know', 'that', 'Georgia', 'will', 'continue', 'to', 'have', 'sufficient', 'electrical', 'power', 'not', 'only', 'to', 'meet', 'the', 'demands', 'of', 'normal', 'growth', 'but', 'to', 'encourage', 'a', 'more', 'rapid', 'rate', 'of', 'industrialization', '.']
+
+35, ['Thirteen', 'Italian', 'airmen', 'who', 'went', 'to', 'the', 'Congo', 'to', 'serve', 'the', 'cause', 'of', 'peace', 'under', 'the', 'United', 'Nations', 'banner', 'have', 'instead', 'met', 'violent', 'death', 'at', 'the', 'hands', 'of', 'Congolese', 'troops', 'supposedly', 'their', 'friends', '.']
+
+36, ['But', 'the', 'internationalists', 'have', 'taken', 'over', 'the', 'governing', 'body', 'of', 'the', 'bar', ',', 'and', 'when', 'the', 'lads', 'met', 'in', 'St.', 'Louis', ',', 'it', 'was', 'not', 'to', 'grumble', 'about', 'the', 'humidity', 'but', 'to', 'vote', 'unanimously', 'that', 'the', 'United', 'Nations', 'was', 'scarcely', 'less', 'than', 'wonderful', ',', 'despite', 'an', 'imperfection', 'here', 'and', 'there', '.']
+
+37, ['The', 'U.N.', 'session', 'scheduled', 'for', 'today', 'will', 'meet', 'under', 'the', 'cloud', 'of', 'his', 'passing', '.']
+
+38, ['The', 'Inter-american', 'Press', 'Association', ',', 'which', 'blankets', 'the', 'Western', 'Hemisphere', 'from', 'northern', 'Canada', 'to', 'Cape', 'Horn', ',', 'is', 'meeting', 'in', 'New', 'York', 'City', 'this', 'week', 'for', 'the', 'first', 'time', 'in', 'eleven', 'years', '.']
+
+39, ['When', 'a', 'person', 'meets', "God's", 'requirements', 'for', 'the', 'experience', 'of', 'forgiveness', 'he', 'is', 'forgiven', '.']
+
+40, ['The', 'three', 'would', 'never', 'meet', 'again', ',', 'but', 'for', 'some', 'reason', 'or', 'other', 'Mr.', 'Podger', 'was', 'sure', 'he', 'would', 'always', 'remember', 'the', 'incident', '.']
+
+41, ['It', 'met', 'a', 'serious', 'rebuff', 'in', 'New', 'Orleans', ',', 'where', 'the', 'two', 'schools', 'selected', 'for', 'the', 'first', 'moves', 'toward', 'integration', 'were', 'boycotted', 'by', 'white', 'parents', '.']
+
+42, ['Generally', ',', 'throughout', 'the', 'South', ',', 'there', 'is', 'a', 'growing', 'impatience', 'with', 'the', 'pattern', 'of', 'violence', 'with', 'which', 'every', 'step', 'of', 'desegregation', 'is', 'met', '.']
+
+43, ['President', "Kennedy's", 'latest', 'warning', 'to', 'the', 'Communist', 'world', 'that', 'the', 'United', 'States', 'will', 'build', 'up', 'its', 'military', 'strength', 'to', 'meet', 'any', 'challenge', 'in', 'Berlin', 'or', 'elsewhere', 'was', ',', 'somewhat', 'surprisingly', ',', 'reported', 'in', 'full', 'text', 'or', 'fairly', 'accurate', 'excerpts', 'behind', 'the', 'Iron', 'Curtain', '.']
+
+44, ['``', 'Sure', ',', 'we', 'met', 'a', 'barrel', 'of', 'rich', 'men', 'but', "it's", 'hard', 'to', 'find', 'the', 'real', 'thing', 'when', "you're", 'young', ',', 'beautiful', 'and', 'the', 'toast', 'of', 'two', 'continents', "''", '``', 'Remember', 'Fanny', 'Brice', 'promised', 'my', 'mother', 'she', 'would', 'look', 'after', 'me', 'on', 'the', 'road', "''", '?', '?']
+
+45, ['It', 'is', 'not', 'much', 'better', 'if', 'he', 'meets', 'with', 'old', 'classmates', '.']
+
+46, ['If', 'they', 'do', 'meet', 'and', 'recognize', 'one', 'another', ',', 'slap', 'backs', 'and', 'embrace', ',', 'the', 'moment', 'soon', 'is', 'done', '.']
+
+47, ['The', 'demand', 'for', 'these', 'lots', 'can', 'be', 'met', 'for', 'some', 'time', 'to', 'come', '.']
+
+48, ['With', 'our', 'current', '$3', 'per', 'hundred', 'tax', 'rate', ',', 'it', 'is', 'safe', 'to', 'assume', 'that', 'this', 'will', 'qualify', 'when', 'you', 'suggest', 'a', 'community', 'should', '``', 'try', 'to', 'develop', 'a', 'modest', 'industrial', 'plant', "''", 'as', 'the', 'best', 'way', 'to', 'meet', 'these', 'problems', '.']
+
+49, ['Until', 'professional', 'planners', 'meet', 'this', 'situation', 'squarely', 'and', 'update', 'the', 'concepts', 'of', 'zoning', 'in', 'a', 'manner', 'acceptable', 'to', 'the', 'courts', ',', 'I', 'hope', 'we', 'in', 'East', 'Greenwich', 'can', 'continue', 'to', 'shape', 'our', 'own', 'destiny', '.']
+
+50, ['I', 'feel', 'that', 'few', 'burglars', 'would', 'be', 'prone', 'to', 'break', 'and', 'enter', 'into', "someone's", 'apartment', 'if', 'they', 'were', 'met', 'with', 'a', 'good', 'hardy', 'growl', 'that', 'a', 'dog', 'would', 'provide', '.']
+
+51, ['That', 'is', 'why', 'the', 'United', 'Nations', 'was', 'formed', 'so', 'that', 'intelligent', 'men', 'with', 'good', 'intentions', 'from', 'all', 'countries', 'could', 'meet', 'and', 'solve', 'problems', 'without', 'resorting', 'to', 'war', '.']
+
+52, ['``', 'In', 'many', 'corners', 'of', 'the', 'globe', "''", ',', 'he', 'said', ',', '``', 'the', 'major', 'source', 'of', 'impressions', 'about', 'this', 'country', 'are', 'in', 'the', 'movies', 'they', 'meet', '.']
+
+53, ['The', 'reader', 'meets', 'a', 'few', 'old', 'friends', 'like', 'Blimp', 'and', 'the', 'TUC', 'horse', ',', 'and', 'becomes', 'better', 'acquainted', 'with', 'new', 'members', 'of', 'the', 'cast', 'of', 'characters', 'like', 'the', 'bomb', 'itself', ',', 'and', 'civilization', 'in', 'her', 'classic', 'robe', 'watching', 'the', 'nuclear', 'arms', 'race', ',', 'her', 'hair', 'standing', 'straight', 'out', '.']
+
+54, ['If', 'Mr.', 'Kennan', 'is', 'sometimes', 'a', 'little', 'somber', 'in', 'his', 'appraisals', ',', 'if', 'his', 'analysis', 'of', 'how', 'Western', 'diplomacy', 'met', 'the', 'challenge', 'of', 'an', 'era', 'of', 'great', 'wars', 'and', 'social', 'revolutions', 'is', 'often', 'critical', 'and', 'pessimistic', '--', 'well', ',', 'the', 'record', 'itself', 'is', 'not', 'too', 'encouraging', '.']
+
+55, ['All', 'went', 'home', 'happy', 'except', 'the', 'Newport', 'police', ',', 'who', 'feared', 'that', 'the', 'throng', 'departing', 'at', '6:35', 'might', 'meet', 'head-on', 'the', 'night', 'crowd', 'drawing', 'nigh', ',', 'and', 'those', 'deprived', 'of', 'their', 'happy', 'hour', 'at', 'the', 'cocktail', 'bar', '.']
+
+56, ['He', 'met', 'with', 'enthusiastic', 'audience', 'approval', ',', 'especially', 'when', 'he', 'swung', 'from', 'jazz', 'to', 'Latin', 'American', 'things', 'like', 'the', 'Mambo', '.']
+
+57, ['For', 'this', 'story', 'of', 'an', 'American', 'couple', 'who', 'meet', 'and', 'fall', 'in', 'love', 'in', 'Israel', ',', 'Mr.', 'Herman', 'has', 'written', 'songs', 'that', 'are', 'warmly', 'melodious', 'and', 'dance', 'music', 'that', 'sparkles', '.']
+
+58, ['Sergei', 'Vikulov', ',', 'as', 'the', 'lone', 'male', ',', 'meets', 'the', 'competition', 'well', 'with', 'some', 'brilliant', 'hits', ',', 'but', 'the', 'work', 'is', 'designed', 'to', 'belong', 'to', 'the', 'ladies', '.']
+
+59, ['The', 'tragic', 'irony', 'of', 'the', 'play', 'is', 'that', 'the', 'very', 'belief', 'in', 'and', 'concern', 'with', 'a', 'devil', 'who', 'could', 'be', 'met', 'in', 'the', 'woods', 'and', 'combatted', 'with', 'formulae', 'set', 'out', 'in', 'books', 'was', 'the', 'very', 'thing', 'that', 'prevented', 'them', 'from', 'detecting', 'the', 'real', 'devil', 'when', 'he', 'came', 'among', 'them', '.']
+
+60, ['When', 'that', 'fear', 'has', 'been', 'removed', 'by', 'faith', 'in', 'Jesus', 'Christ', ',', 'when', 'we', 'know', 'that', 'He', 'is', 'our', 'Savior', ',', 'that', 'He', 'has', 'paid', 'our', 'debt', 'with', 'His', 'blood', ',', 'that', 'He', 'has', 'met', 'the', 'demands', 'of', "God's", 'justice', 'and', 'thus', 'has', 'turned', 'His', 'wrath', 'away', '--', 'when', 'we', 'know', 'that', ',', 'we', 'have', 'peace', 'with', 'God', 'in', 'our', 'hearts', ';', ';']
+
+61, ['Others', 'meet', 'on', 'Sunday', 'night', ',', 'at', 'the', 'mid-week', 'service', ',', 'or', 'for', 'a', 'series', 'of', 'four', 'nights', '.']
+
+62, ['Ask', 'the', 'new', 'members', 'to', 'meet', 'thirty', 'minutes', 'before', 'the', 'service', 'to', 'complete', '``', 'talent', 'sheets', "''", 'and', 'pledge', 'cards', '.']
+
+63, ['But', 'what', 'significance', 'attaches', 'to', '``', 'professional', "''", ',', 'beyond', 'the', 'narrow', 'sense', 'of', 'skillfulness', 'in', 'meeting', 'a', "client's", 'stated', 'needs', 'as', 'already', 'noted', '?', '?']
+
+64, ['How', 'can', 'we', 'have', 'the', 'wisdom', 'to', 'meet', 'such', 'a', 'new', 'and', 'difficult', 'challenge', '?', '?']
+
+65, ['Still', 'others', 'sprang', 'up', 'late', 'in', 'the', 'century', 'to', 'meet', 'conditions', 'which', 'arose', 'from', 'fresh', 'stages', 'of', 'the', 'revolutionary', 'age', '.']
+
+66, ['But', 'actually', 'these', 'accounts', 'reveal', 'the', 'supernatural', 'powers', 'that', 'the', 'masters', 'were', 'in', 'fact', 'supposed', 'to', 'possess', ',', 'as', 'well', 'as', 'the', 'extreme', 'degree', 'of', 'popular', 'credulity', ':', '``', 'Hwang', 'Pah', '(', 'O', 'Baku', ')', ',', 'one', 'day', 'going', 'up', 'Mount', 'Tien', 'Tai', 'which', 'was', 'believed', 'to', 'have', 'been', 'inhabited', 'by', 'Arhats', 'with', 'supernatural', 'powers', ',', 'met', 'with', 'a', 'monk', 'whose', 'eyes', 'emitted', 'strange', 'light', '.']
+
+67, ['Then', 'the', 'monk', 'praised', 'Yang', 'Shan', 'saying', ':', '``', 'I', 'have', 'come', 'over', 'to', 'China', 'in', 'order', 'to', 'worship', 'Manjucri', ',', 'and', 'met', 'unexpectedly', 'with', 'Minor', 'Shakya', "''", ',', 'and', 'after', 'giving', 'the', 'master', 'some', 'palm', 'leaves', 'he', 'brought', 'from', 'India', ',', 'went', 'back', 'through', 'the', 'air', '.']
+
+68, ['For', 'example', ',', 'early', 'in', 'my', 'life', ',', 'when', 'one', 'of', 'my', 'editorial', 'workers', 'wanted', 'to', 'find', 'out', 'how', 'churches', 'and', 'philanthropic', 'organizations', 'met', 'the', 'needs', 'of', 'New', "York's", 'down-and-outers', ',', 'he', "didn't", 'just', 'ask', 'questions', '.']
+
+69, ['They', 'say', 'all', 'personnel', 'have', 'spiritual', 'needs', 'which', 'Guideposts', 'helps', 'to', 'meet', '.']
+
+70, ['At', 'the', 'recent', 'horse', 'show', 'convention', 'in', 'New', 'York', 'it', 'was', 'stated', 'that', 'this', 'Intermediate', 'Judging', 'Class', 'is', 'meeting', 'with', 'great', 'success', 'and', 'will', 'be', 'a', 'great', 'help', 'to', 'future', 'judges', 'in', 'the', 'horse', 'world', '.']
+
+71, ['If', 'ever', 'a', 'rifle', 'met', 'the', 'needs', 'of', 'the', 'whitetail', 'hunter', ',', 'this', 'is', 'it', '.']
+
+72, ['In', 'looking', 'for', 'the', 'best', 'sites', 'available', 'that', 'meet', 'the', 'requirements', ',', 'you', 'need', 'information', 'to', 'compare', 'the', 'site', 'with', 'others', '.']
+
+73, ['Look', 'at', 'the', 'physical', 'features', 'of', 'the', 'land', 'to', 'determine', 'how', 'desirable', 'it', 'is', 'for', 'use', ',', 'what', 'can', 'be', 'done', 'to', 'correct', 'the', 'faults', ',', 'and', 'what', 'it', 'will', 'cost', 'to', 'make', 'the', 'area', 'meet', 'your', 'needs', 'in', 'comparison', 'to', 'other', 'sites', '.']
+
+74, ['The', 'following', 'year', 'he', 'devoted', 'to', 'the', 'customary', '``', 'Wanderjahr', "''", ',', 'traveling', 'in', 'Germany', ',', 'France', ',', 'and', 'the', 'Netherlands', ',', 'meeting', 'the', 'philosophers', 'Schelling', ',', 'Fichte', ',', 'and', 'Tieck', '.']
+
+75, ['He', 'also', 'met', 'Count', 'Rumford', '(', 'born', 'Benjamin', 'Thompson', 'in', 'Woburn', ',', 'Mass.', ')', 'who', 'was', 'then', 'serving', 'the', 'Elector', 'of', 'Bavaria', ',', 'and', 'the', 'physicist', 'Ritter', ';', ';']
+
+76, ['And', 'further', 'he', 'must', 'understand', 'his', 'obligation', 'to', 'the', 'client', 'to', 'not', 'only', 'meet', 'his', 'physical', 'necessities', 'but', 'also', 'to', 'enhance', 'and', 'improve', 'his', 'life', 'and', 'to', 'enlarge', 'the', 'cultural', 'horizon', 'of', 'our', 'society', '.']
+
+77, ['If', 'you', 'use', 'company', 'transportation', 'to', 'meet', 'trains', 'or', 'to', 'haul', 'visitors', ',', 'would', 'taxis', 'be', 'cheaper', '?', '?']
+
+78, ['They', 'are', 'struggling', 'to', 'meet', 'the', 'demand', 'for', 'camping', 'space', ',', 'but', 'families', 'are', 'being', 'turned', 'away', ',', 'especially', 'on', 'holiday', 'weekends', '.']
+
+79, ['Neither', 'are', 'shelters', ',', 'because', 'there', 'is', 'one', 'to', 'meet', 'the', 'needs', 'of', 'every', 'camper', 'or', 'prospective', 'camper', '.']
+
+80, ['Sixty', 'miles', 'north', 'of', 'New', 'York', 'City', 'where', 'the', 'wooded', 'hills', 'of', 'Dutchess', 'County', 'meet', 'the', 'broad', 'sweep', 'of', 'the', 'Hudson', 'River', 'there', 'is', 'a', 'new', 'home', 'development', 'called', '``', 'Oakwood', 'Heights', "''", '.']
+
+81, ['The', 'earlier', 'New', 'Haven', 'development', 'was', 'public', 'housing', ',', 'so', 'it', 'easily', 'leaped', 'over', 'the', 'problems', 'met', 'in', 'a', 'private', 'venture', '.']
+
+82, ['Truck', 'and', 'materials-handling', 'equipment', 'makers', 'now', 'offer', 'specialized', 'units', 'to', 'meet', 'almost', 'every', 'homebuilding', 'need', '.']
+
+83, ['And', 'you', "don't", 'meet', 'the', 'folks', 'from', 'home', 'in', 'Northwest', 'Spain', 'which', 'has', 'remained', 'almost', 'untouched', 'by', 'time', 'and', 'tourists', 'since', 'the', 'Middle', 'Ages', '.']
+
+84, ['Just', 'about', 'the', 'most', 'enthralling', 'real-life', 'example', 'of', 'meeting', 'cute', 'is', 'the', 'Charles', 'MacArthur-Helen', 'Hayes', 'saga', ':', 'reputedly', 'all', 'he', 'did', 'was', 'give', 'her', 'a', 'handful', 'of', 'peanuts', ',', 'but', 'he', 'said', 'simultaneously', ',', '``', 'I', 'wish', 'they', 'were', 'emeralds', "''", '.']
+
+85, ['That', 'the', 'dream', 'was', 'a', 'reality', 'on', 'the', 'infinite', 'progressions', 'of', 'universal', ',', 'gradient', 'frequencies', ',', 'across', 'which', 'the', 'modern', 'professor', 'and', 'the', 'priest', 'of', 'ancient', 'Nippur', 'met', '?', '?']
+
+86, ['Chauncey', 'Depew', ',', 'one-time', 'runner-up', 'for', 'the', 'Republican', 'Presidential', 'nomination', ',', 'was', 'attending', 'a', 'convention', 'at', 'Saratoga', ',', 'where', 'he', 'was', 'scheduled', 'to', 'nominate', 'Colonel', 'Theodore', 'Roosevelt', 'for', 'Governor', 'of', 'New', 'York', 'when', 'he', 'noticed', 'that', 'the', 'temporary', 'chairman', 'was', 'a', 'man', 'he', 'had', 'never', 'met', '.']
+
+87, ['Throughout', 'the', 'Adirondack', 'region', 'abandoned', 'farm', 'homes', 'and', 'wild', 'orchards', 'bear', 'ghostly', 'testimony', 'that', 'their', 'owners', 'met', 'defeat', '.']
+
+88, ['Each', 'time', 'in', ',', 'the', 'unhappy', 'pilot', ',', 'pushing', 'his', 'luck', ',', 'begged', 'the', 'postal', 'officials', 'that', 'met', 'him', 'to', 'find', 'a', 'safer', 'landing', 'place', ',', 'preferably', 'on', 'the', 'flat-topped', 'hills', 'across', 'the', 'Winooski', 'River', '.']
+
+89, ['In', 'the', 'spring', 'and', 'early', 'summer', 'of', 'that', 'year', 'she', 'met', 'a', 'wealthy', 'foreign', 'tycoon', 'who', 'took', 'her', 'to', 'France', ',', 'where', 'she', 'later', 'met', 'a', 'very', 'wealthy', 'man', 'and', 'toured', 'all', 'Europe', 'with', 'him', '.']
+
+90, ['In', 'the', 'spring', 'and', 'early', 'summer', 'of', 'that', 'year', 'she', 'met', 'a', 'wealthy', 'foreign', 'tycoon', 'who', 'took', 'her', 'to', 'France', ',', 'where', 'she', 'later', 'met', 'a', 'very', 'wealthy', 'man', 'and', 'toured', 'all', 'Europe', 'with', 'him', '.']
+
+91, ['``', 'At', 'Deauville', 'she', 'met', 'an', 'Egyptian', 'by', 'the', 'name', 'of', 'Pulley', 'Bey', '.']
+
+92, ['``', 'Then', 'she', 'went', 'to', 'Deauville', 'where', 'she', 'met', 'a', 'member', 'of', 'a', 'powerful', 'Greek', 'syndicate', 'of', 'gamblers', "''", '.']
+
+93, ['She', 'thought', 'royal', 'status', 'might', 'come', 'her', 'way', 'when', ',', 'while', 'she', 'was', 'still', 'in', 'Rome', ',', 'she', 'met', 'Pulley', 'Bey', ',', 'a', 'personal', 'procurer', 'to', 'King', 'Farouk', 'of', 'Egypt', '.']
+
+94, ['She', 'had', 'a', 'hard', 'time', 'making', 'him', 'understand', 'that', 'it', 'was', 'Farouk', 'she', 'wished', 'to', 'meet', '.']
+
+95, ['Front', 'teeth', 'not', 'meeting', 'when', 'the', 'back', 'teeth', 'close', '.']
+
+96, ['Instead', 'he', 'brought', 'with', 'him', 'the', 'names', 'of', 'some', 'people', 'he', 'had', 'never', 'met', 'and', 'of', 'whom', 'the', 'medium', 'knew', 'nothing', '.']
+
+97, ['One', 'way', 'to', 'do', 'this', 'is', 'by', '``', 'proxy', 'sittings', "''", ',', 'wherein', 'the', 'person', 'seeking', 'a', 'message', 'does', 'not', 'himself', 'meet', 'with', 'the', 'medium', 'but', 'is', 'represented', 'by', 'a', 'substitute', ',', 'the', 'proxy', 'sitter', '.']
+
+98, ['The', "farmer's", 'life', 'must', 'be', 'arranged', 'to', 'meet', 'the', 'demands', 'of', 'crops', 'and', 'livestock', '.']
+
+99, ['Part-time', 'farming', 'gives', 'a', 'measure', 'of', 'security', 'if', 'the', 'regular', 'job', 'is', 'lost', ',', 'provided', 'the', 'farm', 'is', 'owned', 'free', 'of', 'debt', 'and', 'furnishes', 'enough', 'income', 'to', 'meet', 'fixed', 'expenses', 'and', 'minimum', 'living', 'costs', '.']
+
+100, ['Finally', ',', 'if', 'the', 'mission', 'of', 'the', 'Trial', 'was', 'to', 'convict', 'anti-Semitism', ',', 'how', 'could', 'it', 'have', 'failed', 'to', 'post', 'before', 'the', 'world', 'the', 'contrasting', 'fates', 'of', 'the', 'countries', 'in', 'which', 'the', 'Final', 'Solution', 'was', 'aided', 'by', 'native', 'Jew-haters', '--', 'i.e.', ',', 'Germany', ',', 'Poland', ',', 'Hungary', ',', 'Czechoslovakia', '--', 'and', 'those', 'in', 'which', 'it', 'met', 'the', 'obstacle', 'of', 'human', 'solidarity', '--', 'Denmark', ',', 'Holland', ',', 'Italy', ',', 'Bulgaria', ',', 'France', '?', '?']
+
+101, ['In', 'September', '1817', 'at', 'Fort', 'Daer', '(', 'Pembina', ')', 'Dickson', 'met', 'the', 'noble', 'lord', 'whom', ',', 'with', 'the', 'help', 'of', 'a', 'band', 'of', 'Sioux', ',', 'he', 'escorted', 'to', 'Prairie', 'Du', 'Chien', '.']
+
+102, ['But', 'as', 'November', '1924', 'drew', 'close', 'the', 'Democratic', 'hierarchy', 'was', 'sorely', 'troubled', 'by', 'grapevine', 'reports', 'that', "O'Banion", 'was', 'being', 'wooed', 'by', 'the', 'opposition', ',', 'and', 'was', 'meeting', 'and', 'conferring', 'with', 'important', 'Republicans', '.']
+
+103, ['But', 'everyone', 'I', 'met', 'had', 'sought', 'cover', 'first', 'and', 'asked', 'questions', 'later', '.']
+
+104, ['``', 'We', "''", 'were', 'Bill', 'Garrett', 'of', 'the', 'National', 'Geographic', 'Illustrations', 'Staff', ',', 'whose', 'three', 'cameras', 'and', 'eight', 'lenses', 'made', 'him', 'look', 'as', 'formidable', 'as', 'any', 'fighting', 'man', 'we', 'met', ';', ';']
+
+105, ['He', 'met', 'nobody', 'he', 'knew', 'on', 'this', 'walk', '.']
+
+106, ['Nice', 'country', 'to', 'meet', 'a', 'lion', 'in', 'face', 'to', 'face', '.']
+
+107, ['It', 'is', 'here', 'that', 'the', 'local', 'and', 'ecumenical', 'must', 'meet', '.']
+
+108, ['And', 'are', 'not', 'the', 'State', 'Department', 'men', 'who', 'dispense', 'this', 'largesse', 'merely', 'crackpots', 'and', 'do-gooders', 'who', 'have', 'never', 'met', 'a', 'payroll', '?', '?']
+
+109, ['A', 'newspaperman', 'who', 'met', 'him', 'at', 'a', 'reception', 'swore', 'that', 'he', 'asked', 'Menshikov', ':', '``', 'What', 'should', 'we', 'call', 'you', "''", '?', '?']
+
+110, ['In', 'the', 'evening', 'the', 'former', 'Oregon', 'State', 'science', 'teachers', 'met', 'for', 'dinner', 'at', 'the', 'New', 'Tokyo', 'Restaurant', 'where', 'I', 'had', 'my', 'first', 'raw', 'fish', 'and', 'found', 'it', 'good', '.']
+
+111, ['My', 'instructions', 'were', 'that', 'Mr.', 'Nishimo', 'would', 'meet', 'me', 'at', 'the', 'hotel', ',', 'but', 'instead', 'he', 'and', 'three', 'others', 'were', 'at', 'the', 'station', 'with', 'a', 'very', 'warm', 'welcome', '.']
+
+112, ['Here', 'Mr.', 'Yoneda', 'met', 'us', 'after', 'a', 'three-hour', 'train', 'trip', 'from', 'the', 'town', 'where', 'he', 'teaches', '.']
+
+113, ['Hiroshima', 'is', 'a', 'better', 'city', 'than', 'it', 'was', 'before', '--', 'in', 'the', 'minds', 'of', 'the', 'people', 'I', 'met', 'was', 'a', 'strong', 'determination', 'for', 'peace', 'and', 'understanding', '.']
+
+114, ['On', 'arriving', 'in', 'Tokyo', 'later', 'we', 'were', 'met', 'by', 'Masu', 'who', 'took', 'us', 'immediately', 'to', 'her', 'university', ',', 'the', 'Japanese', "Women's", 'University', '.']
+
+115, ['After', 'a', 'fine', 'luncheon', 'in', 'the', 'cafeteria', ',', 'the', 'kitchen', 'of', 'which', 'Masu', 'had', 'planned', ',', 'Mr.', 'Washizu', 'and', 'I', 'left', 'to', 'meet', 'representatives', 'of', 'the', 'USIS', 'for', 'a', 'visit', 'to', 'the', 'University', 'of', 'Tokyo', '.']
+
+116, ['In', 'recent', 'weeks', ',', 'as', 'a', 'result', 'of', 'a', 'sweeping', 'defense', 'policy', 'reappraisal', 'by', 'the', 'Kennedy', 'Administration', ',', 'basic', 'United', 'States', 'strategy', 'has', 'been', 'modified', '--', 'and', 'large', 'new', 'sums', 'allocated', '--', 'to', 'meet', 'the', 'accidental-war', 'danger', 'and', 'to', 'reduce', 'it', 'as', 'quickly', 'as', 'possible', '.']
+
+117, ['A', 'man', 'and', 'a', 'girl', 'happen', 'to', 'meet', ';', ';']
+
+118, ['His', 'letter', 'had', 'suggested', 'we', 'meet', 'at', 'my', 'hotel', 'at', 'noon', 'on', 'Sunday', ',', 'and', 'I', 'came', 'into', 'the', 'lobby', 'as', 'the', 'clock', 'struck', 'twelve', '.']
+
+119, ['My', 'wish', 'to', 'meet', 'Samuel', 'Beckett', 'had', 'been', 'prompted', 'by', 'simple', 'curiosity', 'and', 'interest', 'in', 'his', 'work', '.']
+
+120, ['That', ',', 'I', 'thought', ',', 'is', 'at', 'least', 'one', 'thing', 'I', 'can', 'find', 'out', 'when', 'we', 'meet', '.']
+
+121, ['One', 'can', 'meet', 'with', 'aloofness', 'almost', 'anywhere', ':', 'the', 'THIDIU', 'viewpoint', ',', 'It', "Doesn't", 'Affect', 'Us', '!', '!']
+
+122, ['For', 'the', 'occasion', 'on', 'which', 'everyone', 'already', 'knows', 'everyone', 'else', 'and', 'the', 'host', 'wishes', 'them', 'to', 'meet', 'one', 'or', 'a', 'few', 'honored', 'newcomers', ',', 'then', 'the', '``', 'open', 'house', "''", 'system', 'is', 'advantageous', 'because', 'the', 'honored', 'guests', 'are', 'fixed', 'connective', 'points', 'and', 'the', 'drifting', 'guests', 'make', 'and', 'break', 'connections', 'at', 'the', 'door', '.']
+
+123, ['The', 'connective', 'system', ',', 'or', 'network', ',', 'is', 'tailored', 'to', 'meet', 'the', 'requirements', 'of', 'the', 'objective', ',', 'and', 'it', 'is', 'therefore', 'not', 'surprising', 'that', 'a', 'military', 'body', 'acting', 'as', 'a', 'single', 'coordinated', 'unit', 'has', 'a', 'different', 'communication', 'network', 'than', 'a', 'factory', ',', 'a', 'college', ',', 'or', 'a', 'rural', 'village', '.']
+
+124, ['That', ',', 'however', ',', 'may', 'also', 'bring', 'the', 'police', ',', 'if', 'the', 'thinking', 'does', 'not', 'meet', 'with', 'social', 'approval', '.']
+
+125, ['These', 'could', 'be', 'met', 'only', 'by', 'considering', 'the', 'dynamical', 'elements', 'of', 'several', 'planets', 'at', 'one', 'time', '.']
+
+126, ['And', ',', 'in', 'the', 'last', 'case', ',', 'a', 'bitter', 'disappointment', 'but', 'too', 'often', 'meets', 'the', 'confiding', 'nature', '.']
+
+127, ['No', 'wonder', 'Wright', 'was', 'enchanted', '--', 'no', 'two', 'better', 'suited', 'people', 'ever', 'met', '.']
+
+128, ['The', 'Bank', 'of', 'Wisconsin', 'sent', 'a', 'representative', 'to', 'the', "judge's", 'chambers', 'in', 'Madison', 'to', 'give', 'information', 'on', "Wright's", 'ability', 'to', 'meet', 'the', 'terms', '.']
+
+129, ['it', 'is', 'a', 'dedication', 'which', 'began', 'the', 'moment', 'she', 'met', 'Carl', '.']
+
+130, ['Mrs.', 'Sandburg', 'received', 'a', 'Phi', 'Beta', 'Kappa', 'key', 'from', 'the', 'University', 'of', 'Chicago', 'and', 'she', 'was', 'busy', 'writing', 'and', 'teaching', 'when', 'she', 'met', 'Sandburg', '.']
+
+131, ['Carl', 'and', 'Paula', 'met', 'in', 'Milwaukee', 'in', '1907', 'during', "Paula's", 'Christmas', 'holiday', 'visit', 'to', 'her', 'parents', '.']
+
+132, ['the', 'courage', 'to', 'meet', 'every', 'challenge', ';', ';']
+
+133, ['We', 'must', 'meet', 'this', 'situation', 'by', 'promoting', 'a', 'rising', 'volume', 'of', 'exports', 'and', 'world', 'trade', '.']
+
+134, ['To', 'meet', 'situations', 'of', 'less', 'than', 'general', 'nuclear', 'war', ',', 'we', 'continue', 'to', 'maintain', 'our', 'carrier', 'forces', ',', 'our', 'many', 'service', 'units', 'abroad', ',', 'our', 'always', 'ready', 'Army', 'strategic', 'forces', 'and', 'Marine', 'Corps', 'divisions', ',', 'and', 'the', 'civilian', 'components', '.']
+
+135, ['A', 'year', 'ago', ',', 'when', 'I', 'met', 'with', 'you', ',', 'the', 'nation', 'was', 'emerging', 'from', 'an', 'economic', 'downturn', ',', 'even', 'though', 'the', 'signs', 'of', 'resurgent', 'prosperity', 'were', 'not', 'then', 'sufficiently', 'convincing', 'to', 'the', 'doubtful', '.']
+
+136, ['On', 'January', '24', 'Paul', 'Bang-Jensen', ',', 'accompanied', 'by', 'Adolf', 'Berle', ',', 'was', 'met', 'by', 'Dragoslav', 'Protitch', 'and', 'Colonel', 'Frank', 'Begley', ',', 'former', 'Police', 'Chief', 'of', 'Farmington', ',', 'Conn.', ',', 'and', 'now', 'head', 'of', 'U.N.', 'special', 'police', '.']
+
+137, ['It', 'sounded', 'like', 'a', 'fair', 'enough', 'invitation', ',', 'Peter', 'Marshall', 'reflected', ',', 'and', 'Bang-Jensen', 'must', 'have', 'thought', 'so', 'too', ',', 'because', 'on', 'the', 'thirteenth', ',', 'he', 'met', 'the', 'group', 'of', 'three', 'on', 'the', 'thirty-sixth', 'floor', 'of', 'the', 'U.N.', '.']
+
+138, ['But', 'one', 'afternoon', 'Mrs.', 'Mercer', 'met', 'her', ';', ';']
+
+139, ['While', 'with', 'the', 'Whiteman', 'band', 'Mercer', 'met', 'Jerry', 'Arlen', '.']
+
+140, ['He', 'had', 'yet', 'to', 'meet', 'Harold', 'Arlen', ',', 'for', 'although', 'they', 'had', '``', 'collaborated', "''", 'on', '``', "Satan's", "Li'l", 'Lamb', "''", ',', 'Mercer', 'and', 'Harburg', 'had', 'worked', 'from', 'a', 'lead', 'sheet', 'the', 'composer', 'had', 'furnished', 'them', '.']
+
+141, ['they', 'include', 'harmonies', 'and', 'conflicts', 'within', 'the', 'whole', 'man', ',', 'and', 'mechanisms', 'whereby', 'inner', 'components', 'are', 'more', 'or', 'less', 'smoothly', 'met', '.']
+
+142, ['after', 'all', ',', 'the', 'large', '(', 'and', 'probably', 'unreliable', ')', "Reader's", 'Digest', 'literature', 'on', 'the', '``', 'most', 'unforgettable', 'character', 'I', 'ever', 'met', "''", 'deals', 'with', 'village', 'grocers', ',', 'country', 'doctors', ',', 'favorite', 'if', 'illiterate', 'aunts', ',', 'and', 'so', 'forth', '.']
+
+143, ['In', 'a', 'small', 'way', 'this', 'is', 'illustrated', 'by', 'the', 'nineteenth-century', 'novelist', 'who', 'argued', 'for', 'the', 'powerful', 'influence', 'of', 'literature', 'as', 'a', 'teacher', 'of', 'society', 'and', 'who', 'illustrated', 'this', 'with', 'the', 'way', 'a', 'girl', 'learned', 'to', 'meet', 'her', 'lover', ',', 'how', 'to', 'behave', ',', 'how', 'to', 'think', 'about', 'this', 'new', 'experience', ',', 'how', 'to', 'exercise', 'restraint', '.']
+
+144, ['In', 'his', 'fight', 'for', 'the', 'Illinois', 'and', 'Indiana', 'delegations', ',', 'Hearst', 'made', 'several', 'trips', 'to', 'Chicago', 'to', 'confer', 'with', 'Andrew', 'Lawrence', ',', 'the', 'former', 'San', 'Francisco', 'Examiner', 'man', 'who', 'was', 'now', 'his', 'Chicago', 'kingpin', ',', 'and', 'once', 'to', 'meet', 'with', 'Bryan', '.']
+
+145, ['On', 'one', 'visit', 'he', 'stopped', 'at', 'the', 'office', 'of', 'the', 'American', ',', 'where', 'he', 'was', 'known', 'surreptitiously', 'as', '``', 'the', 'Great', 'White', 'Chief', "''", ',', 'and', 'for', 'the', 'first', 'time', 'met', 'his', 'managing', 'editor', ',', 'fat', 'Moses', 'Koenigsberg', '.']
+
+146, ['We', 'would', 'all', 'meet', 'at', 'ten', "o'clock", 'at', 'the', 'Kehl', 'bridge', ',', 'five', 'miles', 'from', 'Strasbourg', ',', 'and', 'march', 'triumphantly', 'across', 'into', 'Germany', '.']
+
+147, ['As', 'I', 'got', 'off', 'the', 'trolley', 'at', 'Kehl', 'bridge', 'the', 'next', 'morning', ',', 'I', 'was', 'met', 'by', 'what', 'looked', 'like', '5,000', 'students', ',', 'some', 'of', 'whom', 'were', 'carrying', 'sticks', 'apparently', 'for', 'the', 'coming', '``', 'battle', "''", 'with', 'the', 'police', '.']
+
+148, ['Thomas', 'tried', 'hard', 'to', 'have', 'his', 'cavalry', 'ready', 'for', 'the', 'test', 'it', 'was', 'to', 'meet', ',', 'but', 'his', 'plans', 'were', 'wrecked', 'when', 'it', 'was', 'forced', 'into', 'a', 'campaign', 'without', 'optimum', 'mobility', 'and', 'with', 'its', 'commander', 'stripped', 'from', 'it', '.']
+
+149, ['and', 'General', 'the', 'Count', 'Pallavicini', ',', 'founder', 'of', 'the', 'Austrian', 'branch', 'of', 'that', 'celebrated', 'Italian', 'house', ',', 'a', 'courtier', 'Littlepage', 'could', 'have', 'met', 'at', 'Madrid', 'in', 'December', ',', '1780', '.']
+
+150, ['This', 'of', 'course', 'was', 'not', 'true', 'of', 'the', 'educated', 'and', 'sophisticated', 'people', 'we', 'met', ',', 'who', 'loved', 'their', 'pets', ',', 'but', 'kindness', 'is', 'not', 'a', 'basic', 'human', 'instinct', '.']
+
+151, ['We', 'met', 'some', 'charming', 'Athenians', ',', 'and', 'among', 'them', 'our', 'chauffeur', 'Panyotis', 'ranked', 'high', '.']
+
+152, ['``', 'Little', 'Rock', 'is', ',', 'without', 'any', 'flattery', ',', 'one', 'of', 'the', 'dullest', 'towns', 'in', 'the', 'United', 'States', 'and', 'I', 'would', 'not', 'have', 'remained', 'two', 'hours', 'in', 'the', 'place', ',', 'if', 'I', 'had', 'not', 'met', 'with', 'some', 'good', 'friends', 'who', 'made', 'me', 'forget', 'its', 'dreariness', "''", '.']
+
+153, ['The', 'younger', 'men', ',', 'Vere', ',', 'and', 'Pembroke', ',', 'who', 'was', 'also', "Edward's", 'cousin', 'and', 'whose', 'Lusignan', 'blood', 'gave', 'him', 'the', 'swarthy', 'complexion', 'that', 'caused', 'Edward', 'of', "Carnarvon's", 'irreverent', 'friend', ',', 'Piers', 'Gaveston', ',', 'to', 'nickname', 'him', '``', 'Joseph', 'the', 'Jew', "''", ',', 'were', 'relatively', 'new', 'to', 'the', 'game', 'of', 'diplomacy', ',', 'but', 'Pontissara', 'had', 'been', 'on', 'missions', 'to', 'Rome', 'before', ',', 'and', 'Hotham', ',', 'a', 'man', 'of', 'great', 'learning', ',', '``', 'jocund', 'in', 'speech', ',', 'agreeable', 'to', 'meet', ',', 'of', 'honest', 'religion', ',', 'and', 'pleasing', 'in', 'the', 'eyes', 'of', 'all', "''", ',', 'and', 'an', 'archbishop', 'to', 'boot', ',', 'was', 'as', 'reliable', 'and', 'experienced', 'as', 'Othon', 'himself', '.']
+
+154, ['the', 'Low', 'Countries', ',', 'where', 'the', 'Middle', 'Ages', 'were', 'to', 'last', 'for', 'another', 'two', 'centuries', 'and', 'die', 'out', 'only', 'when', 'Charles', 'the', 'Bold', 'of', 'Burgundy', 'met', 'his', 'first', 'defeat', 'in', 'the', 'fields', 'and', 'forests', 'below', 'the', 'walls', 'of', 'Grandson', '.']
+
+155, ['I', 'never', 'met', 'John', 'Dewey', ',', 'whose', 'style', 'was', 'a', 'sort', 'of', 'verbal', 'fog', 'and', 'who', 'had', 'written', 'asking', 'me', 'to', 'go', 'to', 'Mexico', 'with', 'him', 'when', 'he', 'was', 'investigating', 'the', 'cause', 'of', 'Trotsky', ';', ';']
+
+156, ['Mr.', 'Burlingham', ',', '--', '``', 'C.C.B.', "''", '--', 'wrote', 'to', 'me', 'once', 'about', 'an', 'old', 'friend', 'of', 'mine', ',', 'S.', 'K.', 'Ratcliffe', ',', 'whom', 'I', 'had', 'first', 'met', 'in', 'London', 'in', '1914', 'and', 'who', 'also', 'came', 'out', 'for', 'a', 'week-end', 'in', 'Weston', '.']
+
+157, ['Would', 'he', 'meet', 'him', 'in', 'Baltimore', 'in', 'Drawing', 'Room', 'A', ',', 'Car', 'Three', 'on', 'the', 'train', 'leaving', 'Washington', 'at', 'nine', "o'clock", 'next', 'morning', '?', '?']
+
+158, ['Nowhere', 'before', 'in', "Malraux's", 'pages', 'have', 'we', 'met', 'such', 'impassioned', 'defenders', 'of', 'a', '``', 'quality', 'of', 'man', "''", 'which', 'transcends', 'the', 'realm', 'of', 'politics', 'and', 'even', 'the', 'realm', 'of', 'action', 'altogether', '--', 'both', 'the', 'action', 'of', "Malraux's", 'early', 'anarchist-adventurers', 'like', 'Perken', 'and', 'Garine', ',', 'and', 'the', 'self-sacrificing', 'action', 'of', 'dedicated', 'Communists', 'like', 'Kyo', 'Gisors', 'and', 'Katow', 'in', "Man's", 'Fate', '.']
+
+159, ['Citing', 'the', 'advances', 'of', 'Communist', 'power', 'in', 'recent', 'years', ',', 'Sir', 'Anthony', 'observed', ':', '``', 'This', 'very', 'grave', 'state', 'of', 'affairs', 'will', 'continue', 'until', 'the', 'free', 'nations', 'accept', 'together', 'the', 'reality', 'of', 'the', 'danger', 'that', 'confronts', 'them', 'and', 'unite', 'their', 'policies', 'and', 'resources', 'to', 'meet', 'it', "''", '.']
+
+160, ['Art', '``', 'makings', "''", 'or', 'pseudo-anthropological', 'myths', 'did', 'not', 'meet', 'all', 'of', "Patchen's", 'requirements', 'for', 'a', 'poetic', 'frame', 'of', 'reference', '.']
+
+161, ['Such', 'measures', 'are', 'essential', 'to', 'its', 'job', 'of', 'presenting', 'business', 'and', 'Government', 'with', 'the', 'facts', 'required', 'to', 'meet', 'the', 'objective', 'of', 'expanding', 'business', 'and', 'improving', 'the', 'operation', 'of', 'the', 'economy', '.']
+
+162, ['To', 'qualify', 'for', 'either', 'type', 'of', 'loan', ',', 'an', 'applicant', 'must', 'be', 'a', 'small', 'business', 'or', 'approved', 'small', 'business', '``', 'pool', "''", 'and', 'must', 'meet', 'certain', 'credit', 'requirements', '.']
+
+163, ['To', 'be', 'eligible', 'to', 'borrow', 'from', 'a', 'Bank', 'for', 'Cooperatives', ',', 'a', 'cooperative', 'must', 'be', 'an', 'association', 'in', 'which', 'farmers', 'act', 'together', 'in', 'processing', 'and', 'marketing', 'farm', 'products', ',', 'purchasing', 'farm', 'supplies', ',', 'or', 'furnishing', 'farm', 'business', 'services', ',', 'and', 'must', 'meet', 'the', 'requirements', 'set', 'forth', 'in', 'the', 'Farm', 'Credit', 'Act', 'of', '1933', ',', 'as', 'amended', '.']
+
+164, ['Once', 'we', 'have', 'made', 'clear', 'that', 'we', 'are', 'genuinely', 'concerned', 'with', 'a', "country's", 'development', 'potential', ',', 'we', 'can', 'be', 'blunt', 'in', 'suggesting', 'the', 'technical', 'conditions', 'that', 'must', 'be', 'met', 'for', 'development', 'to', 'occur', '.']
+
+165, ['It', 'met', 'these', 'problems', 'by', 'the', 'creation', 'of', 'the', 'state', 'automobile', 'maintenance', 'unit', '(', 'more', 'popularly', 'called', 'the', 'motor', 'pool', ')', ',', 'a', 'centralized', 'operation', 'for', 'the', 'maintenance', 'and', 'control', 'of', 'all', 'state', 'transportation', '.']
+
+166, ['They', 'had', 'been', 'through', 'trying', 'times', ',', 'but', 'their', 'faith', 'in', 'the', 'Almighty', 'had', 'given', 'them', 'the', 'courage', 'and', 'the', 'strength', 'to', 'meet', 'and', 'overcome', 'the', 'many', 'problems', 'and', 'difficulties', 'that', 'were', 'the', 'price', 'they', 'had', 'to', 'pay', 'for', 'freedom', '.']
+
+167, ['In', 'view', 'of', 'the', 'increasing', 'shortage', 'of', 'usable', 'surface', 'and', 'ground', 'water', 'in', 'many', 'parts', 'of', 'the', 'Nation', 'and', 'the', 'importance', 'of', 'finding', 'new', 'sources', 'of', 'supply', 'to', 'meet', 'its', 'present', 'and', 'future', 'water', 'needs', ',', 'it', 'is', 'the', 'policy', 'of', 'the', 'Congress', 'to', 'provide', 'for', 'the', 'development', 'of', 'practicable', 'low-cost', 'means', 'for', 'the', 'large-scale', 'production', 'of', 'water', 'of', 'a', 'quality', 'suitable', 'for', 'municipal', ',', 'industrial', ',', 'agricultural', ',', 'and', 'other', 'beneficial', 'consumptive', 'uses', 'from', 'saline', 'water', ',', 'and', 'for', 'studies', 'and', 'research', 'related', 'thereto', '.']
+
+168, ['In', 'March', ',', '1961', ',', 'representatives', 'of', 'the', 'national', 'laboratories', 'of', 'Australia', ',', 'Canada', ',', 'The', 'Netherlands', ',', 'United', 'Kingdom', ',', 'U.S.S.R.', ',', 'United', 'States', ',', 'and', 'West', 'Germany', ',', 'met', 'at', 'the', 'NBS', 'to', 'devise', 'means', 'for', 'reaching', 'international', 'agreement', 'on', 'a', 'temperature', 'scale', 'between', '10', 'and', '90', 'Af', '.']
+
+169, ['Once', 'these', 'conditions', 'of', 'international', 'law', 'are', 'met', ',', 'countries', 'that', 'try', 'to', 'run', 'the', 'blockade', 'do', 'so', 'at', 'their', 'own', 'risk', '.']
+
+170, ['It', 'could', ',', 'by', 'avoiding', 'direct', 'intervention', ',', 'provide', 'a', 'short-of-war', 'strategy', 'to', 'meet', 'short-of-war', 'infiltration', '.']
+
+171, ['Some', 'special', 'health', 'requirements', 'might', 'have', 'to', 'be', 'met', '.']
+
+172, ['The', 'Peace', 'Corps', 'offers', 'an', 'opportunity', 'to', 'bring', 'home', 'to', 'the', 'United', 'States', 'the', 'problems', 'of', 'the', 'world', 'as', 'well', 'as', 'an', 'opportunity', 'to', 'meet', 'urgent', 'host', 'country', 'needs', 'for', 'trained', 'manpower', '.']
+
+173, ['And', 'this', 'is', 'meeting', 'the', "world's", 'need', ',', 'too', ',', 'since', 'what', 'the', 'world', 'most', 'needs', 'from', 'this', 'country', 'is', 'better', 'understanding', 'of', 'the', 'world', '.']
+
+174, ['I', 'recommend', 'to', 'the', 'Congress', 'the', 'establishment', 'of', 'a', 'permanent', 'Peace', 'Corps', '--', 'a', 'pool', 'of', 'trained', 'American', 'men', 'and', 'women', 'sent', 'overseas', 'by', 'the', 'U.S.', 'Government', 'or', 'through', 'private', 'organizations', 'and', 'institutions', 'to', 'help', 'foreign', 'countries', 'meet', 'their', 'urgent', 'needs', 'for', 'skilled', 'manpower', '.']
+
+175, ['To', 'meet', 'this', 'urgent', 'need', 'for', 'skilled', 'manpower', 'we', 'are', 'proposing', 'the', 'establishment', 'of', 'a', 'Peace', 'Corps', '--', 'an', 'organization', 'which', 'will', 'recruit', 'and', 'train', 'American', 'volunteers', ',', 'sending', 'them', 'abroad', 'to', 'work', 'with', 'the', 'people', 'of', 'other', 'nations', '.']
+
+176, ['It', 'is', 'proposed', 'that', 'in', '10', 'years', 'all', 'commercial', 'timberlands', ',', 'all', 'critical', 'watersheds', ',', 'and', 'other', 'lands', 'in', 'the', 'National', 'Forest', 'System', 'developed', 'or', 'proposed', 'for', 'intensive', 'use', 'will', 'be', 'given', 'protection', 'from', 'fire', 'adequate', 'to', 'meet', 'the', 'fire', 'situation', 'in', 'the', 'worst', 'years', 'and', 'under', 'serious', 'peak', 'loads', '.']
+
+177, ['An', 'additional', '15', 'million', 'acres', 'will', 'be', 'given', 'a', 'lesser', 'degree', 'of', 'protection', 'but', 'adequate', 'to', 'meet', 'the', 'average', 'fire', 'situation', '.']
+
+178, ['The', 'long-range', 'objective', 'of', 'this', 'Department', 'is', 'to', 'provide', 'and', 'maintain', 'a', 'system', 'of', 'forest', 'development', 'roads', 'and', 'trails', 'which', 'will', 'adequately', 'service', 'the', 'National', 'Forest', 'System', 'at', 'the', 'levels', 'needed', 'to', 'meet', 'expected', 'needs', 'and', 'optimum', 'production', 'of', 'products', 'and', 'services', '.']
+
+179, ['About', '80', 'percent', 'of', 'these', 'long-range', 'requirements', 'should', 'be', 'met', 'by', 'the', 'year', '2000', '.']
+
+180, ['These', 'strengths', 'are', 'considered', 'adequate', 'to', 'meet', 'the', 'essential', 'roles', 'and', 'missions', 'of', 'the', 'reserves', 'in', 'support', 'of', 'our', 'national', 'security', 'objectives', '.']
+
+181, ['The', 'growing', 'communications', 'needs', 'of', 'this', 'new', 'State', 'can', 'best', 'be', 'met', ',', 'as', 'they', 'have', 'in', 'other', 'States', ',', 'through', 'the', 'operation', 'and', 'development', 'of', 'such', 'facilities', 'by', 'private', 'enterprise', '.']
+
+182, ['As', 'a', 'designer', 'and', 'manufacturer', 'of', 'textile', 'production', 'machinery', ',', 'Leesona', 'and', 'other', 'companies', 'in', 'its', 'industry', 'have', 'sought', 'to', 'meet', 'this', 'challenge', 'with', 'new', 'or', 'improved', 'equipment', 'and', 'methods', 'that', 'would', 'increase', 'production', ',', 'yet', 'maintain', 'both', 'quality', 'and', 'flexibility', '.']
+
+183, ['Occasional', 'meetings', 'are', 'held', 'for', 'the', 'whole', 'membership', ',', 'usually', 'with', 'a', 'guest', 'speaker', ',', 'while', 'smaller', 'discussion', 'groups', 'meet', 'more', 'frequently', '.']
+
+184, ['The', 'group', 'meets', 'once', 'a', 'week', 'in', 'the', 'Boliou', 'Student', 'Workshop', '.']
+
+185, ['A', 'busy', 'president', ',', 'conversant', 'with', 'a', 'problem', 'and', 'its', 'ramifications', 'and', 'beset', 'by', 'pressures', 'to', 'meet', 'deadlines', ',', 'tends', 'naturally', 'to', 'assume', 'that', 'others', 'must', 'be', 'as', 'familiar', 'with', 'a', 'problem', 'as', 'he', 'is', '.']
+
+186, ['On', 'those', 'rare', 'occasions', 'when', 'a', 'faculty', 'member', 'on', 'tenure', 'is', 'not', 'meeting', 'the', 'standards', 'of', 'the', 'institution', ',', 'the', 'president', 'must', 'also', 'bear', 'the', 'ultimate', 'burden', 'of', 'decision', 'and', 'action', '.']
+
+187, ['Large', 'numbers', 'of', 'potential', 'builders', 'have', 'been', 'investigated', ',', 'but', 'none', 'have', 'been', 'found', 'to', 'be', 'as', 'effective', 'as', 'the', 'polyphosphates', 'over', 'the', 'relatively', 'wide', 'range', 'of', 'conditions', 'met', 'in', 'practice', '.']
+
+188, ['In', 'considering', 'BW', 'defense', ',', 'it', 'must', 'be', 'recognized', 'that', 'a', 'number', 'of', 'critical', 'meterological', 'parameters', 'must', 'be', 'met', 'for', 'an', 'aerosol', 'to', 'exhibit', 'optimum', 'effect', '.']
+
+189, ['There', 'are', ',', 'of', 'course', ',', 'certain', 'times', 'during', 'the', '24-hour', 'daily', 'cycle', 'when', 'most', 'of', 'these', 'conditions', 'will', 'be', 'met', '.']
+
+190, ['An', 'agent', 'would', 'likely', 'be', 'selected', 'which', 'would', 'possess', 'sufficient', 'viability', 'and', 'virulence', 'stability', 'to', 'meet', 'realistic', 'minimal', 'logistic', 'requirements', '.']
+
+191, ['An', 'ordinary', 'point', 'will', 'be', 'any', 'point', 'of', 'intersection', 'A', 'such', 'that', 'in', 'every', 'neighborhood', 'of', 'A', 'in', 'the', 'C-plane', ',', 'Af', 'meets', 'both', 'the', 'interior', 'and', 'the', 'exterior', 'of', 'C', '.']
+
+192, ['These', 'are', 'defined', 'by', 'a', 'simple', 'involutorial', 'transformation', 'of', 'the', 'points', 'in', 'which', 'a', 'general', 'line', 'meets', 'a', 'nonsingular', 'quadric', 'surface', 'bearing', 'a', 'curve', 'of', 'symbol', 'Af', '.']
+
+193, ['Then', 'in', '2', 'we', 'show', 'that', 'any', 'line', 'involution', 'with', 'the', 'properties', 'that', '(', 'A', ')', 'It', 'has', 'no', 'complex', 'of', 'invariant', 'lines', ',', 'and', '(', 'B', ')', 'Its', 'singular', 'lines', 'form', 'a', 'complex', 'consisting', 'exclusively', 'of', 'the', 'lines', 'which', 'meet', 'a', 'twisted', 'curve', ',', 'is', 'necessarily', 'of', 'the', 'type', 'discussed', 'in', '1', '.']
+
+194, ['We', 'observe', 'first', 'that', 'no', 'line', ',', 'l', ',', 'can', 'meet', 'its', 'image', 'except', 'at', 'one', 'of', 'its', 'intersections', 'with', 'Q', '.']
+
+195, ['Moreover', ',', 'from', 'the', 'definitive', 'transformation', 'of', 'intercepts', 'on', 'the', 'generators', 'of', 'Af', ',', 'it', 'is', 'clear', 'that', 'the', 'only', 'points', 'of', 'Q', 'at', 'which', 'a', 'line', 'can', 'meet', 'its', 'image', 'are', 'the', 'points', 'of', 'Aj', '.']
+
+196, ['Hence', 'the', 'totality', 'of', 'singular', 'lines', 'is', 'the', 'T', 'order', 'complex', 'of', 'lines', 'which', 'meet', 'Aj', '.']
+
+197, ['For', 'the', 'lines', 'of', 'any', 'plane', ',', '**yp', ',', 'meeting', 'Q', 'in', 'a', 'conic', 'C', ',', 'are', 'transformed', 'into', 'the', 'congruence', 'of', 'secants', 'of', 'the', 'curve', "C'", 'into', 'which', 'C', 'is', 'transformed', 'in', 'the', 'point', 'involution', 'on', 'Q', '.']
+
+198, ['This', 'curve', 'is', 'of', 'symbol', 'Af', 'since', 'it', 'meets', '**yl', ',', 'and', 'hence', 'every', 'line', 'of', 'Af', 'in', 'the', 'Af', 'invariant', 'points', 'on', '**yl', 'and', 'since', 'it', 'obviously', 'meets', 'every', 'line', 'of', 'Af', 'in', 'a', 'single', 'point', '.']
+
+199, ['This', 'curve', 'is', 'of', 'symbol', 'Af', 'since', 'it', 'meets', '**yl', ',', 'and', 'hence', 'every', 'line', 'of', 'Af', 'in', 'the', 'Af', 'invariant', 'points', 'on', '**yl', 'and', 'since', 'it', 'obviously', 'meets', 'every', 'line', 'of', 'Af', 'in', 'a', 'single', 'point', '.']
+
+200, ['A', 'conic', ',', 'C', ',', 'being', 'a', '(', '1', ',', '1', ')', 'curve', 'on', 'Q', ',', 'meets', 'the', 'image', 'of', 'any', 'line', 'of', 'Af', ',', 'which', 'we', 'have', 'already', 'found', 'to', 'be', 'a', 'Af', 'curve', 'on', 'Q', ',', 'in', 'Af', 'points', '.']
+
+201, ['Hence', 'its', 'image', ',', "C'", ',', 'meets', 'any', 'line', 'of', 'Af', 'in', 'Af', 'points', '.']
+
+202, ['Moreover', ',', "C'", 'obviously', 'meets', 'any', 'line', 'Af', 'in', 'a', 'single', 'point', '.']
+
+203, ['The', 'preceding', 'observations', 'make', 'it', 'clear', 'that', 'there', 'exist', 'line', 'involutions', 'of', 'all', 'orders', 'greater', 'than', '1', 'with', 'no', 'complex', 'of', 'invariant', 'lines', 'and', 'with', 'a', 'complex', 'of', 'singular', 'lines', 'consisting', 'exclusively', 'of', 'the', 'lines', 'which', 'meet', 'a', 'twisted', 'curve', 'Aj', '.']
+
+204, ['To', 'do', 'this', 'we', 'must', 'first', 'show', 'that', 'every', 'line', 'which', 'meets', '**zg', 'in', 'a', 'point', 'P', 'meets', 'its', 'image', 'at', 'P', '.']
+
+205, ['To', 'do', 'this', 'we', 'must', 'first', 'show', 'that', 'every', 'line', 'which', 'meets', '**zg', 'in', 'a', 'point', 'P', 'meets', 'its', 'image', 'at', 'P', '.']
+
+206, ['By', '(', '1', ')', ',', 'the', 'image', 'of', 'this', 'pencil', 'is', 'a', 'ruled', 'surface', 'of', 'order', 'Af', 'which', 'is', 'met', 'by', 'the', 'plane', 'of', 'the', 'pencil', 'in', 'a', 'curve', ',', 'C', ',', 'of', 'order', 'Af', '.']
+
+207, ['Since', 'C', 'is', 'rational', ',', 'this', 'correspondence', 'has', 'K', 'coincidences', ',', 'each', 'of', 'which', 'implies', 'a', 'line', 'of', 'the', 'pencil', 'which', 'meets', 'its', 'image', '.']
+
+208, ['The', 'first', 'possibility', 'requires', 'that', 'there', 'be', 'a', 'line', 'through', 'P', 'which', 'meets', '**zg', 'in', 'Af', 'points', ';', ';']
+
+209, ['the', 'second', 'requires', 'that', 'there', 'be', 'a', 'line', 'through', 'P', 'which', 'meets', '**zg', 'in', 'Af', 'points', '.']
+
+210, ['For', 'if', 'such', 'were', 'the', 'case', ',', 'either', 'the', 'plane', 'of', 'the', 'two', 'lines', 'would', 'meet', '**zg', 'in', 'more', 'than', 'K', 'points', 'or', ',', 'alternatively', ',', 'the', 'order', 'of', 'the', 'image', 'regulus', 'of', 'the', 'pencil', 'determined', 'by', 'the', 'two', 'lines', 'would', 'be', 'too', 'high', '.']
+
+211, ['We', 'now', 'observe', 'that', 'the', 'case', 'in', 'which', '**zg', 'is', 'a', 'Af', 'curve', 'on', 'a', 'quadric', 'is', 'impossible', 'if', 'the', 'complex', 'of', 'singular', 'lines', 'consists', 'exclusively', 'of', 'the', 'lines', 'which', 'meet', 'Aj', '.']
+
+212, ['For', 'any', 'pencil', 'in', 'a', 'plane', 'containing', 'a', 'Af-fold', 'secant', 'of', '**zg', 'has', 'an', 'image', 'regulus', 'which', 'meets', 'the', 'plane', 'of', 'the', 'pencil', 'in', 'Af', 'lines', ',', 'namely', 'the', 'images', 'of', 'the', 'lines', 'of', 'the', 'pencil', 'which', 'pass', 'through', 'the', 'intersection', 'of', '**zg', 'and', 'the', 'multiple', 'secant', ',', 'plus', 'an', 'additional', 'component', 'to', 'account', 'for', 'the', 'intersections', 'of', 'the', 'images', 'of', 'the', 'general', 'lines', 'of', 'the', 'pencil', '.']
+
+213, ['Now', 'consider', 'an', 'arbitrary', 'line', ',', 'l', ',', 'meeting', 'Q', 'in', 'two', 'points', ',', 'Af', 'and', 'Af', '.']
+
+214, ['If', '**ya', 'is', 'the', 'multiple', 'secant', 'of', '**zg', 'which', 'passes', 'through', 'Af', 'and', '**yb', 'is', 'the', 'simple', 'secant', 'of', '**zg', 'which', 'passes', 'through', 'Af', ',', 'and', 'if', 'Af', 'are', 'the', 'points', 'in', 'which', '**ya', 'meets', '**zg', ',', 'and', 'if', 'Af', 'is', 'the', 'image', 'of', 'Af', 'on', 'the', 'generator', '**yb', ',', 'it', 'follows', 'that', 'the', 'image', 'of', 'the', 'line', 'Af', 'is', 'Af', '.']
+
+215, ['To', 'establish', 'an', 'emotionally', 'meaningful', 'relationship', 'the', 'worker', 'must', 'demonstrate', 'actual', 'or', 'potential', 'helpfulness', 'immediately', ',', 'preferably', 'within', 'the', 'first', 'interview', ',', 'by', 'meeting', 'the', "client's", 'specific', 'needs', '.']
+
+216, ['Adaptation', 'to', 'the', 'social', 'and', 'non-social', 'environment', 'through', 'the', 'economy', 'has', 'been', 'met', 'to', 'a', 'degree', 'through', 'a', 'type', 'of', 'occupational', 'segregation', '.']
+
+217, ['They', 'began', 'to', 'meet', 'in', 'the', 'evenings', 'and', 'carry', 'forward', 'various', 'discussions', 'they', 'felt', 'not', 'fully', 'enough', 'covered', 'in', 'class', '.']
+
+218, ['Another', 'patient', ',', 'a', 'paranoid', 'woman', ',', 'for', 'many', 'months', 'infuriated', 'not', 'only', 'me', 'but', 'the', 'ward-personnel', 'and', 'her', 'fellow', 'patients', 'by', 'arrogantly', 'behaving', 'as', 'though', 'she', 'owned', 'the', 'whole', 'building', ',', 'as', 'though', 'she', 'were', 'the', 'only', 'person', 'in', 'it', 'whose', 'needs', 'were', 'to', 'be', 'met', '.']
+
+219, ['Any', 'free', 'elections', 'that', 'were', 'to', 'be', 'held', 'in', 'Poland', 'would', 'have', 'to', 'produce', 'a', 'government', 'in', 'which', 'Moscow', 'had', 'complete', 'confidence', ',', 'and', 'all', 'pressure', 'from', 'the', 'West', 'for', 'free', 'voting', 'by', 'anti-Soviet', 'elements', 'in', 'Poland', 'would', 'be', 'met', 'by', 'restrictions', 'on', 'voting', 'by', 'these', 'elements', '.']
+
+220, ['Annual', 'authorizations', 'of', '$15', 'million', 'were', 'added', 'for', 'area', 'vocational', 'education', 'programs', 'that', 'meet', 'national', 'defense', 'needs', 'for', 'highly', 'skilled', 'technicians', '.']
+
+221, ['Only', 'the', 'Federal', 'government', 'is', 'likely', 'to', 'be', 'able', 'to', 'take', 'a', 'long-run', 'and', 'nation-wide', 'view', 'and', 'to', 'pay', 'for', 'training', 'to', 'meet', 'national', 'skilled', 'manpower', 'needs', '.']
+
+222, ['If', 'it', 'were', 'not', 'for', 'judicial', 'development', 'of', 'certain', 'exceptions', ',', 'this', 'section', 'would', 'prohibit', 'a', 'suit', 'for', 'refund', 'by', 'an', 'acquiring', 'corporation', 'for', 'taxes', 'paid', 'by', 'a', 'transferor', 'corporation', ',', 'even', 'though', 'the', 'reorganization', 'meets', 'the', 'requirements', 'of', 'section', '381(a)', '.']
+
+223, ['The', 'first', 'reason', 'would', 'never', 'apply', 'to', 'a', 'reorganization', 'transfer', 'which', 'meets', 'the', 'conditions', 'of', 'section', '381(a)', ',', 'which', 'is', 'the', 'only', 'type', 'presently', 'under', 'discussion', '.']
+
+224, ['These', 'attempts', 'met', 'with', 'little', 'sucess', 'for', 'a', 'variety', 'of', 'reasons', '.']
+
+225, ['Ridiculing', 'a', 'child', 'for', 'being', 'afraid', 'or', 'forcing', 'him', 'to', 'meet', 'the', 'feared', 'situation', 'alone', 'are', 'poor', 'ways', 'of', 'dealing', 'with', 'the', 'problem', ';', ';']
+
+226, ['the', 'student', 'will', 'certainly', 'want', 'to', 'explore', 'more', 'deeply', 'into', 'the', 'fascinating', 'study', 'of', 'immature', 'individuals', ',', 'struggling', 'to', 'meet', 'their', 'developmental', 'needs', ',', 'and', 'at', 'the', 'same', 'time', 'trying', 'to', 'learn', 'the', 'rules', 'of', 'the', 'game', 'in', 'the', 'ever-expanding', 'number', 'of', 'groups', 'in', 'which', 'they', 'hold', 'membership', '.']
+
+227, ['Much', 'progress', 'has', 'been', 'made', 'in', 'the', 'last', 'two', 'decades', 'in', 'developing', 'techniques', 'for', 'understanding', 'children', ',', 'yet', 'in', 'almost', 'any', 'classroom', 'today', 'can', 'be', 'found', 'children', 'whose', 'needs', 'are', 'not', 'being', 'met', 'by', 'the', 'school', 'program', '.']
+
+228, ['These', 'specialists', 'perform', 'valuable', 'services', 'by', 'helping', 'teachers', 'learn', 'to', 'identify', 'children', 'who', 'need', 'special', 'attention', ',', 'by', 'suggesting', 'ways', 'of', 'meeting', 'the', 'needs', 'of', 'individual', 'children', 'in', 'the', 'regular', 'classroom', ',', 'and', 'by', 'providing', 'clinical', 'services', 'for', 'severely', 'maladjusted', 'children', '.']
+
+229, ['Teachers', 'and', 'administrators', 'in', 'many', 'elementary', 'schools', 'have', 'assumed', 'that', 'dividing', 'the', 'pupils', 'in', 'any', 'grade', 'into', 'groups', 'on', 'the', 'basis', 'of', 'test', 'scores', 'solves', 'the', 'problem', 'of', 'meeting', 'the', 'needs', 'of', 'individuals', '.']
+
+230, ['When', 'a', 'child', 'fails', 'to', 'meet', 'the', 'standards', 'of', 'the', 'school', 'in', 'his', 'rate', 'of', 'learning', ',', 'insecurity', ',', 'unhappiness', ',', 'and', 'other', 'forms', 'of', 'maladjustment', 'frequently', 'follow', '.']
+
+231, [')', 'has', 'amounted', 'to', 'about', 'one', 'third', 'of', 'those', 'total', 'revenue', 'requirements', 'which', 'the', 'carload', 'freight', 'business', 'is', 'supposed', 'to', 'be', 'called', 'upon', 'to', 'meet', '.']
+
+232, ['As', 'American', 'artists', ',', 'it', 'was', 'natural', 'that', 'we', 'would', 'want', 'to', 'meet', 'as', 'many', 'Soviet', 'artists', 'as', 'possible', '.']
+
+233, ['This', 'letter', 'might', 'not', 'have', 'been', 'necessary', 'had', 'our', 'efforts', 'to', 'meet', 'and', 'talk', 'with', 'you', 'been', 'more', 'successful', '.']
+
+234, ['Just', 'yesterday', 'we', 'had', 'met', 'and', 'talked', 'with', 'a', 'living', 'writer', ',', 'a', 'contemporary', 'of', 'the', 'dead', 'poet', ',', 'who', 'is', 'known', 'for', 'his', 'ability', 'of', 'manipulating', 'his', 'ideas', 'and', 'his', 'craft', 'more', 'advantageously', '.']
+
+235, ['Turning', 'from', 'these', 'problems', 'of', 'the', 'use', 'of', 'evidence', ',', 'one', 'meets', 'another', 'type', 'of', 'difficulty', 'in', "Fromm's", 'analysis', ',', 'which', 'is', 'his', 'loose', 'and', 'ambiguous', 'use', 'of', 'certain', 'important', 'terms', '.']
+
+236, ['this', 'is', 'met', 'with', 'scorn', 'by', 'the', 'hearers', ',', 'who', 'claim', 'that', 'Mityukh', 'is', 'lying', 'or', 'drunk', '.']
+
+237, ['And', 'in', 'meeting', 'the', 'demands', 'for', 'urethane', 'foam', 'as', 'a', 'garment', 'interlining', ',', 'new', 'adhesives', 'and', 'new', 'methods', 'of', 'laminating', 'foam', 'to', 'a', 'substrate', 'have', 'been', 'developed', '.']
+
+238, ['If', 'a', 'branch', 'extended', 'out', 'too', 'far', ',', 'each', 'man', 'held', 'it', 'back', 'for', 'the', 'next', ',', 'and', 'if', 'they', 'met', 'a', 'low', 'overhang', ',', 'each', 'warned', 'the', 'other', '.']
+
+239, ['Brittany', ',', 'that', 'stone-gray', 'mystery', 'through', 'which', 'he', 'traveled', 'for', 'thirty', 'days', ',', 'sleeping', 'in', 'the', 'barns', 'of', 'farmers', 'or', 'alongside', 'roads', ',', 'had', 'worked', 'some', 'subtle', 'change', 'in', 'him', ',', 'he', 'knew', ',', 'and', 'it', 'was', 'in', 'Brittany', 'that', 'he', 'had', 'met', 'Pierre', '.']
+
+240, ['But', 'when', 'this', 'proposal', 'was', 'made', 'to', 'his', 'Deacon', 'Board', ',', 'he', 'met', 'unanimous', 'opposition', '.']
+
+241, ['He', 'started', 'down', 'the', 'steps', 'to', 'meet', 'the', 'near-blind', 'preacher', ',', 'who', 'had', 'been', 'one', 'of', 'the', 'early', 'Gospelers', 'in', 'Paris', '.']
+
+242, ['I', 'did', 'have', 'the', 'decency', 'to', 'call', 'up', 'Thelma', 'and', 'tell', 'her', "I'd", 'met', 'old', 'friends', 'and', 'would', 'be', 'home', 'late', '.']
+
+243, ['I', 'wrote', 'her', 'that', "I'd", 'met', 'up', 'with', 'Eileen', 'and', 'that', 'old', 'bonds', 'had', 'proved', 'too', 'strong', 'and', 'asked', 'her', 'to', 'send', 'my', 'clothes', 'down', 'by', 'express', '.']
+
+244, ['At', 'last', 'he', 'consented', 'to', 'meet', 'her', ',', 'and', 'following', 'that', 'brief', 'interview', 'Claire', 'wrote', 'him', 'a', 'yet', 'more', 'remarkable', 'proposal', ':']
+
+245, ['Turning', 'in', 'at', 'the', "Flannagans'", 'driveway', ',', 'he', 'tried', 'to', 'remember', 'if', 'he', 'had', 'ever', 'met', 'them', '.']
+
+246, ['Her', 'voice', 'was', 'ripe', 'and', 'full', 'and', 'her', 'teeth', 'flashed', 'again', 'in', 'Sicilian', 'brilliance', 'before', 'the', 'warm', 'curved', 'lips', 'met', 'and', 'her', 'mouth', 'settled', 'in', 'repose', '.']
+
+247, ["They've", 'never', 'met', ',', 'you', 'know', '.']
+
+248, ['Was', 'it', 'preferable', 'to', 'meet', 'her', 'at', 'home', 'or', 'in', 'the', 'city', '?', '?']
+
+249, ['In', 'December', 'I', 'wrote', 'her', 'with', 'authority', 'that', 'we', 'would', 'meet', 'on', 'the', 'steps', 'of', 'the', 'Hotel', 'Astor', ',', 'a', 'rendezvous', 'spot', 'that', 'I', 'had', 'learned', 'was', 'the', 'most', 'sophisticated', '.']
+
+250, ['She', 'met', 'my', 'eyes', ',', 'suddenly', 'angry', '.']
+
+251, ['Want', 'to', 'try', 'and', 'meet', 'him', 'there', "''", '?', '?']
+
+252, ["We've", 'got', 'one', 'other', 'call', 'to', 'make', 'before', 'I', 'meet', 'Alvarez', "''", '.']
+
+253, ['``', 'Remember', 'to', 'tell', 'that', 'to', 'the', 'next', 'corpse', 'you', 'meet', "''", '.']
+
+254, ['She', 'could', 'always', 'predict', 'what', 'Stanley', 'was', 'going', 'to', 'do', ',', 'ever', 'since', 'she', 'first', 'met', 'him', '.']
+
+255, ['A', 'second', 'scene', 'flashed', 'before', 'his', 'mind', ',', 'the', 'interior', 'of', 'the', 'garage', 'at', 'the', 'new', 'house', 'and', 'the', 'young', 'Bartlett', 'girl', 'turning', 'startled', 'to', 'meet', 'him', ',', 'the', 'dim', 'dark', 'and', 'the', 'sudden', 'confusion', 'and', 'fear', 'and', 'then', 'the', 'brightness', 'as', 'Mae', 'had', 'clicked', 'on', 'the', 'light', '.']
+
+256, ['Shrugs', 'met', 'that', ',', 'from', 'room', 'clerks', ',', 'from', 'bellhops', '.']
+
+257, ['Shrugs', 'met', 'that', '.']
+
+258, ['Pamela', 'North', 'said', ',', '``', 'Hi', "''", ',', 'to', 'her', 'cats', ',', 'and', 'added', 'that', 'proper', 'cats', 'met', 'their', 'humans', 'at', 'the', 'door', '.']
+
+259, ['The', 'important', 'thing', 'was', 'that', 'Burton', 'had', 'gone', 'somewhere', 'to', 'meet', 'a', 'blackmailer', 'with', 'a', 'gun', 'in', 'his', 'pocket', '.']
+
+260, ['But', 'he', 'was', 'surprised', 'to', 'meet', 'it', 'here', '.']
+
+261, ['We', 'met', 'at', "Maxine's", 'and', 'decided', 'we', 'were', 'set', 'to', 'stay', 'as', 'long', 'as', 'it', 'took', ',', 'into', 'or', 'even', 'through', 'the', 'evening', ',', 'to', 'talk', 'things', 'out', '.']
+
+262, ['``', 'McLish', "''", ',', 'he', 'said', 'as', 'he', 'kicked', 'the', 'horse', 'into', 'motion', ',', '``', "I'd", 'be', 'a', 'mighty', 'sad', 'man', 'if', 'we', 'never', 'met', 'again', "''", '.']
+
+263, ['``', 'Just', 'let', 'me', 'meet', 'up', 'with', 'that', 'damned', "bushwhackin'", 'coward', 'face-to-face', "''", '!', '!']
+
+264, ['Glowering', 'looks', 'met', 'them', 'in', 'the', 'bar', ',', 'but', 'there', 'was', 'no', 'attempt', 'to', 'halt', 'them', '.']
+
+265, ['Just', 'as', 'I', 'straightened', 'up', 'with', 'my', 'duffel', 'bag', ',', 'I', 'heard', ':', '``', 'Sahjunt', 'Yoorick', ',', 'meet', 'Mrs.', 'Major', 'J.', 'A.', 'Roebuck', "''", '.']
+
+266, ['It', 'was', 'a', 'disturbingly', 'familiar', 'face', ',', 'too', ',', 'but', 'I', "couldn't", 'remember', 'where', 'we', 'had', 'met', '.']
+
+267, ['``', 'They', 'were', 'supposed', 'to', 'meet', 'Thor', 'at', 'nine', 'PM', 'for', 'a', 'conference', 'concerning', 'the', 'ad', 'campaign', 'for', 'their', 'soap', ',', 'a', 'new', 'angle', 'based', 'on', 'this', 'SX-21', 'stuff', "''", '.']
+
+268, ['I', 'was', 'aware', 'that', 'when', 'our', 'eyes', 'met', 'we', 'both', 'quickly', 'averted', 'them', '.']
+
+269, ['When', 'our', 'eyes', 'met', 'the', 'air', 'was', 'filled', 'with', 'an', 'unuttered', 'message', 'of', '``', 'Me', ',', 'too', "''", '.']
+
+270, ["I've", 'noticed', 'the', 'way', "you've", 'been', 'looking', 'at', 'me', 'ever', 'since', 'we', 'met', "''", '.']
+
+271, ['She', 'took', 'it', 'grudgingly', ',', 'her', 'dark', 'eyes', 'baleful', 'as', 'they', 'met', 'his', '.']
+
+272, ['That', 'was', 'where', 'he', 'met', 'Penny', '.']
+
+273, ['But', 'they', 'met', 'in', 'one', 'searing', 'moment', 'that', 'gave', 'them', 'to', 'one', 'another', 'instantly', '.']
+
+274, ["Keith's", 'eyes', 'met', "Penny's", 'as', 'they', 'stood', 'there', 'in', 'this', 'strange', 'marriage', 'of', 'destruction', '.']
+
+275, ['about', 'keeping', 'warm', ',', 'about', 'keeping', 'well', ',', 'about', 'meeting', 'the', 'minor', 'emergencies', 'that', 'came', 'up', 'once', ',', 'twice', ',', 'fifty', 'times', 'a', 'day', '.']
+
+276, ['She', 'said', 'to', 'Maggie', 'that', 'it', 'was', 'one', 'thing', 'to', 'meet', 'an', 'emergency', 'and', 'another', 'to', 'wallow', 'in', 'it', ',', 'and', 'it', 'was', 'beginning', 'to', 'look', 'at', 'if', 'this', 'one', 'was', 'going', 'to', 'last', 'forever', '.']
+
+277, ['``', 'A', 'swell', 'party', ',', 'send', 'an', 'invite', 'to', "ever'body", 'but', 'them', '--', 'those', 'folks', 'you', 'met', 'at', 'the', 'Galt', 'House', ',', 'the', 'ones', "I've", 'got', 'to', 'know', 'in', 'this', 'new', 'Jockey', 'Club', 'affair', ',', 'the', 'whole', 'dang', 'neighborhood', '.']
+
+278, ['if', 'Tommy', 'sat', 'long', 'enough', ',', 'she', 'would', 'be', 'sure', 'to', 'see', 'all', 'the', 'young', 'officers', 'she', 'had', 'met', 'in', 'San', 'Diego', 'and', 'Long', 'Beach', '.']
+
+279, ['The', 'two', 'met', 'in', 'the', "Captain's", 'cabin', '.']
+
+280, ['In', 'the', 'tiny', 'cabin', ',', 'Alexander', 'met', 'with', 'Gansevoort', ',', 'Heiser', 'and', 'Wales', 'to', 'speak', 'and', 'to', 'listen', '.']
+
+281, ['The', 'hazel', 'eyes', 'met', "Alexander's", '.']
+
+282, ['He', 'had', 'known', 'when', 'he', 'first', 'helped', 'her', 'to', 'meet', 'the', 'right', 'people', 'and', 'work', 'with', 'them', 'that', 'she', 'did', 'not', 'intend', 'to', 'marry', 'him', '.']
+
+283, ['The', 'night', 'we', 'first', 'met', ',', 'at', 'one', 'of', 'Mrs.', "Monmouth's", 'giant', 'parties', ',', 'he', 'was', 'wearing', 'a', 'brown', 'cashmere', 'jacket', 'with', 'silver', 'buttons', 'and', 'a', 'soft', 'pink', 'Viyella', 'shirt', ';', ';']
+
+284, ['Besides', ',', "it's", 'important', 'to', 'the', 'way', 'a', 'painter', 'thinks', 'that', 'he', 'should', 'move', 'in', 'a', 'certain', 'atmosphere', ',', 'an', 'atmosphere', 'in', 'which', 'he', 'may', 'absorb', 'the', 'ideas', 'of', 'other', 'masters', ',', 'as', 'Durer', 'went', 'to', 'Italy', 'to', 'meet', 'Bellini', 'and', 'Mantegna', "''", '.']
+
+285, ['The', 'upshot', 'of', 'the', 'evening', 'was', 'that', 'I', 'got', 'the', 'address', 'of', "Pendleton's", 'studio', '--', 'or', 'rather', ',', 'of', 'the', 'studio', 'in', 'which', 'he', 'gave', 'his', 'classes', ',', 'for', 'he', "didn't", 'work', 'there', 'himself', '--', 'and', 'joined', 'the', 'life', 'class', ',', 'which', 'met', 'every', 'Tuesday', 'and', 'Thursday', 'from', 'ten', 'to', 'twelve', 'in', 'the', 'morning', '.']
+
+286, ['it', 'is', 'when', 'I', 'meet', 'someone', 'who', 'was', 'a', 'close', 'friend', 'of', 'the', 'family', ',', 'and', 'therefore', 'of', 'mine', ',', 'and', 'they', 'nod', 'to', 'me', 'so', 'coolly', 'and', 'walk', 'away', ',', 'that', 'it', 'hurts', '.']
+
+287, ['Then', 'Via', 'called', 'to', 'say', 'they', 'had', 'decided', 'to', 'cremate', 'her', '--', 'as', 'they', 'had', 'Ellen', ',', 'the', 'thought', 'leaped', 'to', 'my', 'mind', '--', 'and', 'did', 'I', 'want', 'to', 'meet', 'her', 'at', 'the', 'funeral', 'home', 'the', 'next', 'morning', '.']
+
+288, ['Just', 'the', 'same', ',', 'the', 'old', 'woman', 'said', ',', 'she', 'would', 'write', 'to', 'her', 'nephew', 'in', 'his', 'boxcar', 'and', 'tell', 'him', 'she', 'had', 'met', 'a', 'nice', 'man', 'from', 'his', 'adopted', 'country', '.']
+
+289, ['And', 'Sam', 'thanked', 'her', ',', 'and', 'hoped', 'he', 'might', 'meet', 'her', 'nephew', 'back', 'home', ',', 'and', 'asked', 'her', 'if', 'she', 'had', 'any', 'further', 'news', 'of', 'the', 'Pope', '.']
+
+290, ['Devout', ',', 'orthodox', 'and', 'plain', 'like', 'a', 'family', 'she', 'might', 'meet', 'in', 'Brooklyn', 'or', 'Malta', 'or', 'Ireland', '.']
+
+291, ['They', 'met', 'next', 'morning', 'and', 'all', 'the', 'mornings', 'thereafter', '.']
+
+292, ['Pete', 'came', 'to', 'meet', 'us', 'when', 'we', 'stepped', 'out', 'of', 'the', 'elevator', 'on', 'Seven', '--', "he'd", 'had', 'a', 'case', 'of', 'post-operative', 'shock', ',', 'but', 'it', 'was', 'all', 'taken', 'care', 'of', 'now', '.']
+
+293, ['I', 'met', 'Claire', ',', 'which', 'was', 'better', '.']
+
+294, ['But', 'there', 'is', 'more', 'in', 'this', 'than', 'meets', 'the', 'eye', '.']
+
+295, ["I'd", 'never', 'even', 'petted', 'with', 'a', 'boy', ',', 'and', 'after', 'I', 'met', 'Johnnie', 'he', 'never', 'touched', 'me', 'for', 'the', 'longest', 'while', ',', 'not', 'until', 'I', 'all', 'but', 'threw', 'myself', 'at', 'him', '.']
+
+296, ['The', 'first', 'meeting', 'was', 'held', 'in', 'Faneuil', 'Hall', ',', 'a', 'great', 'big', 'place', 'where', 'we', 'were', 'able', 'to', 'meet', 'members', 'from', 'all', 'the', 'other', 'states', '.']
+
+297, ['Then', 'he', 'met', 'the', 'grave', 'eyes', 'of', 'his', 'wife', ',', 'Anne', ',', 'from', 'the', 'photograph', 'next', 'to', "David's", '.']
+
+298, ['In', 'the', 'first', 'place', ',', 'it', 'was', 'difficult', 'for', 'us', 'to', 'meet', '.']
+
+299, ['Under', 'the', 'circumstances', ',', 'I', 'had', 'difficulty', 'keeping', 'up', 'with', 'the', 'conversation', 'on', 'the', 'phone', ',', 'but', 'when', 'I', 'hung', 'up', 'I', 'was', 'reasonably', 'certain', 'that', 'Francesca', 'had', 'wanted', 'to', 'remind', 'me', 'of', 'our', 'town', 'meeting', 'the', 'next', 'evening', ',', 'and', 'how', 'important', 'it', 'was', 'that', 'Hank', 'and', 'I', 'be', 'there', '.']
+
+300, ['We', "didn't", 'even', 'know', 'them', 'till', 'about', 'a', 'month', 'after', 'we', 'moved', '--', 'at', 'that', 'time', ',', 'they', 'had', 'called', 'on', 'us', ',', 'after', 'I', 'met', 'Fran', 'at', 'a', 'PTA', 'meeting', ',', 'and', 'had', 'taken', 'us', 'in', 'hand', 'socially', '.']
+
+301, ['Fran', 'and', 'he', 'had', 'met', 'about', 'two', 'years', 'after', 'she', 'had', 'arrived', 'in', 'Manhattan', 'from', 'Nebraska', ',', 'or', 'was', 'it', 'Wyoming', '?', '?']
+
+302, ['It', 'was', 'during', 'her', '``', 'writing', "''", 'period', 'that', 'she', 'and', 'Herb', 'met', 'and', 'decided', 'that', 'they', 'were', 'in', 'love', '.']
+
+303, ['The', 'husbands', 'of', 'these', 'women', 'and', 'others', 'I', 'had', 'met', 'in', 'Catatonia', 'were', 'distinguished', 'only', 'in', 'that', 'they', 'were', ',', 'to', 'me', 'at', 'least', ',', 'indistinguishable', '.']
+
+304, ['These', 'boys', 'acknowledged', 'an', 'introduction', 'to', 'anybody', 'by', 'gently', 'pressing', 'one', 'of', 'his', 'hands', 'in', 'both', 'of', 'theirs', ',', 'while', 'they', 'gazed', ',', 'misty-eyed', 'with', 'care', ',', 'into', 'the', 'eyes', 'of', 'the', 'person', 'they', 'were', 'meeting', '.']
+
+305, ['A', 'woman', 'met', 'a', 'famous', 'author', 'at', 'a', 'literary', 'tea', '.']
+
+306, ['``', 'Oh', ',', "I'm", 'so', 'delighted', 'to', 'meet', 'you', "''", ',', 'she', 'gushed', '.']
