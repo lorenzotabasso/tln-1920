@@ -3,18 +3,35 @@ from nltk.corpus import wordnet as wn
 from nltk.corpus import stopwords
 
 
-def find_synonims(sense):
+def our_lesk(word, sentence):
     """
-    Given a sense (Synset), it returns a list of his synonyms.
-    :param sense: synset of which find synonyms
-    :return: synonyms list
+    Lesk's algoritm implementation. Given a word and a sentence in which it appears,
+    it returns the best sense of the word.
+
+    :param word: word to disabiguate
+    :param sentence: sentence to compare
+    :return: best sense of word
     """
 
-    synonyms = []
-    for l in sense.lemmas():
-        synonyms.append(l.name())
+    senses = wn.synsets(word)
+    if len(senses) <= 0:
+        return None
 
-    return synonyms
+    best_sense = senses[0]
+    max_overlap = 0
+    context = bag_of_word(sentence)
+
+    for sense in senses:
+        signature = bag_of_word(sense.definition())
+        examples = sense.examples()
+        for ex in examples:
+            signature = signature.union(bag_of_word(ex))  # bag of words of definition and examples
+        overlap = compute_overlap(signature, context)
+        if overlap > max_overlap:
+            max_overlap = overlap
+            best_sense = sense
+
+    return best_sense
 
 
 def bag_of_word(sent):
@@ -46,37 +63,6 @@ def compute_overlap(signature, context):
     """
 
     return len(signature & context)
-
-
-def lesk(word, sentence):
-    """
-    Lesk's algoritm implementation. Given a word and a sentence in which it appears,
-    it returns the best sense of the word.
-
-    :param word: word to disabiguate
-    :param sentence: sentence to compare
-    :return: best sense of word
-    """
-
-    senses = wn.synsets(word)
-    if len(senses) <= 0:
-        return None
-
-    best_sense = senses[0]
-    max_overlap = 0
-    context = bag_of_word(sentence)
-
-    for sense in senses:
-        signature = bag_of_word(sense.definition())
-        examples = sense.examples()
-        for ex in examples:
-            signature = signature.union(bag_of_word(ex))  # bag of words of definition and examples
-        overlap = compute_overlap(signature, context)
-        if overlap > max_overlap:
-            max_overlap = overlap
-            best_sense = sense
-
-    return best_sense
 
 
 def get_sense_index(word, sense):

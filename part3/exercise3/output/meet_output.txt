@@ -12,10 +12,16 @@ Enter a verb to search in the Brown corpus: meet
 	('i', 'literature', "after all , the large ( and probably unreliable ) reader's digest literature on the `` most unforgettable character i ever met '' deals with village grocers , country doctors , favorite if illiterate aunts , and so forth ")
 	('founder', 'pallavicini', 'and general the count pallavicini , founder of the austrian branch of that celebrated italian house , a courtier littlepage could have met at madrid in december , 1780 ')
 	('people', 'we', 'this of course was not true of the educated and sophisticated people we met , who loved their pets , but kindness is not a basic human instinct ')
-	('she', 'officers', 'if tommy sat long enough , she would be sure to see all the young officers she had met in san diego and long beach ')
+	('officers', 'she', 'if tommy sat long enough , she would be sure to see all the young officers she had met in san diego and long beach ')
 	('husbands', 'i', 'the husbands of these women and others i had met in catatonia were distinguished only in that they were , to me at least , indistinguishable ')
-[4] - Finding Semantic Clusters (percentage, count of instances, semantic cluster):
+
+[4.1] - "Our Lesk":
+	Finding Semantic Clusters (percentage, count of instances, semantic cluster):
 	[14.29%] - 1 - ('noun.person', 'noun.substance')
 	[28.57%] - 2 - ('noun.substance', 'noun.cognition')
 
-Process finished with exit code 0
+[4.2] - "NLTK Lesk":
+	Finding Semantic Clusters (percentage, count of instances, semantic cluster):
+	[14.29%] - 1 - ('adj.all', 'noun.cognition')
+	[14.29%] - 1 - ('adj.all', 'noun.act')
+	[14.29%] - 1 - ('noun.person', 'adj.all')
