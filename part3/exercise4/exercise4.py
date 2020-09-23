@@ -1,89 +1,34 @@
-import math
-import sys
-from datetime import datetime
-from optparse import OptionParser
-
-import matplotlib.pyplot as plt
 import nltk
 import numpy as np
 import pandas as pd
-from nltk.corpus import stopwords
+import math
+import matplotlib.pyplot as plt
 from scipy import signal
+from datetime import datetime
 
-# golden values for our text.
+from part3.exercise4.utilities import create_vectors, weighted_overlap
+
+# separator values for our text.
 separators = [19, 50, 85]
-
-
-def compute_overlap(signature, context):
-    """
-    Computes the number of words in common between signature and context.
-
-    :param signature: bag of words of the text's signature (e.g. definitions +
-    examples)
-    :param context: bag of words of the context (e.g. sentence)
-    :return: intersection between signature and context
-    """
-
-    return signature & context
-
-
-def rank(x, v):
-    """
-    Computes rank between the vector X and the Nasari vector V
-
-    :param x: input vector
-    :param v: Nasari vector
-    :return: Rank of the input vector (position)
-    """
-
-    for i in range(len(v)):
-        if v[i] == x:
-            return i + 1
-
-
-def weighted_overlap(topic_nasari_vector, paragraph_nasari_vector):
-    """
-    Implementation of the Weighted Overlap metrics (Pilehvar et al.)
-    :param topic_nasari_vector: Nasari vector representing the topic
-    :param paragraph_nasari_vector: Nasari vector representing the paragraph
-    :return: square-rooted Weighted Overlap if exist, 0 otherwise.
-    """
-
-    overlap_keys = compute_overlap(topic_nasari_vector.keys(),
-                                   paragraph_nasari_vector.keys())
-
-    overlaps = list(overlap_keys)
-
-    if len(overlaps) > 0:
-        # sum 1/(rank() + rank())
-        den = sum(1 / (rank(q, list(topic_nasari_vector)) +
-                       rank(q, list(paragraph_nasari_vector))) for q in overlaps)
-
-        # sum 1/(2*i)
-        num = sum(list(map(lambda x: 1 / (2 * x),
-                           list(range(1, len(overlaps) + 1)))))
-
-        return den / num
-
-    return 0
 
 
 def parse_nasari_dictionary():
     """
     It parse the Nasari input file, and it converts into a more convenient
     Python dictionary.
+
     :return: a dictionary representing the Nasari input file. Fomat: {word: {term:score}}
     """
 
     global options
 
     nasari_dict = {}
-    with open(options.nasari, 'r', encoding="utf8") as file:
+    with open(options["nasari"], 'r', encoding="utf8") as file:
         for line in file:
             splits = line.split("\t")
             vector_dict = {}
 
-            for term in splits[2:options.limit]:
+            for term in splits[2:options["limit"]]:
                 k = term.split("_")
                 if len(k) > 1:
                     vector_dict[k[0]] = k[1]
@@ -93,7 +38,13 @@ def parse_nasari_dictionary():
     return nasari_dict
 
 
-def read(path):
+def read_file(path):
+    """
+    It reads the input file at the specified path.
+
+    :param path: the path to the input file.
+    :return:
+    """
     with open(path) as file:
         lines = file.readlines()
     return ''.join(lines)
@@ -111,7 +62,7 @@ def tokenize(text):
     text = text.lower()
     tokens = nltk.word_tokenize(text)
     j = 0
-    for i in range(options.w, len(tokens), options.w):
+    for i in range(options["token_sequence_size"], len(tokens), options["token_sequence_size"]):
         sequences.append(tokens[j:i])
         j = i
 
@@ -119,46 +70,12 @@ def tokenize(text):
     return sequences
 
 
-def bag_of_word(tokens):
-    """
-    It returns the Bag of Word representation fo the given text.
-    It applies lemmatization, removes the punctuation, the stop-words and duplicates.
-    :param tokens: input text
-    :return: Bag of Words representation of the text.
-    """
-
-    stop_words = set(stopwords.words('english'))
-    punct = {',', ';', '(', ')', '{', '}', ':', '?', '!', '*'}
-    wnl = nltk.WordNetLemmatizer()
-    tokens = list(filter(lambda x: x not in stop_words and x not in punct, tokens))
-    return set(wnl.lemmatize(t) for t in tokens)
-
-
-def create_vectors(tokens, nasari):
-    """
-    It creates a list of Lexical Nasari vectors (a list of {term:score}).
-    Every vector is linked to one token of the text.
-
-    :param tokens: input text
-    :param nasari: Nasari dictionary
-    :return: list of Nasari's vectors.
-    """
-
-    tokens = bag_of_word(tokens)
-    vectors = []
-    for word in tokens:
-        if word in nasari.keys():
-            vectors.append(nasari[word])
-
-    return vectors
-
-
-def main():
+def segmentation():
     global options
 
     # input
     nasari = parse_nasari_dictionary()
-    text = read(options.input)
+    text = read_file(options["input"])
 
     # tokenize
     sequences = tokenize(text)
@@ -197,12 +114,12 @@ def main():
     short = int(0.016 * length)
     long = int(0.08 * length)
     very_long = int(0.16 * length)
-    span = length / (options.k + 1)
+    span = length / (options["segments_number"] + 1)
 
     # moving average
     data = pd.DataFrame(data=y)
-    short_rolling = data.rolling(window=short).mean()
-    long_rolling = data.rolling(window=long).mean()
+    # short_rolling = data.rolling(window=short).mean()
+    # long_rolling = data.rolling(window=long).mean()
     ema_very_long = data.ewm(span=very_long, adjust=False).mean()
 
     # local minimum
@@ -223,41 +140,24 @@ def main():
     ax.legend(loc='best')
 
     # dd/mm/YY H:M:S
-    now = datetime.now().strftime("Plot - %d.%m.%Y %H:%M:%S")
+    now = datetime.now().strftime("Plot - %d.%m.%Y-%H:%M:%S")
     plt.savefig('output/{}.png'.format(now))
     plt.show()
     print("Plot saved in output folder.")
 
 
+global options  # Dictionary of the configuration. Used across all the script.
+
 if __name__ == "__main__":
+    options = {
+        "input": "input/snowden.txt",
+        "output": "output/",
+        "nasari": "resources/NASARI_lexical_english.txt",
+        "limit": 14,  # limit Nasari's dimensions
+        "token_sequence_size": 25,
+        "segments_number": 9
+
+    }
 
     print('Starting segmentation...')
-
-    argv = sys.argv[1:]
-    parser = OptionParser()
-
-    parser.add_option("-i", "--input", help='input', action="store", type="string", dest="input",
-                      default="input/text.txt")
-
-    parser.add_option("-o", "--output", help='input', action="store", type="string", dest="output",
-                      default="output/")
-
-    parser.add_option("-n", "--nasari", help='nasari file', action="store", type="string", dest="nasari",
-                      default="resources/NASARI_lexical_english.txt")
-
-    parser.add_option("-l", "--limit", help='nasari dimensions', action="store", type="int", dest="limit",
-                      default="14")
-
-    parser.add_option("-w", help='tokens sequence size', action="store", type="int", dest="w",
-                      default="25")
-
-    parser.add_option("-k", help='number of segments', action="store", type="int", dest="k",
-                      default="9")
-
-    (options, args) = parser.parse_args()
-
-    if options.input is None or options.nasari is None or options.k is None or options.w is None:
-        print("Missing mandatory parameters")
-        sys.exit(2)
-
-    main()
+    segmentation()

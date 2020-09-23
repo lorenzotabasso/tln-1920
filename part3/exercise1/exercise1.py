@@ -1,12 +1,12 @@
 import csv
+from datetime import datetime
+
 import nltk
 from nltk import word_tokenize
 from nltk.corpus import stopwords
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
-from numpy.linalg import norm
-import Levenshtein
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
@@ -245,31 +245,31 @@ if __name__ == "__main__":
             third_row.append('{:.0%}'.format(mean_pos))
             percentage2["generic_concrete"] = mean_pos
             fifth_row.append('{:.0%}'.format(mean_cosine))
-            percentage3["generic_abstract"] = mean_cosine
+            percentage3["generic_concrete"] = mean_cosine
         elif count == 2:
             second_row.append('{:.0%}'.format(mean_terms))
             percentage1["specific_abstract"] = mean_terms
             fourth_row.append('{:.0%}'.format(mean_pos))
             percentage2["specific_abstract"] = mean_pos
             sixth_row.append('{:.0%}'.format(mean_cosine))
-            percentage3["generic_abstract"] = mean_cosine
+            percentage3["specific_abstract"] = mean_cosine
         else:
             second_row.append('{:.0%}'.format(mean_terms))
             percentage1["specific_concrete"] = mean_terms
             fourth_row.append('{:.0%}'.format(mean_pos))
             percentage2["specific_concrete"] = mean_pos
             sixth_row.append('{:.0%}'.format(mean_cosine))
-            percentage3["generic_abstract"] = mean_cosine
+            percentage3["specific_concrete"] = mean_cosine
 
         count += 1
 
     # build and print dataframe
     df_baseline = pd.DataFrame([first_row, second_row], columns=["Abstract", "Concrete"],
-                      index=["Generic", "Specific"])
+                               index=["Generic", "Specific"])
     df_pos = pd.DataFrame([third_row, fourth_row], columns=["Abstract", "Concrete"],
                           index=["Generic", "Specific"])
     df_cosine = pd.DataFrame([fifth_row, sixth_row], columns=["Abstract", "Concrete"],
-                          index=["Generic", "Specific"])
+                             index=["Generic", "Specific"])
 
     print("\nBaseline:\n")
     print(df_baseline)
@@ -291,7 +291,12 @@ if __name__ == "__main__":
     plt.title("Baseline")
     plt.xlabel("Concepts")
     plt.ylabel("Similarity (higher is better)")
+
+    # saving plot in output folder
+    now = datetime.now().strftime("Baseline - %d.%m.%Y-%H:%M:%S")  # dd/mm/YY-H:M:S
+    plt.savefig('output/{}.png'.format(now))
     plt.show()
+    print("Baseline's plot saved in output folder.")
 
     # POS Experiment
     print2 = [[percentage2["generic_abstract"], percentage2["generic_concrete"]],
@@ -303,19 +308,29 @@ if __name__ == "__main__":
     plt.title("POS Experiment")
     plt.xlabel("Concepts")
     plt.ylabel("Similarity (higher is better)")
+
+    # saving plot in output folder
+    now = datetime.now().strftime("POS - %d.%m.%Y-%H:%M:%S")  # dd/mm/YY-H:M:S
+    plt.savefig('output/{}.png'.format(now))
     plt.show()
+    print("POS's plot saved in output folder.")
 
     # Cosine Similarity Experiment
     print3 = [[percentage3["generic_abstract"], percentage3["generic_concrete"]],
               [percentage3["specific_abstract"], percentage3["specific_concrete"]]]
-    df3 = pd.DataFrame(print2, columns=["Abstract", "Concrete"],
+    df3 = pd.DataFrame(print3, columns=["Abstract", "Concrete"],
                        index=["Generic", "Specific"])
     df3.plot.bar()
     plt.xticks(rotation=30, horizontalalignment="center")
     plt.title("Cosine Similarity Experiment")
     plt.xlabel("Concepts")
     plt.ylabel("Similarity (higher is better)")
+
+    # saving plot in output folder
+    now = datetime.now().strftime("Cosine Similarity - %d.%m.%Y-%H:%M:%S")  # dd/mm/YY-H:M:S
+    plt.savefig('output/{}.png'.format(now))
     plt.show()
+    print("Cosine Similarity's plot saved in output folder.")
 
     # TODO: fare le cloud word?
 
