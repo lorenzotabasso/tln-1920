@@ -8,9 +8,6 @@ from datetime import datetime
 
 from part3.exercise4.utilities import create_vectors, weighted_overlap
 
-# separator values for our text.
-separators = [19, 50, 85]
-
 
 def parse_nasari_dictionary():
     """
@@ -20,7 +17,7 @@ def parse_nasari_dictionary():
     :return: a dictionary representing the Nasari input file. Fomat: {word: {term:score}}
     """
 
-    global options
+    # global options
 
     nasari_dict = {}
     with open(options["nasari"], 'r', encoding="utf8") as file:
@@ -38,30 +35,19 @@ def parse_nasari_dictionary():
     return nasari_dict
 
 
-def read_file(path):
-    """
-    It reads the input file at the specified path.
-
-    :param path: the path to the input file.
-    :return:
-    """
-    with open(path) as file:
-        lines = file.readlines()
-    return ''.join(lines)
-
-
-def tokenize(text):
+def tokenize_text(text):
     """
     It divides the text in groups. Each group is composed by w words.
     :param text: input text
     :return: list of sequences (list of all groups of word)
     """
-    global options
+    # global options
 
     sequences = []
     text = text.lower()
     tokens = nltk.word_tokenize(text)
     j = 0
+    # TODO: sistemare l'append delle sentences
     for i in range(options["token_sequence_size"], len(tokens), options["token_sequence_size"]):
         sequences.append(tokens[j:i])
         j = i
@@ -71,14 +57,16 @@ def tokenize(text):
 
 
 def segmentation():
-    global options
+    # global options
 
     # input
     nasari = parse_nasari_dictionary()
-    text = read_file(options["input"])
+    with open(options["input"]) as file:
+        lines = file.readlines()
+    text = ''.join(lines)
 
     # tokenize
-    sequences = tokenize(text)
+    sequences = tokenize_text(text)
 
     # compute similarity neighbors
     similarities = list(np.zeros(len(sequences)))
@@ -104,9 +92,9 @@ def segmentation():
 
     del nasari
 
+    # Plotting -----------------------------------------------------------------
     print("Plotting...")
 
-    # plot
     length = len(similarities)
     x = np.arange(0, length, 1)
     y = np.array(similarities)
@@ -148,6 +136,9 @@ def segmentation():
 
 global options  # Dictionary of the configuration. Used across all the script.
 
+# separator values for our text.
+separators = [19, 50, 85]
+
 if __name__ == "__main__":
     options = {
         "input": "input/snowden.txt",
@@ -161,3 +152,4 @@ if __name__ == "__main__":
 
     print('Starting segmentation...')
     segmentation()
+    print('Segmentation ended.')
