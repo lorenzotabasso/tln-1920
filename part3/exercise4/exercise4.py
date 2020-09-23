@@ -147,7 +147,6 @@ if __name__ == "__main__":
         "limit": 14,  # limit Nasari's dimensions
         "token_sequence_size": 25,
         "segments_number": 9
-
     }
 
     print('Starting segmentation...')
