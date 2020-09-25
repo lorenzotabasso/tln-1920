@@ -64,7 +64,7 @@ def parse_nasari():
     nasari = {}
     babel_word_nasari = {}
 
-    with open(options["nasari"], 'r', encoding="utf8") as file:
+    with open(config["nasari"], 'r', encoding="utf8") as file:
         for line in file.readlines():
             lineSplitted = line.split()
             k = lineSplitted[0].split("__")
@@ -91,7 +91,7 @@ def parse_italian_synset():
     sem_dict = {}
     synsets = []
     term = "first_step"  # only for the first time
-    with open(options["input_italian_synset"], 'r', encoding="utf8") as file:
+    with open(config["input_italian_synset"], 'r', encoding="utf8") as file:
         for line in file.readlines():
             line = line[:-1].lower()
             if "#" in line:
@@ -186,11 +186,11 @@ def evaluate_correlation_level(v1, v2):
     return pearsonr(v1, v2)[0], spearmanr(v1, v2)[0]
 
 
-global options  # Dictionary containing all the script settings. Used everywhere.
+global config  # Dictionary containing all the script settings. Used everywhere.
 
 if __name__ == "__main__":
 
-    options = {
+    config = {
         "input_annotation_1": "input/mydata/my_words.txt",
         "input_annotation_2": "input/mydata/my_words_2.txt",
         "input_senses": "input/mydata/my_senses.tsv",
@@ -213,8 +213,8 @@ if __name__ == "__main__":
 
     print('Task 1: Semantic Similarity')
 
-    annotations_1 = parse_word(options["input_annotation_1"])
-    annotations_2 = parse_word(options["input_annotation_2"])
+    annotations_1 = parse_word(config["input_annotation_1"])
+    annotations_2 = parse_word(config["input_annotation_2"])
 
     # 1. Annotation's scores, used for evaluation
     scores_human_1 = list(zip(*annotations_1))[1]
@@ -265,9 +265,9 @@ if __name__ == "__main__":
     k = cohen_kappa_score(int_score_human_1, int_score_human_2)
     print('\tInter-rate agreement - Cohen Kappa: {0:.2f}'.format(k))
 
-    senses = parse_sense(options["input_senses"])
+    senses = parse_sense(config["input_senses"])
 
-    with open(options["output"] + 'results.tsv', "w", encoding="utf-8") as out:
+    with open(config["output"] + 'results.tsv', "w", encoding="utf-8") as out:
 
         i = 0  # used for print progress bar
         first_print = True  # used for print progress bar

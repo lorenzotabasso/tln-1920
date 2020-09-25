@@ -65,7 +65,7 @@ def parse_nasari_dictionary():
     """
 
     nasari_dict = {}
-    with open(options["nasari"], 'r', encoding="utf8") as file:
+    with open(config["nasari"], 'r', encoding="utf8") as file:
         for line in file.readlines():
             splits = line.split(";")
             vector_dict = {}
@@ -156,23 +156,23 @@ def parse_document(file):
     return document
 
 
-global options  # Dictionary containing all the script settings. Used everywhere.
+global config  # Dictionary containing all the script settings. Used everywhere.
 
 if __name__ == "__main__":
 
-    options = {
+    config = {
         "input": "input/text-documents",
         "nasari": "input/dd-small-nasari-15.txt",
         "output": "output/",
         "percentage": 10
     }
 
-    print("Summarization.\nReduction percentage: {}".format(options["percentage"]))
+    print("Summarization.\nReduction percentage: {}".format(config["percentage"]))
 
     nasari_dict = parse_nasari_dictionary()
 
     # Inspecting the input files
-    path = Path(options["input"])
+    path = Path(config["input"])
     files_documents = list(path.glob('./*.txt'))
 
     # showing progress bar
@@ -183,15 +183,15 @@ if __name__ == "__main__":
 
         # For each document, do some pretty print of the original.
         # It will be used later for comparison.
-        with open(options["output"] + 'Original-' + file.name,
+        with open(config["output"] + 'Original-' + file.name,
                   'w', encoding='utf-8') as out_original:
             for paragraph in document:
                 out_original.write(paragraph + '\n')
 
         # For each document do summarization.
-        sum_document = summarization(document, nasari_dict, options["percentage"])
+        sum_document = summarization(document, nasari_dict, config["percentage"])
 
-        with open(options["output"] + str(options["percentage"]) + '-' + file.name,
+        with open(config["output"] + str(config["percentage"]) + '-' + file.name,
                   'w', encoding='utf-8') as out_summarized:
             for paragraph in sum_document:
                 out_summarized.write(paragraph + '\n')

@@ -16,7 +16,7 @@ def load_data():
     It reads che definition's CSV
     :return: four list containing the read definitions.
     """
-    with open(options["output"], "r", encoding="utf-8") as definitions:
+    with open(config["output"], "r", encoding="utf-8") as definitions:
         reader = csv.reader(definitions, delimiter=';')
 
         def_abstract_generic = []
@@ -185,7 +185,7 @@ def compute_overlap_cosine(definitions):
 
 if __name__ == "__main__":
 
-    options = {
+    config = {
         "output": "./input/definitions.csv"
     }
 

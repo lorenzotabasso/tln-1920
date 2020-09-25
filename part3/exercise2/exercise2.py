@@ -12,7 +12,7 @@ def load_data():
     It reads che definition's CSV
     :return: four list containing the read definitions.
     """
-    with open(options["output"] + 'content-to-form.csv', "r", encoding="utf-8") as content:
+    with open(config["output"] + 'content-to-form.csv', "r", encoding="utf-8") as content:
         cnt = csv.reader(content, delimiter=';')
 
         dictionary = {}
@@ -193,7 +193,7 @@ def main2(depth):
 
 
 if __name__ == "__main__":
-    options = {
+    config = {
         "output": "/Users/lorenzotabasso/Desktop/University/TLN/Progetto/19-20/tln-1920/part3/exercise2/input/",
     }
 

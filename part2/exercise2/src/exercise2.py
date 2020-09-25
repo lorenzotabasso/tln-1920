@@ -118,8 +118,8 @@ def evaluate():
     """
     total_len = 0
     test = 0
-    with open(options["output"] + 'results.csv', "r", encoding="utf-8") as results:
-        with open(options["golden"], "r", encoding="utf-8") as golden:
+    with open(config["output"] + 'results.csv', "r", encoding="utf-8") as results:
+        with open(config["golden"], "r", encoding="utf-8") as golden:
             reader_results = csv.reader(results, delimiter=',')
             reader_golden = csv.reader(golden, delimiter=',')
 
@@ -144,11 +144,11 @@ def evaluate():
     print("\nPrecision: {0} / {1} Synsets -> {2:.2f} %".format(test, total_len, (test / total_len) * 100))
 
 
-global options  # Dictionary containing all the script settings. Used everywhere.
+global config  # Dictionary containing all the script settings. Used everywhere.
 
 if __name__ == "__main__":
 
-    options = {
+    config = {
         "output": "/Users/lorenzotabasso/Desktop/University/TLN/Progetto/19-20/tln-1920/part2/exercise2/output/",
         "golden": "/Users/lorenzotabasso/Desktop/University/TLN/Progetto/19-20/tln-1920/part2/exercise2/input/gold.csv"
     }
@@ -163,7 +163,7 @@ if __name__ == "__main__":
 
     frame_ids = [133, 2980, 405, 1927, 2590]
 
-    with open(options["output"] + 'results.csv', "w", encoding="utf-8") as out:
+    with open(config["output"] + 'results.csv', "w", encoding="utf-8") as out:
 
         print("Assigning Synsets...")
 
