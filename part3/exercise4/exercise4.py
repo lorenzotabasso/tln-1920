@@ -5,8 +5,11 @@ import math
 import matplotlib.pyplot as plt
 from scipy import signal
 from datetime import datetime
-
-from part3.exercise4.utilities import create_vectors, weighted_overlap
+from sklearn.cluster import KMeans
+from sklearn.metrics import silhouette_score
+import numpy as np
+import collections
+from utilities import create_vectors, weighted_overlap
 
 
 def parse_nasari_dictionary():
@@ -97,8 +100,36 @@ def segmentation():
         similarities[i] = (left + right) / 2
 
     del nasari
+    
+#compute clusters
+    sentences_similarities = np.array(similarities)
+    data = sentences_similarities.reshape(-1, 1)
 
-    # Plotting -----------------------------------------------------------------
+    #set the best cluster size within the minimum and maximum supplied Es 2,10
+    clustersgroup_size_ranges = np.arange(2, 10) 
+    clustersgroup_sizes = {}
+    for size in clustersgroup_size_ranges:
+        model = KMeans(n_clusters=size).fit(data)
+        predictions = model.predict(data)
+        clustersgroup_sizes[size] = silhouette_score(data, predictions)
+    best_clustersgroup_size = max(clustersgroup_sizes, key=clustersgroup_sizes.get)
+    print("The best cluster group size is:" +str( best_clustersgroup_size))
+    
+    #Compute Kmeans with best cluster groupsize 
+    kmeans = KMeans(n_clusters=best_clustersgroup_size)
+    kmeans.fit(data)
+    matix_clusterized = kmeans.labels_
+    print("The array of sencences referencing a cluster is:\n {}".format(matix_clusterized))
+    # Print quantity allocated on each cluster
+    quantity_per_cluster = collections.Counter(matix_clusterized)
+    print("The number of elements allocated on each cluster is:\n\t {}".format(quantity_per_cluster))
+
+    #calculating beginning windows lenght based on sentences evenly splitted in contiguos clusters
+    initial_window_size = len(matix_clusterized) / best_clustersgroup_size
+    print("The initial window size is: {}".format(initial_window_size))
+
+    
+   # Plotting -----------------------------------------------------------------
     print("Plotting...")
 
     length = len(similarities)
@@ -137,7 +168,7 @@ def segmentation():
 
     # dd/mm/YY H:M:S
     now = datetime.now().strftime("Plot - %d.%m.%Y-%H:%M:%S")
-    plt.savefig('output/{}.png'.format(now))
+    plt.savefig('./part3/exercise4/output/{}.png'.format(now))
     plt.show()
     print("Plot saved in output folder.")
 
@@ -149,9 +180,9 @@ separators = [19, 50, 85]
 
 if __name__ == "__main__":
     config = {
-        "input": "input/snowden.txt",
-        "output": "output/",
-        "nasari": "resources/NASARI_lexical_english.txt",
+        "input": "./part3/exercise4/input/snowden.txt",
+        "output": "./part3/exercise4/output/",
+        "nasari": "./part3/exercise4/resources/NASARI_lexical_english.txt",
         "limit": 14,  # first x elem of nasari vector
         "token_sequence_size": 25,
         "segments_number": 9
