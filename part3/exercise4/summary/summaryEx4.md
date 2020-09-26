@@ -8,6 +8,13 @@ In questa esercitazione, abbiamo scritto ispirandoci al Text Tiling un algoritmo
 
 3. Per ogni token (parola) in ogni frase è stata calcolata la similarietà tra quest'ultimo e tutti gli altri token prima nella frase precedente e poi in quella successiva. Per calcolare tale similarietà si è ricorsi prima all'uso della metrica  del Weighted Overlap per computare la similarietà tra i due vettori Nasari dei due token, e poi successivamente, si è fatto ricorso allo Square Root Weighhted Overlap per calcolare la similarietà finale delle due parole a partire dal Weighted Overlap calcolato in precedenza.
 
+![image info](./images/wo_metrics.png)
+
+
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+
 4. 
 
 ## Osservazioni
