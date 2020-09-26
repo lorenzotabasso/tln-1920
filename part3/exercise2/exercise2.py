@@ -58,7 +58,7 @@ def preprocess_synset(synset):
     return clean_synset
 
 
-def exercise_2_hypon(depth):
+def genus_noun(depth):
     content = load_data()  # Loading the content-to-form.csv file
 
     '''
@@ -125,7 +125,7 @@ def exercise_2_hypon(depth):
         print(feature_list[m] + '\n')
 
 
-def exercise_2_hyper(depth):
+def genus_hyper(depth):
     # Da NOMI a IPERONIMI
 
     content = load_data()  # Loading the content-to-form.csv file
@@ -200,4 +200,4 @@ if __name__ == "__main__":
         "output": "/Users/lorenzotabasso/Desktop/University/TLN/Progetto/19-20/tln-1920/part3/exercise2/input/",
     }
 
-    exercise_2_hypon(3)
+    genus_noun(3)
