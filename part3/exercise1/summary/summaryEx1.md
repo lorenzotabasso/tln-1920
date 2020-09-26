@@ -7,9 +7,9 @@ Nella realizzazzione di questo esercizio abbiamo:
 2. Preprocessato le sentences risultanti
 
 3. Sperimentato il calcolo di 3 diversi tipi di similarità
-	- **Baseline**: Overlap sui termini delle definizioni
-	- **PoS Experiment**: Overlap sul PoS Tag di ogni termine (all'interno della stessa categoria)
-	- **Cosine Similarity Experiment**: Overlap sul Cosine Similarity si ogni definizione
+	- **Baseline**: facendo overlap sui termini delle definizioni
+	- **PoS Experiment**: facendo overlap sul PoS Tag di ogni termine (all'interno della stessa categoria)
+	- **Cosine Similarity Experiment**: facendo overlap sul Cosine Similarity si ogni definizione
 
 4. Visualizzato i risultati categorizzati per concetti generici astratti/concreti e specifici astratti/concreti
 
@@ -42,10 +42,10 @@ Specific       7%      11%
 ### Appendice
 
 #### Plot Baseline
-![alt text](./images/srwo_metrics.png)
+![alt text](./images/baseline.png)
 
 #### Plot PoS Experiment
-![alt text](./images/srwo_metrics.png)
+![alt text](./images/pos.png)
 
 #### Plot Cosine Similarity Experiment
-![alt text](./images/srwo_metrics.png)
+![alt text](./images/cosine_similarity.png)

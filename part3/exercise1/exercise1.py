@@ -271,7 +271,7 @@ if __name__ == "__main__":
     df_cosine = pd.DataFrame([fifth_row, sixth_row], columns=["Abstract", "Concrete"],
                              index=["Generic", "Specific"])
 
-    print("\nBaseline:\n")
+    print("\n\nBaseline:\n")
     print(df_baseline)
     print("\nPOS Experiment:\n")
     print(df_pos)
