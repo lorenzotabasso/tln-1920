@@ -54,4 +54,48 @@ A fine esecuzione, l'algoritmo descritto, ha dato in output il seguente plot:
 ![alt text](./images/final_plot.png)
 
 come si può notare, K-Means a fine iterazioni è stato in grado basandosi sulal simiarietà dellew frasi di posizionare in modo _"aprossimativamente corretto"_
-i giusti breakpoint.
+i giusti breakpoint. Un possibile futuro sviluppo futuro consisterebbe nel verificare la similarietà semantica e non quella lessicale come nel nostro algoritmo.
+
+## Osservazioni aggiuntive
+- A seguito dei nostri esperimenti sul testo `snowden.txt` ([Edward Snowden: the whistleblower behind the NSA surveillance revelations](https://www.theguardian.com/world/2013/jun/09/edward-snowden-nsa-whistleblower-surveillance)), abbiamo **ipotizzato** che i testi autobiografici presentino una matrice di similarietà e dei cluster molto sparse.
+
+### Appendice
+
+### Matrice delle similarietà
+```shell script
+array([0.        , 0.70412415, 0.20412415, 0.41493811, 0.57305199,
+       0.15811388, 0.21320072, 0.21320072, 0.        , 0.        ,
+       0.23570226, 0.73570226, 0.        , 0.5       , 0.        ,
+       0.        , 0.5       , 0.81622777, 0.31622777, 0.23570226,
+       0.5029635 , 0.45624348, 0.68898224, 0.65811388, 0.15811388,
+       0.5       , 0.5       , 0.31725282, 0.56725282, 0.57203059,
+       0.32203059, 0.5       , 0.        , 0.72237479, 0.22237479,
+       0.31725282, 0.54085962, 0.2236068 , 0.17149859, 0.52505198,
+       0.35355339, 0.        , 0.2409996 , 0.4819992 , 0.66225829,
+       0.42125869, 0.        , 0.        , 0.19611614, 0.36761472,
+       0.17149859, 0.        , 0.20412415, 0.70412415, 0.5       ,
+       0.        , 0.        , 0.        , 0.43952454, 0.59028021,
+       0.55900396, 0.90824829, 0.        , 0.        , 0.5       ,
+       0.5       , 0.5       , 0.16666667, 0.40236893, 0.23570226,
+       0.        , 0.33419801, 0.33419801, 0.        , 0.31622777,
+       0.81622777, 0.75      , 0.47301681, 0.72277262, 0.49975581,
+       0.31622777, 0.65156306, 0.3353353 , 0.25      , 0.49618298,
+       0.24618298, 0.23570226, 0.48188524, 0.24618298, 0.19611614,
+       0.19611614, 0.26726124, 0.26726124, 0.        , 0.36324158,
+       0.36324158, 0.31990258, 0.31990258, 0.21320072, 0.40218295,
+       0.18898224, 0.20412415, 0.40024028, 0.19611614, 0.        ,
+       0.        , 0.16222142, 0.32444284, 0.42948266, 0.26726124,
+       0.        , 0.        , 0.5       , 0.65430335, 0.3086067 ,
+       0.15430335, 0.        , 0.28867513, 0.72876374, 0.        ])
+```
+
+### Matrice dei clusters
+```shell script
+array([2, 4, 1, 3, 0, 1, 1, 1, 2, 2, 1, 4, 2, 0, 2, 2, 0, 4, 3, 1, 0, 0,
+       4, 4, 1, 0, 0, 3, 0, 0, 3, 0, 2, 4, 1, 3, 0, 1, 1, 0, 3, 2, 1, 0,
+       4, 3, 2, 2, 1, 3, 1, 2, 1, 4, 0, 2, 2, 2, 0, 0, 0, 4, 2, 2, 0, 0,
+       0, 1, 3, 1, 2, 3, 3, 2, 3, 4, 4, 0, 4, 0, 3, 4, 3, 1, 0, 1, 1, 0,
+       1, 1, 1, 1, 1, 2, 3, 3, 3, 3, 1, 3, 1, 1, 3, 1, 2, 2, 1, 3, 0, 1,
+       2, 2, 0, 4, 3, 1, 2, 3, 4, 2], dtype=int32)
+```
+
