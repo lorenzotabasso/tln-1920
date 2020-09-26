@@ -71,7 +71,7 @@ def clustering(similarities, sentences):
     """
     print("\tComputing clusters using K-Means...")
     sentences_similarities = np.array(similarities)
-    data = sentences_similarities.reshape(-1, 1)
+    data = sentences_similarities.reshape(-1, 1)  # needed for cluster computin
 
     # Sets the best cluster size within the minimum and maximum supplied. Eg.: 2,10
     clusters_size_ranges = np.arange(2, 10)
@@ -87,14 +87,8 @@ def clustering(similarities, sentences):
     kmeans = KMeans(n_clusters=best_clusters_size)
     kmeans.fit(data)
     matix_clusterized = kmeans.labels_
-    # print("The array of sencences referencing a cluster is:\n {}".format(matix_clusterized)) # DEBUG
-
-    # DEBUG
-    # Print quantity allocated on each cluster
-    # quantity_per_cluster = collections.Counter(matix_clusterized)
-    # print("The number of elements allocated on each cluster is:\n\t {}".format(quantity_per_cluster))
-
-    # Calculating beginning windows lenght based on sentences evenly splitted in contiguos clusters
+    
+     # Calculating beginning windows lenght based on sentences evenly splitted in contiguos clusters
     initial_window_size = len(matix_clusterized) / best_clusters_size
     print("\t\tThe initial window size is: {:.3f}".format(initial_window_size))
 
@@ -106,10 +100,9 @@ def clustering(similarities, sentences):
     final_list = [l.tolist() for l in windows_list]
 
     iterations_log = []
-    stable = False
+    stable = False  # if true -> convergence
     while not stable:
         stable = True
-        # print('START CYCLE')
         for i in range(len(final_list)):
             if i > 0:
                 last_prev_vs_prev_similarity = sentences_cosine_similarity(
@@ -117,11 +110,7 @@ def clustering(similarities, sentences):
                 last_prev_vs_curr_similarity = sentences_cosine_similarity(
                     final_list[i - 1][-1], ' '.join(final_list[i]))
 
-                # print("FORWARD:{} - OVERLAP - PREV {} - CURR {}".format(i, last_prev_vs_prev_similarity,
-                # last_prev_vs_curr_similarity))
-
-                # TODO: vedificare problemi di index nel primo cluster o nell'ultimo
-                if last_prev_vs_curr_similarity > last_prev_vs_prev_similarity:  # ORIGINALE, OK
+                if last_prev_vs_curr_similarity > last_prev_vs_prev_similarity: 
                     stable = False
                     elem_to_move = final_list[i - 1].pop(len(final_list[i - 1]) - 1)
                     final_list[i].insert(0, elem_to_move)
@@ -130,8 +119,6 @@ def clustering(similarities, sentences):
                         ' '.join(final_list[i][1:]), final_list[i][0])
                     first_curr_vs_prev_similarity = sentences_cosine_similarity(
                         final_list[i][0], ' '.join(final_list[i - 1]))
-                    # print("BACKWARD:{} - OVERLAP - PREV {} - CURR {}".format(i, first_curr_vs_prev_similarity,
-                    #                                                          first_curr_vs_curr_similarity))
                     if first_curr_vs_prev_similarity > first_curr_vs_curr_similarity:
                         stable = False
                         elem_to_move = final_list[i].pop(0)
@@ -144,9 +131,6 @@ def clustering(similarities, sentences):
             else:
                 iteration_log_line.append((len(final_list[j]) + iteration_log_line[j - 1]))
         iterations_log.append(iteration_log_line)
-        # print('END CYCLE')
-    # print(iterations_log)  # DEBUG
-    # print(final_list)  # DEBUG
     print("\tDone.")
     return iterations_log
 
