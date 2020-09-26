@@ -31,7 +31,74 @@ La differenza tra i due algoritmi è minima (il secondo passaggio), per cui ripo
 ## Risultati
 
 Riportiamo di seguito entrambi i risultati di entrambi gli algoritmi. Abbiamo eseguito diversi esperimenti a diverse profondità, a partire da profondità 1 (il primo iperonimo/iponimo) fino a profondità 20, dove sono aumentate di molto le tempistiche.
-A parità di livelli di esplorazione l'algoritmo `genus_hyper` si è dimostrato migliore nel calcolo del concetto finale, arrivabndo a dei risultati più vicini rispetto all'aloritmo `genus_noun`.
+A parità di livelli di esplorazione l'algoritmo `genus_hyper` si è dimostrato migliore nel calcolo del concetto finale, arrivando a dei risultati più vicini rispetto all'aloritmo `genus_noun`.
+
+Depth - 1
+```shell script
+Genus Noun (depth 1):
+	1 - thing - 388
+	2 - skill - 159
+	3 - wish - 256
+	4 - operation - 216
+	5 - subject - 309
+	6 - land - 141
+	7 - land - 126
+	8 - base_alloy - 35
+
+Genus Hyper (depth 1):
+	1 - theme - 43
+	2 - focus - 16
+	3 - cash - 16
+	4 - network - 149
+	5 - hard_time - 26
+	6 - bus_company - 8
+	7 - affine - 0
+	8 - ride - 103
+```
+Depth - 2
+```shell script
+Genus Noun (depth 2):
+	1 - s_law - 982
+	2 - capability - 67
+	3 - wish - 736
+	4 - s_law - 1120
+	5 - water - 1136
+	6 - case - 152
+	7 - wall - 710
+	8 - copper - 142
+
+Genus Hyper (depth 2):
+	1 - place - 406
+	2 - break - 161
+	3 - change - 57
+	4 - accretion - 3
+	5 - native - 370
+	6 - electrical_system - 59
+	7 - acanthuridae - 1
+	8 - artificial_intelligence - 2
+```
+Depth - 3
+```shell script
+Genus Noun (depth 3):
+	1 - s_law - 1815
+	2 - capability - 111
+	3 - wish - 1217
+	4 - s_law - 2491
+	5 - thorax - 2421
+	6 - body - 215
+	7 - body - 140
+	8 - chrome - 201
+
+Genus Hyper (depth 3):
+	1 - s_law - 216
+	2 - break - 622
+	3 - change - 36
+	4 - accretion - 24
+	5 - man - 1367
+	6 - and - 45
+	7 - accretion - 10
+	8 - accretion - 9
+```
 
 ### Osservazioni
 
@@ -39,5 +106,4 @@ Abbiamo notato che scendendo troppo di livello (es.: 7, 10 o 20), entrambi gli a
 
 ### Sviluppi futuri
 
-Come sviluppi futuri, si potrebbe implementare una terza versione dell'algoritmo, che
-anzichè restituire il genus più frequente, restituisse il genus che ha generato l'iponimo puù frequente, in modo da rendere più efficienti la ricerca e i risultati.
+Come sviluppi futuri, si potrebbe implementare una terza versione dell'algoritmo, che anzichè restituire il genus più frequente, restituisse il genus che ha generato l'iponimo puù frequente, in modo da rendere più efficienti la ricerca e i risultati.
