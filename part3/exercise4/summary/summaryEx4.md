@@ -53,6 +53,5 @@ A fine esecuzione, l'algoritmo descritto, ha dato in output il seguente plot:
 
 ![alt text](./images/final_plot.png)
 
-## Osservazioni
-
-Una volta che lo sviluppo dell'esercizio è stato terminato, ci siamo concentrati sullo sperimentare l'efficacia dell'algoritmo descritto poc'anzi cambiando dataset.
+come si può notare, K-Means a fine iterazioni è stato in grado basandosi sulal simiarietà dellew frasi di posizionare in modo _"aprossimativamente corretto"_
+i giusti breakpoint.
