@@ -1,6 +1,6 @@
 import nltk
 from nltk.corpus import stopwords
-from nltk.tokenize import word_tokenize 
+from nltk.tokenize import word_tokenize
 
 
 def weighted_overlap(topic_nasari_vector, paragraph_nasari_vector):
@@ -96,34 +96,68 @@ def aux_bag_of_word(tokens):
 
 
 def sentences_cosine_similarity(x, y):
-    # https://www.geeksforgeeks.org/python-measure-similarity-between-two-sentences-using-cosine-similarity/
-    # Program to measure the similarity between  
-    # two sentences using cosine similarity. 
+    """
+    It computes the Cosine Similarity between the two input sentences.
+    (source: https://www.geeksforgeeks.org/python-measure-similarity-between-two-sentences-using-cosine-similarity/)
+
+    :param x: first sentence
+    :param y: second sentence
+    :return: the Cosine Similarity score of the two sentences
+    """
 
     # tokenization 
-    x_list = word_tokenize(x.lower())  
-    y_list = word_tokenize(y.lower()) 
-    
+    x_list = word_tokenize(x.lower())
+    y_list = word_tokenize(y.lower())
+
     # sw contains the list of stopwords 
-    sw = stopwords.words('english')  
-    l1 =[];l2 =[] 
-    
+    sw = stopwords.words('english')
+    l1 = []
+    l2 = []
+
     # remove stop words from the string 
-    x_set = {w for w in x_list if not w in sw}  
-    y_set = {w for w in y_list if not w in sw} 
-    
+    x_set = {w for w in x_list if not w in sw}
+    y_set = {w for w in y_list if not w in sw}
+
     # form a set containing keywords of both strings  
-    rvector = x_set.union(y_set)  
-    for w in rvector: 
-        if w in x_set: l1.append(1) # create a vector 
-        else: l1.append(0) 
-        if w in y_set: l2.append(1) 
-        else: l2.append(0) 
+    rvector = x_set.union(y_set)
+    for w in rvector:
+        if w in x_set:
+            l1.append(1)  # create a vector
+        else:
+            l1.append(0)
+        if w in y_set:
+            l2.append(1)
+        else:
+            l2.append(0)
     c = 0
-    
-    # cosine formula  
-    for i in range(len(rvector)): 
-            c+= l1[i]*l2[i] 
-    cosine = c / float((sum(l1)*sum(l2))**0.5) 
+
+    # # cosine formula
+    # for i in range(len(rvector)):
+    #     if l1[i] != 0 and l2[i] != 0:
+    #         c += l1[i] * l2[i]
+    #     else:
+    #         if l1[i] == 0:
+    #             c += 1 * l2[i]
+    #         else:
+    #             c += l1[i] * 1
+    # # temp = float((sum(l1) * sum(l2)) ** 0.5)
+    # cosine = 0
+    # if sum(l1) != 0 and sum(l2) != 0:
+    #     cosine = c / float((sum(l1) * sum(l2)) ** 0.5)
+    # else:
+    #     if sum(l1) == 0:
+    #         cosine = c / float((1 * sum(l2)) ** 0.5)
+    #     else:
+    #         cosine = c / float((sum(l1) * 1) ** 0.5)
+    #
+    # # print("similarity: ", cosine)
+    #
+    # return cosine
+    # cosine formula
+
+    for i in range(len(rvector)):
+        c += l1[i] * l2[i]
+    cosine = c / float((sum(l1) * sum(l2)) ** 0.5)
     # print("similarity: ", cosine)
+
     return cosine

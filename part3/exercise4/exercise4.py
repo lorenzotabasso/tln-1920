@@ -1,16 +1,14 @@
-import nltk
-import numpy as np
-import pandas as pd
+import collections
 import math
+import numpy as np
+import nltk
 import matplotlib.pyplot as plt
-from scipy import signal
 from datetime import datetime
 from sklearn.cluster import KMeans
 from sklearn.metrics import silhouette_score
 from nltk.tokenize import sent_tokenize
-import numpy as np
-import collections
-from utilities import create_vectors, weighted_overlap, aux_compute_overlap, sentences_cosine_similarity
+
+from part3.exercise4.utilities import sentences_cosine_similarity, create_vectors, weighted_overlap
 
 
 def parse_nasari_dictionary():
@@ -47,32 +45,130 @@ def tokenize_text(text):
 
     sequences = []
     text = text.lower()
-    sent_tokens = nltk.sent_tokenize(text)
-    sentences=[]
+    sent_tokens = sent_tokenize(text)
+    sentences = []
     j = 0
-    # TODO: sistemare l'append delle sentences
 
     for sent_token in sent_tokens:
         sequences.append(nltk.word_tokenize(sent_token))
         sentences.append(sent_token)
 
-
     print("\tFound {} sequences".format(str(len(sequences))))
     return sequences, sentences
 
 
-def segmentation():
+def clustering(similarities, sentences):
+    """
+    It uses K-Means clustering algorithm in order to compute and move if
+    necessary the breakpoint of the input text.
 
+    :param similarities:  list of similarity score for every sentence in the text.
+    Each element is the sum of the two similarity of a sentence with the previous
+    and the next sentence.
+    :param sentences: a list of string containing the sentences of the input text
+    :return: a list containing one or more list of breakpoint positions (one
+    list for each iteration)
+    """
+    print("\tComputing clusters using K-Means...")
+    sentences_similarities = np.array(similarities)
+    data = sentences_similarities.reshape(-1, 1)
+
+    # Sets the best cluster size within the minimum and maximum supplied. Eg.: 2,10
+    clusters_size_ranges = np.arange(2, 10)
+    clusters_sizes = {}
+    for size in clusters_size_ranges:
+        model = KMeans(n_clusters=size).fit(data)
+        predictions = model.predict(data)
+        clusters_sizes[size] = silhouette_score(data, predictions)
+    best_clusters_size = max(clusters_sizes, key=clusters_sizes.get)
+    print("\t\tThe best cluster group size is: {}".format(best_clusters_size))
+
+    # Compute Kmeans with best cluster size
+    kmeans = KMeans(n_clusters=best_clusters_size)
+    kmeans.fit(data)
+    matix_clusterized = kmeans.labels_
+    # print("The array of sencences referencing a cluster is:\n {}".format(matix_clusterized)) # DEBUG
+
+    # DEBUG
+    # Print quantity allocated on each cluster
+    # quantity_per_cluster = collections.Counter(matix_clusterized)
+    # print("The number of elements allocated on each cluster is:\n\t {}".format(quantity_per_cluster))
+
+    # Calculating beginning windows lenght based on sentences evenly splitted in contiguos clusters
+    initial_window_size = len(matix_clusterized) / best_clusters_size
+    print("\t\tThe initial window size is: {:.3f}".format(initial_window_size))
+
+    # Windows is the part of the array that contains cluster's id for each sentence
+    # (original: "contiene l'id dei cluster per frasi")
+    windows_list = np.array_split(sentences, best_clusters_size)
+    # print("Tmp sliced array: {}".format(windows_list)) # DEBUG
+
+    final_list = [l.tolist() for l in windows_list]
+
+    iterations_log = []
+    stable = False
+    while not stable:
+        stable = True
+        # print('START CYCLE')
+        for i in range(len(final_list)):
+            if i > 0:
+                last_prev_vs_prev_similarity = sentences_cosine_similarity(
+                    ' '.join(final_list[i - 1][:-1]), final_list[i - 1][-1])
+                last_prev_vs_curr_similarity = sentences_cosine_similarity(
+                    final_list[i - 1][-1], ' '.join(final_list[i]))
+
+                # print("FORWARD:{} - OVERLAP - PREV {} - CURR {}".format(i, last_prev_vs_prev_similarity,
+                # last_prev_vs_curr_similarity))
+
+                # TODO: vedificare problemi di index nel primo cluster o nell'ultimo
+                if last_prev_vs_curr_similarity > last_prev_vs_prev_similarity:  # ORIGINALE, OK
+                    stable = False
+                    elem_to_move = final_list[i - 1].pop(len(final_list[i - 1]) - 1)
+                    final_list[i].insert(0, elem_to_move)
+                else:
+                    first_curr_vs_curr_similarity = sentences_cosine_similarity(
+                        ' '.join(final_list[i][1:]), final_list[i][0])
+                    first_curr_vs_prev_similarity = sentences_cosine_similarity(
+                        final_list[i][0], ' '.join(final_list[i - 1]))
+                    # print("BACKWARD:{} - OVERLAP - PREV {} - CURR {}".format(i, first_curr_vs_prev_similarity,
+                    #                                                          first_curr_vs_curr_similarity))
+                    if first_curr_vs_prev_similarity > first_curr_vs_curr_similarity:
+                        stable = False
+                        elem_to_move = final_list[i].pop(0)
+                        final_list[i - 1].append(elem_to_move)
+        # Just for logging
+        iteration_log_line = []
+        for j in range(len(final_list)):
+            if j == 0:
+                iteration_log_line.append(len(final_list[j]))
+            else:
+                iteration_log_line.append((len(final_list[j]) + iteration_log_line[j - 1]))
+        iterations_log.append(iteration_log_line)
+        # print('END CYCLE')
+    # print(iterations_log)  # DEBUG
+    # print(final_list)  # DEBUG
+    print("\tDone.")
+    return iterations_log
+
+
+def segmentation():
+    print('Starting segmentation.')
+
+    print('\tLoading Nasari...')
     # input
     nasari = parse_nasari_dictionary()
     with open(config["input"]) as file:
         lines = file.readlines()
     text = ''.join(lines)
+    print('\tDone.')
 
     # Text tokenization
+    print('\tBegin tokenization...')
     sequences, sentences = tokenize_text(text)
+    print('\tDone.')
 
     # Compute similarity between neighbors
+    print('\tComputing similarity...')
     similarities = list(np.zeros(len(sequences)))
     for i in range(1, len(sequences) - 1):
         prev = create_vectors(sequences[i - 1], nasari)
@@ -102,147 +198,47 @@ def segmentation():
 
         # Final similarity
         similarities[i] = (left + right) / 2
+    print("\tDone.")
 
     del nasari
-    
-    # Compute clusters ---------------------------------------------------------
-    sentences_similarities = np.array(similarities)
-    data = sentences_similarities.reshape(-1, 1)
 
-    #set the best cluster size within the minimum and maximum supplied Es 2,10
-    clustersgroup_size_ranges = np.arange(2, 10) 
-    clustersgroup_sizes = {}
-    for size in clustersgroup_size_ranges:
-        model = KMeans(n_clusters=size).fit(data)
-        predictions = model.predict(data)
-        clustersgroup_sizes[size] = silhouette_score(data, predictions)
-    best_clustersgroup_size = max(clustersgroup_sizes, key=clustersgroup_sizes.get)
-    print("The best cluster group size is:" +str( best_clustersgroup_size))
-    
-    # Compute Kmeans with best cluster groupsize 
-    kmeans = KMeans(n_clusters=best_clustersgroup_size)
-    kmeans.fit(data)
-    matix_clusterized = kmeans.labels_
-    print("The array of sencences referencing a cluster is:\n {}".format(matix_clusterized))
-    
-    # Print quantity allocated on each cluster
-    quantity_per_cluster = collections.Counter(matix_clusterized)
-    print("The number of elements allocated on each cluster is:\n\t {}".format(quantity_per_cluster))
-
-    # Calculating beginning windows lenght based on sentences evenly splitted in contiguos clusters
-    initial_window_size = len(matix_clusterized) / best_clustersgroup_size
-    print("The initial window size is: {}".format(initial_window_size))
-    
-    # windows è la porzione di array che contiene l'id dei cluster per frasi
-    windows_list = np.array_split(sentences, best_clustersgroup_size)
-    print("Tmp sliced array: {}".format(windows_list))
-    counter = 0
-    prev_overlap = 0
-    prev_elem=''
-    
-    final_list = [l.tolist() for l in windows_list]
-
-    iterations_log=[]
-    stable = False
-    while not stable:
-        stable = True
-        print('START CYCLE')
-        for i in range(len(final_list)):
-         
-              if i > 0:
-                last_prev_vs_prev_similarity = sentences_cosine_similarity(
-                    ' '.join(final_list[i-1][:-1]), final_list[i-1][-1])
-                last_prev_vs_curr_similarity = sentences_cosine_similarity(
-                    final_list[i-1][-1], ' '.join(final_list[i]))
-                
-                print("FORWARD:{} - OVERLAP - PREV {} - CURR {}".format(i, last_prev_vs_prev_similarity, last_prev_vs_curr_similarity))       
-                # TODO: vedificare problemi di index nel primo cluster o nell'ultimo
-                if last_prev_vs_curr_similarity > last_prev_vs_prev_similarity: # ORIGINALE, OK
-                    stable = False
-                    elem_tomove = final_list[i-1].pop(len(final_list[i-1]) - 1)
-                    final_list[i].insert(0, elem_tomove)
-                else:
-                    first_curr_vs_curr_similarity = sentences_cosine_similarity(
-                        ' '.join(final_list[i][1:]), final_list[i][0])
-                    first_curr_vs_prev_similarity = sentences_cosine_similarity(
-                        final_list[i][0], ' '.join(final_list[i - 1]))
-                    print("BACKWARD:{} - OVERLAP - PREV {} - CURR {}".format(i,
-                                                                             first_curr_vs_prev_similarity, first_curr_vs_curr_similarity))
-                    if first_curr_vs_prev_similarity > first_curr_vs_curr_similarity:
-                        stable = False
-                        elem_tomove = final_list[i].pop(0)
-                        final_list[i - 1].append(elem_tomove)
-        #Just for logging                
-        iteration_log_line=[]                
-        for j in range(len(final_list)):
-            if j==0:
-                iteration_log_line.append(len(final_list[j]))
-            else:
-                iteration_log_line.append((len(final_list[j])+iteration_log_line[j-1]))
-        iterations_log.append(iteration_log_line)
-        print('END CYCLE')
-    print(iterations_log)
-    print('TADAAAA')
-    print(final_list)
+    breakpoints = clustering(similarities, sentences)
 
     # Plotting -----------------------------------------------------------------
-    print("Plotting...")
+    print("\tPlotting...")
 
     length = len(similarities)
     x = np.arange(0, length, 1)
     y = np.array(similarities)
 
-    short = int(0.016 * length)
-    long = int(0.08 * length)
-    very_long = int(0.16 * length) # 19
-    span = length / (config["segments_number"] + 1)
-
-    # moving average
-    data = pd.DataFrame(data=y)  # dataframe containing the similarity (the output on blue)
-    # short_rolling = data.rolling(window=short).mean()
-    # long_rolling = data.rolling(window=long).mean()
-    ema_very_long = data.ewm(span=very_long, adjust=False).mean()
-    ema_very_long.plot()
-
-    # local minimum
-    f = np.array(ema_very_long.to_numpy()).reshape((length,))
-    inv_data_y = f * (-1)
-    valley = signal.find_peaks_cwt(inv_data_y, np.arange(1, span))
-
     fig, ax = plt.subplots()
     ax.plot(x, y, label='blocks cohesion', color='c')
-    plt.plot(x[valley], f[valley], "o", label="local minimum (" + str(span) + " span)", color='r')
 
-    for x in separators:
-        ax.axvline(x, color='k', linewidth=1)
+    # Plotting the last computed list of breakpoint
+    for x in breakpoints[-1]:
+        ax.axvline(x, color='r', linewidth=1)
 
-    ax.set(xlabel='tokens sequence gap', ylabel='similarity',
+    ax.set(xlabel='sentences', ylabel='similarity',
            title='Block similarity')
     ax.grid()
     ax.legend(loc='best')
 
-    # dd/mm/YY H:M:S
-    now = datetime.now().strftime("Plot - %d.%m.%Y-%H:%M:%S")
-    plt.savefig('./part3/exercise4/output/{}.png'.format(now))
+    # Saving the plot in output folder
+    now = datetime.now().strftime("Plot - %d.%m.%Y-%H:%M:%S")  # dd/mm/YY H:M:S
+    plt.savefig('{}{}.png'.format(config["output"], now))
     plt.show()
-    print("Plot saved in output folder.")
+    print("\tPlot saved in output folder.")
+    print('Segmentation ended.')
 
 
 global config  # Dictionary of the configuration. Used across all the script.
 
-# separator values for our text.
-separators = [19, 50, 85]
-
 if __name__ == "__main__":
     config = {
-        "input": "./part3/exercise4/input/snowden.txt",
-        "output": "./part3/exercise4/output/",
-        "nasari": "./part3/exercise4/resources/NASARI_lexical_english.txt",
-        "limit": 14,  # first x elem of nasari vector
-        "token_sequence_size": 25,
-        "segments_number": 9
+        "input": "input/snowden.txt",
+        "output": "output/",
+        "nasari": "resources/NASARI_lexical_english.txt",
+        "limit": 14  # first x elem of nasari vector
     }
 
-    print('Starting segmentation...')
     segmentation()
-    print('Segmentation ended.')
