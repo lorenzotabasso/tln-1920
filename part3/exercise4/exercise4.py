@@ -169,7 +169,7 @@ def segmentation():
 
     # Compute similarity between neighbors
     print('\tComputing similarity...')
-    similarities = list(np.zeros(len(sequences)))
+    similarities = list(np.zeros(len(sequences))) 
     for i in range(1, len(sequences) - 1):
         prev = create_vectors(sequences[i - 1], nasari)
         current = create_vectors(sequences[i], nasari)
