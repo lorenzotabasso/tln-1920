@@ -67,7 +67,8 @@ def beam_search(model, vocab, hps):
 
             # scegliamo 2 * beam_size possibili espansioni dei cammini
             for j in range(hps.beam_size * 2):
-                # aggiungiamo a all_hyps l'estensione delle ipotesi con
+                # TODO: Aggiungere qui!
+                # Aggiungiamo a all_hyps l'estensione delle ipotesi con
                 # il j-esimo indice e la sua probabilità
                 temp = h.extend(indexes[j], probs[indexes[j]])
                 all_hyps.append(temp)
@@ -87,7 +88,6 @@ def beam_search(model, vocab, hps):
             if len(hyps) == hps.beam_size or len(results) == hps.beam_size:
                 break
 
-        # TODO: Aggiunta per farlo funzionare
         if len(hyps) == 0:
             hyps = results
 
@@ -109,11 +109,9 @@ def beam_search(model, vocab, hps):
 def sort_hyps(hyps):
     """
     Ordinare i cammini in ordine decrescente di probabilita' media. Per farlo,
-    1. Basta richimare la funzione corretta tra avg_log_prob e log_prob
-    # (proprieties della classe top-level)
+    1. Basta richimare la funzione corretta tra avg_log_prob e log_prob (proprieties della classe top-level)
     2. per completarla, prendre spunto dalla versione greedy della makename
-    :param hyps:
-    :return:
     """
+    # TODO: Completare!
     toret = sorted(hyps, key=lambda x: x.avg_log_prob, reverse=True)
     return toret
