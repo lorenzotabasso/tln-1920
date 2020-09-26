@@ -11,6 +11,7 @@ In questa esercitazione, abbiamo creato i cluster semantici basandoci sul concet
 4. Durante la fase di aggregazione dei risultati, abbiamo recuperato i Supersensi dai Wordnet Synset delle parole disambiguate tramite due implementazioni dell' algoritmmo di, Lesk, una versione nostra (OurLesk) e la versione di NLTK, poiché abbiamo riscontrato dei risultati diversi nell'aggregazione dei Semantic Type.
 
 ## Risultati
+
 A fine esecuzione, l'algoritmo descritto, ha dato il seguente output:
 
 ```shell script

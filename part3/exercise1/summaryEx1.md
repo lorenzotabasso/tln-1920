@@ -1,1 +1,0 @@
-# Relazione Esercizio 1
