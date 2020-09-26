@@ -58,15 +58,18 @@ def preprocess_synset(synset):
     return clean_synset
 
 
-def main1(depth):
+def exercise_2_hypon(depth):
     content = load_data()  # Loading the content-to-form.csv file
 
     '''
     1. prendo definzione, disambiguo con pos-tagging. il primo nome è il genus
-    2. come approccio personalizzato, teveno un dizionario di genus (dopo aver esplorato tutte le definizioni) e espandevo solo il genus più frequente
+    2. come approccio personalizzato, teveno un dizionario di genus (dopo aver 
+    esplorato tutte le definizioni) e espandevo solo il genus più frequente
     riducendo la ricerca
-    3. prendo da wordnet i synsets di quel sostantivo, e per ognuno di essi parto in basso con gli iponimi
-    4. calcolo l'iponimo dell'iponimo dell'iponimo..., per non sclerare utilizza la closure (chiusura trasitiva). Calcolo gli iponimi fino a un certo 
+    3. prendo da wordnet i synsets di quel sostantivo, e per ognuno di essi
+    parto in basso con gli iponimi
+    4. calcolo l'iponimo dell'iponimo dell'iponimo..., per non sclerare
+    utilizza la closure (chiusura trasitiva). Calcolo gli iponimi fino a un certo 
     livello
     5. calcola iponimo con più overlapping, stili classifica
     '''
@@ -82,7 +85,8 @@ def main1(depth):
             results = nltk.pos_tag(def_tokens)
 
             possibles_genus = list(filter(lambda x: x[1] == "NN", results))
-            # Es.: [('abstract', 'NN'), ('concept', 'NN'), ('idea', 'NN'), ('fairness', 'NN'), ('front', 'NN'), ('code', 'NN'), ('community', 'NN')]
+            # Es.: [('abstract', 'NN'), ('concept', 'NN'), ('idea', 'NN'), ('fairness', 'NN'), 
+            # ('front', 'NN'), ('code', 'NN'), ('community', 'NN')]
 
             for g in possibles_genus:
                 if not g[0] in local_genus:
@@ -97,7 +101,7 @@ def main1(depth):
                 # Prendiamo tutti gli iponimi per il genus della singola definizione
                 for i, s in enumerate(syns, start=0):
                     hypon = lambda s: s.hyponyms()  # SOTTONOME, significato semantico incluso in altra parola
-                    all_hypon = list(s.closure(hypon, depth=depth))  # TODO: aumentare a 2,3
+                    all_hypon = list(s.closure(hypon, depth=depth)) 
                     hyponyms.extend([x.name().split(".")[0] for x in all_hypon])
 
             hyponyms_list.append(' '.join(hyponyms))
@@ -121,7 +125,7 @@ def main1(depth):
         print(feature_list[m] + '\n')
 
 
-def main2(depth):
+def exercise_2_hyper(depth):
     # Da NOMI a IPERONIMI
 
     content = load_data()  # Loading the content-to-form.csv file
@@ -146,13 +150,12 @@ def main2(depth):
             clean_tokens = preprocess(definition)
 
             for word in clean_tokens:
-                # TODO: disambiguare le parole della definizione con lesk e usare i loro synsets per trovare gli iperonimi!
                 syn = [lesk(definition, word)]
-                if len(syn) > 0:
+                if len(syn) > 0:  # needed because for some words lesks returns an empty list
                     for s in syn:
                         if s:
                             hyper = lambda s: s.hypernyms()
-                            all_hyper = list(s.closure(hyper, depth=depth))  # TODO: aumentare a 2,3
+                            all_hyper = list(s.closure(hyper, depth=depth)) 
                             hypernyms.extend([x.name().split(".")[0] for x in all_hyper])
 
                     for g in hypernyms:
@@ -168,7 +171,7 @@ def main2(depth):
                 # Prendiamo tutti gli iponimi per il genus della singola definizione
                 for i, s in enumerate(syns, start=0):
                     hypon = lambda s: s.hyponyms()  # SOTTONOME, significato semantico incluso in altra parola
-                    all_hypon = list(s.closure(hypon, depth=depth))  # TODO: aumentare a 2,3
+                    all_hypon = list(s.closure(hypon, depth=depth))
                     hyponyms.extend([x.name().split(".")[0] for x in all_hypon])
 
             hyponyms_list.append(' '.join(hyponyms))
@@ -197,4 +200,4 @@ if __name__ == "__main__":
         "output": "/Users/lorenzotabasso/Desktop/University/TLN/Progetto/19-20/tln-1920/part3/exercise2/input/",
     }
 
-    main1(3)
+    exercise_2_hypon(3)
