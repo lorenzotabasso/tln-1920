@@ -7,6 +7,7 @@ from scipy import signal
 from datetime import datetime
 from sklearn.cluster import KMeans
 from sklearn.metrics import silhouette_score
+from nltk.tokenize import sent_tokenize
 import numpy as np
 import collections
 from utilities import create_vectors, weighted_overlap, aux_compute_overlap, sentences_cosine_similarity
@@ -46,14 +47,15 @@ def tokenize_text(text):
 
     sequences = []
     text = text.lower()
-    tokens = nltk.word_tokenize(text)
+    sent_tokens = nltk.sent_tokenize(text)
     sentences=[]
     j = 0
     # TODO: sistemare l'append delle sentences
-    for i in range(config["token_sequence_size"], len(tokens), config["token_sequence_size"]):
-        sequences.append(tokens[j:i])
-        sentences.append(' '.join( tokens[j:i]))
-        j = i
+
+    for sent_token in sent_tokens:
+        sequences.append(nltk.word_tokenize(sent_token))
+        sentences.append(sent_token)
+
 
     print("\tFound {} sequences".format(str(len(sequences))))
     return sequences, sentences
