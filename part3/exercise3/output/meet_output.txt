@@ -3,8 +3,6 @@ Enter a verb to search in the Brown corpus: meet
 	307 sentences in which the verb 'meet' appears.
 
 [2] - Extracting fillers...
-	Error in **an ordinary point will be any point of intersection a such that in every neighborhood of a in the c-plane , af meets both the interior and the exterior of c **
-	Error in **it was during her `` writing '' period that she and herb met and decided that they were in love **
 
 [3] - Total of 7 Fillers
 	('himself', 'person', "one way to do this is by `` proxy sittings '' , wherein the person seeking a message does not himself meet with the medium but is represented by a substitute , the proxy sitter ")

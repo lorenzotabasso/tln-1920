@@ -108,8 +108,8 @@ def hanks(verb):
         # format -> [int1, int 2, ...], eg.: [34], [0, 10, 34, ...]
 
         if len(verb_key_list) <= 0:
-            # In case of errors
-            print("\tError in **{}**".format(sentence), file=sys.stderr)
+            # DEBUG
+            # print("\tError in **{}**".format(sentence), file=sys.stderr)
             continue
 
         # Adjacency List
