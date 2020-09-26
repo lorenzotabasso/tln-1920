@@ -1,5 +1,6 @@
 import nltk
 from nltk.corpus import stopwords
+from nltk.tokenize import word_tokenize 
 
 
 def weighted_overlap(topic_nasari_vector, paragraph_nasari_vector):
@@ -92,3 +93,37 @@ def aux_bag_of_word(tokens):
     wnl = nltk.WordNetLemmatizer()
     tokens = list(filter(lambda x: x not in stop_words and x not in punct, tokens))
     return set(wnl.lemmatize(t) for t in tokens)
+
+
+def sentences_cosine_similarity(x, y):
+    # https://www.geeksforgeeks.org/python-measure-similarity-between-two-sentences-using-cosine-similarity/
+    # Program to measure the similarity between  
+    # two sentences using cosine similarity. 
+
+    # tokenization 
+    x_list = word_tokenize(x.lower())  
+    y_list = word_tokenize(y.lower()) 
+    
+    # sw contains the list of stopwords 
+    sw = stopwords.words('english')  
+    l1 =[];l2 =[] 
+    
+    # remove stop words from the string 
+    x_set = {w for w in x_list if not w in sw}  
+    y_set = {w for w in y_list if not w in sw} 
+    
+    # form a set containing keywords of both strings  
+    rvector = x_set.union(y_set)  
+    for w in rvector: 
+        if w in x_set: l1.append(1) # create a vector 
+        else: l1.append(0) 
+        if w in y_set: l2.append(1) 
+        else: l2.append(0) 
+    c = 0
+    
+    # cosine formula  
+    for i in range(len(rvector)): 
+            c+= l1[i]*l2[i] 
+    cosine = c / float((sum(l1)*sum(l2))**0.5) 
+    # print("similarity: ", cosine)
+    return cosine
