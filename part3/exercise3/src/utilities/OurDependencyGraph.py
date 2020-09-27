@@ -37,7 +37,7 @@ class OurDependencyGraph:
         values from dot_notation
         """
         lines = dot_notation.split('\n')
-        lines = lines[4:-1]  # TODO: provare a commentarlo
+        lines = lines[4:-1]
         for line in lines:
             splits = re.split('\[label="', line, maxsplit=2)
             splits[0] = splits[0].strip()

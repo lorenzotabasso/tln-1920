@@ -331,11 +331,3 @@ if __name__ == "__main__":
     plt.savefig('output/{}.png'.format(now))
     plt.show()
     print("Cosine Similarity's plot saved in output folder.")
-
-    # TODO: fare le cloud word?
-
-    # TODO: Make report.
-    # Sono state aggiunte le seguenti frasi:
-    # 1. The ability of one to make free choices and act by following his (NON mia)
-    # 2. The ability of make independent choices
-    # 3. When you feel sad for someone of you forgive him for something.
