@@ -1,4 +1,3 @@
-import collections
 import math
 import numpy as np
 import nltk
@@ -8,7 +7,7 @@ from sklearn.cluster import KMeans
 from sklearn.metrics import silhouette_score
 from nltk.tokenize import sent_tokenize
 
-from part3.exercise4.utilities import sentences_cosine_similarity, create_vectors, weighted_overlap
+from part3.exercise4.src.utilities import sentences_cosine_similarity, create_vectors, weighted_overlap
 
 
 def parse_nasari_dictionary():

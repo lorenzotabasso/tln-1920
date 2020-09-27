@@ -1,12 +1,11 @@
-import sys
 import nltk
 from nltk.parse.corenlp import CoreNLPDependencyParser
 from nltk.corpus import brown
 from nltk.stem import WordNetLemmatizer
 from nltk.wsd import lesk
 
-from part3.exercise3.utilities.OurDependencyGraph import OurDependencyGraph
-from part3.exercise3.utilities.our_lesk import our_lesk
+from part3.exercise3.src.utilities.OurDependencyGraph import OurDependencyGraph
+from part3.exercise3.src.utilities.our_lesk import our_lesk
 
 # global parameter for WordNet search
 verbs_pos = ['VB', 'VBD', 'VBG', 'VBN', 'VBP', 'VBZ']
@@ -180,8 +179,8 @@ def hanks(verb):
 
 if __name__ == "__main__":
     """
-    IMPORTANT: Before run, make sure to download Stanford CoreNLP tool and run 
-    it using the following command inside its root folder. 
+    IMPORTANT: Before run, make sure to download Stanford CoreNLP 4.1.0 tool
+    and run it using the following command inside its root folder. 
     
     java -mx4g -cp "*" edu.stanford.nlp.pipeline.StanfordCoreNLPServer -port 9000 -timeout 15000
     

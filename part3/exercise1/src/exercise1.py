@@ -296,7 +296,7 @@ if __name__ == "__main__":
     now = datetime.now().strftime("Baseline - %d.%m.%Y-%H:%M:%S")  # dd/mm/YY-H:M:S
     plt.savefig('output/{}.png'.format(now))
     plt.show()
-    print("Baseline's plot saved in output folder.")
+    print("\nBaseline's plot saved in output folder.")
 
     # POS Experiment
     print2 = [[percentage2["generic_abstract"], percentage2["generic_concrete"]],
