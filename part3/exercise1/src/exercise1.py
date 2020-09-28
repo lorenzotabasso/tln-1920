@@ -106,6 +106,8 @@ def compute_overlap_pos(definitions):
         a = set(x[1] for x in temp_a)
 
         j = i + 1
+
+        # Performed (n(n+1))/2 times
         while j < len(definitions) - 1:
             # print(i,j)  # DEBUG
             text2 = word_tokenize(definitions[j])
@@ -140,12 +142,12 @@ def compute_overlap_cosine(definitions):
         d = d.lower()
         stop_words = set(stopwords.words('english'))
         punct = {',', ';', '(', ')', '{', '}', ':', '?', '!', '.'}
-        wnl = nltk.WordNetLemmatizer()
         tokens = nltk.word_tokenize(d)
         tokens = list(
             filter(lambda x: x not in stop_words and x not in punct, tokens))
 
         # Lemmatization
+        wnl = nltk.WordNetLemmatizer()
         lemmatized_tokens = ' '.join(list(wnl.lemmatize(t) for t in tokens))
 
         clean_defs.append(lemmatized_tokens)
@@ -161,6 +163,8 @@ def compute_overlap_cosine(definitions):
 
     results = []
     i = 0
+
+    # Performed (n(n+1))/2 times
     while i < len(vectors):
         a = vectors[i]
         j = i + 1

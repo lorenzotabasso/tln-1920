@@ -87,7 +87,7 @@ def clustering(similarities, sentences):
     kmeans.fit(data)
     matix_clusterized = kmeans.labels_
     
-     # Calculating beginning windows lenght based on sentences evenly splitted in contiguos clusters
+    # Calculating beginning windows lenght based on sentences evenly splitted in contiguos clusters
     initial_window_size = len(matix_clusterized) / best_clusters_size
     print("\t\tThe initial window size is: {:.3f}".format(initial_window_size))
 

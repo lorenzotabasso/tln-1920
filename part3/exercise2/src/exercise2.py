@@ -11,7 +11,7 @@ def load_data():
     """
     It reads che definition's CSV
 
-    :return: four list containing the read definitions.
+    :return: a dictionary containing all the definitions for a specified concept
     """
     with open(config["output"] + 'content-to-form.csv', "r", encoding="utf-8") as content:
         cnt = csv.reader(content, delimiter=';')
@@ -170,7 +170,7 @@ def genus_hyper(depth):
 if __name__ == "__main__":
     config = {
         "output": "/Users/lorenzotabasso/Desktop/University/TLN/Progetto/19-20/tln-1920/part3/exercise2/input/",
-        "depth": 3
+        "depth": 4
     }
 
     print("Genus Noun (depth {}):".format(config["depth"]))
